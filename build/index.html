@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,20 +8,44 @@
     <title>Home Page</title>
     <link rel="stylesheet" href="../src/style.css">
 </head>
+
 <body>
-    <div id="navbar" class="flex w-100">
-        <div id="left">
-            <img src="./images/logo-full.svg" alt="website_log" />
-            <a href="#">Discover smallcases</a>
-            <a href="#">For Businesses</a>
+    <div id="navbar" class="fixed w-full flex justify-between h-20 items-center pl-32 pr-32 border-b border-gray-400">
+        <div id="left" class="flex gap-12">
+            <img src="../images/logo-full.svg" alt="website_log" class="w-36" />
+            <a href="#" class="font-medium hover:text-black text-gray-400 p-1">Discover smallcases</a>
+            <a href="#" class="font-medium hover:text-black text-gray-400 p-1">For Businesses</a>
 
         </div>
-        <div id="right">
-            <a href="#">We're Hiring</a>
-            <a href="#">Blog</a>
-            <a href="#">Open Broker Account</a>
-            <button>Login</button>
+        <div id="right" class="flex gap-12 items-center">
+            <a href="#" class="font-medium hover:text-black text-gray-400 p-1">We're Hiring</a>
+            <a href="#" class="font-medium hover:text-black text-gray-400 p-1">Blog</a>
+            <a href="#" class="font-medium hover:text-black text-gray-400 p-1">Open Broker Account</a>
+            <button
+                class="border-solid border-2 border-blue-500 text-blue-600 font-bold w-20 h-12 rounded-md transition-all duration-150 transform hover:-translate-y-0.5 hover:shadow-lg">Login</button>
+        </div>
+    </div>
+    <div id="intro_container" class=" w-full h-screen">
+        <div id="info_main" class="h-full w-4/5 m-auto flex flex-col justify-center gap-2">
+            <h1 class="text-6xl font-bold w-2/5">Stock investing done right</h1>
+            <p class="w-2/5 text-2xl font-light my-2">With smallcases, build your diversified long-term portfolio of stocks & ETFs
+            </p>
+            <div class="w-2/5 h-20 flex gap-4 my-4">
+                <button class="w-1/2 h-4/5 font-medium border-2 border-blue-300 rounded text-white bg-blue-500 text-xl transition-all duration-150 transform hover:-translate-y-0.5 hover:shadow-lg">Discover smallcases</button>
+                <button class="w-1/2 h-4/5 font-medium border-2 border-blue-300 rounded  text-xl text-blue-500 transition-all duration-150 transform hover:-translate-y-0.5 hover:shadow-lg">Download App</button>
+            </div>
+            <p class="font-light text-xl">Supported on India's largest brokers</p>
+            <div class="flex gap-1">
+                <a href="#" title="5paisa" class="w-12 h-12 shadow-lg transition-all duration-150 transform hover:-translate-y-0.5 border-solid border-1 border-gray-400 rounded-3xl"><img class="m-auto my-3" src="../images/fivepaisa.svg" alt="5paisa" /></a>
+                <a href="#" title="5paisa" class="w-12 h-12 shadow-lg transition-all duration-150 transform hover:-translate-y-0.5 border-solid border-1 border-gray-400 rounded-3xl"><img class="m-auto my-4 w-5" src="../images/angelbroking.svg" alt="angelbroking" /></a>
+                <a href="#" title="Angel Broking" class="w-12 h-12 shadow-lg transition-all duration-150 transform hover:-translate-y-0.5 border-solid border-1 border-gray-400 rounded-3xl"><img class="m-auto my-3" src="../images/hdfc.svg" alt="hdfc" /></a>
+                <a href="#" title="HDFC" class="w-12 h-12 shadow-lg transition-all duration-150 transform hover:-translate-y-0.5 border-solid border-1 border-gray-400 rounded-3xl"><img class="m-auto my-3" src="../images/kotak.svg" alt="kotak" /></a>
+                <a href="#" title="Up Stox" class="w-12 h-12 shadow-lg transition-all duration-150 transform hover:-translate-y-0.5 border-solid border-1 border-gray-400 rounded-3xl"><img class="m-auto my-3" src="../images/upstox.svg" alt="Up Stox" /></a>
+                <a href="#" title="Kite" class="w-12 h-12 shadow-lg transition-all duration-150 transform hover:-translate-y-0.5 border-solid border-1 border-gray-400 rounded-3xl"><img class="m-auto my-3" src="../images/kite.svg" alt="kite" /></a>
+                <a href="#" title="more" class="w-12 h-12 shadow-lg transition-all duration-150 transform hover:-translate-y-0.5 border-solid border-1 border-gray-400 rounded-3xl py-3 px-3"><span class="text-blue-500">+7</span></a>
+            </div>
         </div>
     </div>
 </body>
+
 </html>
