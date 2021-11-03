@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <div id="navbar" class="fixed w-full flex justify-between h-20 items-center pl-32 pr-32 border-b border-gray-400">
+    <div id="navbar" class="fixed w-full flex justify-between h-20 items-center pl-32 pr-32 border-b border-gray-400 bg-white z-10">
         <div id="left" class="flex gap-12">
             <img src="../images/logo-full.svg" alt="website_log" class="w-36" />
             <a href="#" class="font-medium hover:text-black text-gray-400 p-1">Discover smallcases</a>
@@ -25,7 +25,7 @@
                 class="border-solid border-2 border-blue-500 text-blue-600 font-bold w-20 h-12 rounded-md transition-all duration-150 transform hover:-translate-y-0.5 hover:shadow-lg">Login</button>
         </div>
     </div>
-    <div id="intro_container" class=" w-full h-screen">
+    <div id="intro_container" class=" w-full h-screen bg-contain bg-no-repeat bg-left-bottom bg-" style="background-image: url(../images/back.png);">
         <div id="info_main" class="h-full w-4/5 m-auto flex flex-col justify-center gap-2">
             <h1 class="text-6xl font-bold w-2/5">Stock investing done right</h1>
             <p class="w-2/5 text-2xl font-light my-2">With smallcases, build your diversified long-term portfolio of stocks & ETFs
@@ -43,6 +43,27 @@
                 <a href="#" title="Up Stox" class="w-12 h-12 shadow-lg transition-all duration-150 transform hover:-translate-y-0.5 border-solid border-1 border-gray-400 rounded-3xl"><img class="m-auto my-3" src="../images/upstox.svg" alt="Up Stox" /></a>
                 <a href="#" title="Kite" class="w-12 h-12 shadow-lg transition-all duration-150 transform hover:-translate-y-0.5 border-solid border-1 border-gray-400 rounded-3xl"><img class="m-auto my-3" src="../images/kite.svg" alt="kite" /></a>
                 <a href="#" title="more" class="w-12 h-12 shadow-lg transition-all duration-150 transform hover:-translate-y-0.5 border-solid border-1 border-gray-400 rounded-3xl py-3 px-3"><span class="text-blue-500">+7</span></a>
+            </div>
+        </div>
+        <div id="static_info_second" class="flex gap-2 my-32 w-4/5 m-auto">
+            <div class="flex flex-col gap-3 w-1/2">
+                <h2 class="m-4 text-4xl font-bold w-4/5">A smallcase is a basket of stocks that reflects an idea</h2>
+                <p class="w-4/5 text-2xl font-light m-4">smallcases are portfolios of stocks or ETFs, weighted intelligently to track a theme, strategy or objective</p>
+                <img class="w-4/5 rounded " src="../images/whatissmallcase-thumbnail.jpeg" alt="thumbnail" />
+                <a href="#">
+                    <div class="flex h-32 w-full items-center p-2 gap-4 my-12 hover:shadow-lg">
+                        <img class="w-28 h-4/5 rounded-md" src="../images/smallcases-bp-2.jpg" alt="invest" />
+                        <div class="p-2">
+                            <div class="text-blue-600 font-bold text-xl">Investing Insights</div>
+                            <div class="text-2xl font-bold">Why Investors Should Invest in smallcases</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div>
+                <div></div>
+                <div></div>
+                <div></div>
             </div>
         </div>
     </div>
