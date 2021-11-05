@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../src/style.css">
     <style>
         .partnersBox{
-            background-image: url('./images/partnersBox_backImg.svg'),url('./images/partnersBox_backImg_Right.svg');
+            background-image: url('../images/partnersBox_backImg.svg'),url('./images/partnersBox_backImg_Right.svg');
             background-position:0%,100%;
             background-repeat: no-repeat;
             background-size: contain;
@@ -285,7 +285,7 @@
                                 <figure class="flex">
                                     <img class="w-96 relative transform translate-x-3/4" src="../images/phone.svg" alt="phone">
                                     <div>
-                                        <video autoplay playsinline class="transform -translate-x-12 translate-y-10 w-72 rounded-lg h-full" src="../videos/track_new.mp4"></video>
+                                        <video autoplay muted playsinline class="transform -translate-x-12 translate-y-10 w-72 rounded-lg h-full" src="../videos/track_new.mp4"></video>
                                     </div>
                                 </figure>
                             </div>
@@ -303,7 +303,7 @@
                                 <figure class="flex">
                                     <img class="w-96 relative transform translate-x-3/4" src="../images/phone.svg" alt="phone">
                                     <div>
-                                        <video autoplay playsinline class="transform -translate-x-12 translate-y-10 w-72 rounded-lg h-full" src="../videos/sip_new.mp4"></video>
+                                        <video autoplay muted playsinline class="transform -translate-x-12 translate-y-10 w-72 rounded-lg h-full" src="../videos/sip_new.mp4"></video>
                                     </div>
                                 </figure>
                             </div>
@@ -321,7 +321,7 @@
                                 <figure class="flex">
                                     <img class="w-96 relative transform translate-x-3/4" src="../images/phone.svg" alt="phone">
                                     <div>
-                                        <video autoplay playsinline class="transform -translate-x-12 translate-y-10 w-72 rounded-lg h-full" src="../videos/create_new.mp4"></video>
+                                        <video autoplay muted playsinline class="transform -translate-x-12 translate-y-10 w-72 rounded-lg h-full" src="../videos/create_new.mp4"></video>
                                     </div>
                                 </figure>
                             </div>
@@ -340,52 +340,61 @@
         </div>
 
 
-        <div class="bg-blue-600 bg-opacity-90 rounded partnersBox border">
+        <div class="bg-blue-600 bg-opacity-90 rounded partnersBox border flex w-4/5 m-auto">
+            <figure>
+                <img src="../images/finance-bg-2.svg" />
+            </figure>
             <div class="my-12 mx-36 text-center border border-none">
-                <h1 class="text-white font-semibold text-2xl">We work with India's most</h1>
-                <h1 class="text-white font-semibold text-2xl">trusted financial brands</h1>
-                <p class="text-xs m-3 text-gray-200 text-left">When you invest in smallcase, stocks you buy are held in your existing demat account. Get started with your trading account</p>
-                <div class="companies_ass mx-10 grid grid-cols-4 gap2 gap-3 border border-none">
-                    <div class="bg-white h-14 rounded flex">
-                        <img class="p-5" src="../images/fivepaisa.png">
+                <h1 class="m-auto mb-7 text-white text-center font-semibold text-4xl font-bold w-4/5">&nbsp;&nbsp;&nbsp;&nbsp; We work with India's &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; most trusted financial brands</h1>
+                <p class="text-xs m-auto text-center text-gray-200 mb-10 text-xl w-11/12 p-3">When you invest in smallcase, stocks you buy are held in your existing demat account. Get started with your trading account</p>
+                <div style="display: grid; grid-template-columns: repeat(3,30%); grid-template-rows: repeat(2,90px); border-radius: 6px; gap: 15px; justify-content: center;">
+                    <div class="bg-white h-full w-4/5 items-center  rounded w-full flex justify-center">
+                        <img class="w-4/5 h-1/3" src="../images/angelbroking.png">
                     </div>
-                    <div class="bg-white h-14 rounded flex">
-                        <img class="p-5" src="../images/aliceblue.png">
+                    <div class="bg-white h-full w-4/5 items-center  rounded w-full flex justify-center">
+                        <img class="w-4/5 h-1/3" src="../images/hdfc.png">
                     </div>
-                    <div class="bg-white h-14 rounded flex">
-                        <img class="p-5" src="../images/angelbroking.png">
+                    <div class="bg-white h-full w-4/5 items-center  rounded w-full flex justify-center">
+                        <img class="w-4/5 h-1/3" src="../images/iifl.png">
                     </div>
-                    <div class="bg-white h-14 rounded flex">
-                        <img class="p-5" src="../images/axisDirect.png">
+                    <div class="mt-4 bg-white h-full  items-center w-4/5 rounded w-full flex justify-center">
+                        <img class="w-4/5 h-1/3" src="../images/kotak.png">
                     </div>
-                    <div class="bg-white h-14 rounded flex">
-                        <img class="p-5" src="../images/edelweiss.png">
+                    <div class="mt-4 bg-white h-full  items-center w-4/5 rounded w-full flex justify-center">
+                        <img class="w-4/5 h-1/3" src="../images/upstox.png">
                     </div>
-                    <div class="bg-white h-14 rounded flex">
-                        <img class="p-5" src="../images/HDFCSecurities.png">
-                    </div>
-                    <div class="bg-white h-14 rounded flex">
-                        <img class="p-5" src="../images/iifl.png">
-                    </div>
-                    <div class="bg-white h-14 rounded flex">
-                        <img class="p-5" src="../images/kotak.jpeg">
-                    </div>
-                    <div class="bg-white h-14 rounded flex">
-                        <img class="p-5" src="../images/mosl.png">
-                    </div>
-                    <div class="bg-white h-14 rounded flex">
-                        <img class="p-5" src="../images/trustline.png">
-                    </div>
-                    <div class="bg-white h-14 rounded flex">
-                        <img class="p-5" src="../images/upstox.png">
-                    </div>
-                    <div class="bg-white h-14 rounded flex">
-                        <img class="p-5" src="../images/kite.png">
+                    <div class="mt-4 bg-white h-full  items-center w-4/5 rounded w-full flex justify-center">
+                        <img class="w-4/5 h-1/3" src="../images/kite.png" alt="kite">
                     </div>
                 </div>
+                <div class="w-1/5 mt-10 m-auto bg-white rounded h-10 flex align-middle transition-all duration-150 transform hover:-translate-y-0.5 hover:shadow-lg">
+                    <button class="m-auto font-medium text-blue-500">See All Brokers</button>
+                </div>
+            </div>
+            <figure>
+                <img src="../images/finance-bg.svg" alt="">
+            </figure>
+        </div>
+        <div>
+            <div>
+                <h2>Frequently Asked Questions</h2>
+            </div>
+            <div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div>
+                <p>
+                    <span>Have more questions or some feedback?</span>
+                    We are just an email away
+                </p>
+                <button>Write to us</button>
+                <p>Or Visit our
+                    <a href="#">Help Center</a>
+                </p>
             </div>
         </div>
-
 
         
 
