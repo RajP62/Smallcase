@@ -8,9 +8,44 @@
     <link rel="icon" href="./images/siteLogo.png" sizes="32x32">
     <link rel="stylesheet" href="./build/style.css">
     <link rel="stylesheet" href="blog.css">
+    <style>
+        /* div {
+            border: 0.5px solid red;
+        } */
+        .text-small{
+            font-size: 9.7px;
+        }
+        .text-exsm{
+            font-size: 11px;
+        }
+        .btnInNav {
+            background-color: #1A80E0;
+        }
+
+        #firBoxOfSec {
+            border-bottom: 0.5px solid rgb(236, 230, 230);
+        }
+
+        #secBoxOfSec {
+            border-bottom: 0.5px solid rgb(236, 230, 230);
+        }
+
+        .subscribe_box {
+            background: linear-gradient(to right, #1A80E0, #029DDE);
+        }
+        .colGrayBlue{
+            background-color: #F2F8FF;
+        }
+        .partnersBox{
+            background-image: url('./images/partnersBox_backImg.svg'),url('./images/partnersBox_backImg_Right.svg');
+            background-position:0%,100%;
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+    </style>
     
 </head>
-<body>
+<body >
     <div class="w-5/5 h-10">
         <div class="w-9/12 h-full m-auto flex justify-between">
             <div class="w-20 flex">
@@ -37,7 +72,7 @@
                             clip-rule="evenodd" />
                     </svg>
                     <div>
-                    <input type="text" placeholder="Search" class="w-10 text-xs m-1 text-small inpBox-nav">
+                    <input type="text" placeholder="Search" class="w-10 text-xs m-1 text-small inpBox-nav p-1">
                     </div>
                 </div>
                 
@@ -75,7 +110,7 @@
             </div>
             <div class="w-4/5 flex items-center">
                 <input type="text" placeholder="Email Address" class="text-gray-600 w-4/6 rounded p-0.5">
-                <button class="bg-white mx-2 text-black p-1.5 px-4 text-xs rounded">Subscribe</button>
+                <button class="p-2 bg-white mx-2 text-black p-1.5 px-4 text-xs rounded">Subscribe</button>
             </div>
         </div>
 
