@@ -1,3 +1,6 @@
+let loginBox = document.querySelector('.loginBox');
+let main_cont =document.querySelector('.mainContentDiv');
+
 async function getTrendingData() {
     try {
         let body = await fetch(`https://newsapi.org/v2/top-headlines?country=in&category=business&apiKey=0f2fb6533d144f24a288ed58d4ef8244`);
@@ -101,11 +104,6 @@ function appendFirstBox(articles) {
         secBoxNews.append(div);
     }
 
-}
-let btnNav = document.getElementById('btnInNav');
-btnNav.addEventListener('click',conso);
-function conso(){
-    console.log('navbar button clicked');
 }
 
 let collection_cards = document.querySelector(`.collectionBoxOpener`);
@@ -224,6 +222,10 @@ document.querySelector(`.mainContentDiv`).addEventListener('click',()=>{
         inp.classList.remove('w-52');
         inp.classList.add('w-10');
     }
+    if(!loginBox.classList.contains('hidden')){
+        loginBox.classList.add('hidden');
+        main_cont.removeAttribute('style','filter');
+    }
 });
 
 function showSuggestion(){
@@ -272,3 +274,18 @@ async function getSearchData(search){
     }
     
 }
+
+// navBtn onclick just for checking login card
+navBtn.addEventListener('click',displayLogin);
+console.log(main_cont)
+function displayLogin(){
+    if(loginBox.classList.contains('hidden')){
+        loginBox.classList.remove('hidden');
+        main_cont.setAttribute('style','filter: blur(5px)');
+    }
+}
+
+document.querySelector('.closeLoginCard').addEventListener('click',()=>{
+    loginBox.classList.add('hidden');
+    main_cont.removeAttribute('style','filter');
+})
