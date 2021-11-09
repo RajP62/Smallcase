@@ -7,13 +7,9 @@
     <title>Blog - Making smalltalk</title>
     <link rel="icon" href="./images/siteLogo.png" sizes="32x32">
     <link rel="stylesheet" href="./build/style.css">
-    <link rel="stylesheet" href="blog.css">
     <style>
         /* div {
             border: 0.5px solid red;
-        } */
-        /* .mainContentDiv{
-            filter: blur(5px);
         } */
         .text-small{
             font-size: 9.7px;
@@ -43,6 +39,21 @@
             background-image: url('./images/partnersBox_backImg.svg'),url('./images/partnersBox_backImg_Right.svg');
             background-position:0%,100%;
             background-repeat: no-repeat;
+            background-size: contain;
+        }
+        input{
+            width: 90%;
+        }
+        .btnSignup{
+            width: 90%;
+        }
+        .inpSignup{
+            width: 90%;
+        }
+        .backInSignup{
+            background-image: url(./images/signup_leftBack.png),url(./images/signup_rightBack.svg);
+            background-repeat: no-repeat;
+            background-position: 0%,100%;
             background-size: contain;
         }
     </style>
@@ -88,56 +99,10 @@
         
     </div>
 
-    <div class="bg-white z-10 hidden loginBox border border-gray-200 rounded shadow-lg w-3/12 my-5 left-96 top-20 sticky absolute top-1 select-none">
-        <div class="">
-            <span class="float-right closeLoginCard"><svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-gray-600 cursor-pointer mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-              </svg></span>
-            <h1 class="font-semibold m-3 text-xs">Login with your broker</h1>
-            <p class="text-gray-500 m-3 text-exsm">Choose a broker to start investing in smallcase seamlessly</p>
-            <div class="broking_part m-3 grid grid-cols-3">
-                <div class="grid grid-rows-2 p-3 hover:bg-gray-50 items-center justify-center border border-gray-100 rounded cursor-pointer">
-                        <img src="./images/groww.svg" class="w-4 block m-auto" alt="">
-                        <p class="text-small hover:text-blue-600 cursor-pointer font-semibold">Groww</p>
-                </div>
-                <div class="grid grid-rows-2 p-3 hover:bg-gray-50 items-center justify-center border border-gray-100 rounded cursor-pointer">
-                        <img src="./images/aliceblue.svg" class="w-4 block m-auto" alt="">
-                        <p class="text-small hover:text-blue-600 cursor-pointer font-semibold">Alice Blue</p>
-                </div>
-                <div class="grid grid-rows-2 p-3 hover:bg-gray-50 items-center justify-center border border-gray-100 rounded cursor-pointer">
-                        <img src="./images/fivepaisa.svg" class="w-4 block m-auto" alt="">
-                        <p class="text-small hover:text-blue-600 cursor-pointer font-semibold">5Paisa</p>
-                </div>
-                <div class="grid grid-rows-2 p-3 hover:bg-gray-50 items-center justify-center border border-gray-100 rounded cursor-pointer cursor-pointer">
-                        <img src="./images/angelbroking.svg" class="w-4 block m-auto" alt="">
-                        <p class="text-small hover:text-blue-600 cursor-pointer font-semibold">Angel One</p>
-                </div>
-                <div class="grid grid-rows-2 p-3 hover:bg-gray-50 items-center justify-center border border-gray-100 rounded cursor-pointer">
-                        <img src="./images/hdfc.svg" class="w-4 block m-auto" alt="">
-                        <p class="text-small hover:text-blue-600 cursor-pointer font-semibold">HDFC Sec</p>
-                </div>
-                <div class="grid grid-rows-2 p-3 hover:bg-gray-50 items-center justify-center border border-gray-100 rounded cursor-pointer">
-                        <img src="./images/kotak.svg" class="w-4 block m-auto" alt="">
-                        <p class="text-small hover:text-blue-600 cursor-pointer font-semibold">Kotak Sec</p>
-                </div>
-                <div class="grid grid-rows-2 p-3 hover:bg-gray-50 items-center justify-center border border-gray-100 rounded cursor-pointer">
-                        <img src="./images/upstox.svg" class="w-4 block m-auto" alt="">
-                        <p class="text-small hover:text-blue-600 cursor-pointer font-semibold">Upstox</p>
-                </div>
-                <div class="grid grid-rows-2 p-3 hover:bg-gray-50 items-center justify-center border border-gray-100 rounded cursor-pointer">
-                        <img src="./images/kite.svg" class="w-4 block m-auto" alt="">
-                        <p class="text-small hover:text-blue-600 cursor-pointer font-semibold">Zerodha</p>
-                </div>
-                <div class=" flex p-3 hover:bg-gray-50 items-center justify-center border border-gray-100 rounded cursor-pointer">
-                        <p class="text-small text-blue-600 cursor-pointer font-semibold">+5 More</p>
-                </div>
-            </div>
-            <p class="text-small m-3 text-center text-gray-600">————Don't have a broker account?———</p>
-            <button class="border border-blue-600 text-small block m-auto w-4/5 text-blue-600 font-semibold mb-5 rounded">Open an account online</button>
-        </div>
-        </div>
+    <div id="loginNSignUp"></div>
 
-    <div class="w-4/5 m-auto mainContentDiv">
+
+    <div class="w-4/5 m-auto mainContentDiv select-none">
         <div class="w-5/5 m-auto my-2 flex">
             <div class="w-2/3 m-5" id="newsBox-one">
 
@@ -172,12 +137,12 @@
             <button class="text-blue-600 border text-small font-semibold rounded border-blue-600 block m-auto py-1.5 px-14 hover:bg-blue-500 hover:text-white">See more recent stories</button>
         </div>
 
-        <div class="border border-gray-200 rounded">
+        <div class="border border-gray-200 rounded select-none">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-3 text-blue-600 w-3 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7" />
             </svg>
             <h1 class="inline text-sm font-bold m-3 collectionBoxOpener cursor-pointer">Collections</h1>
-            <div class="collection_cards grid grid-cols-4 m-5 gap-3 hidden">
+            <div class="collection_cards grid grid-cols-4 m-5 gap-3">
                 <div class="border border-gray-300 rounded cursor-pointer firCard_collection">
                     <div class="p-1 pb-8 firCardDiv_collection">
                         <img class="w-2/6 rounded m-2" src="../images/exchangeTradedFunds.png" alt="Unable To Load">
@@ -350,5 +315,5 @@
     </div>
 </body>
 </html>
-<script src="blog.js"></script>
+<script type="module" src="blog.js"></script>
 

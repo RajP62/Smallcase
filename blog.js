@@ -1,6 +1,6 @@
-let loginBox = document.querySelector('.loginBox');
-let main_cont =document.querySelector('.mainContentDiv');
+import {loginAndSignHtml,displayLogin} from './components/auth.js';
 
+let loginNSignUpBox = document.getElementById('loginNSignUp');
 async function getTrendingData() {
     try {
         let body = await fetch(`https://newsapi.org/v2/top-headlines?country=in&category=business&apiKey=0f2fb6533d144f24a288ed58d4ef8244`);
@@ -43,7 +43,7 @@ function appendFirstBox(articles) {
         let firOfSecBox = document.getElementById('firBoxOfSec');
         let img1 = document.createElement('img');
         img1.alt = "Unable to load";
-        ins_small_txt = document.createElement('p');
+        let ins_small_txt = document.createElement('p');
         ins_small_txt.textContent = "inside smallcase";
         ins_small_txt.setAttribute('class', 'text-small text-blue-600 my-3 cursor-pointer');
         let desc2 = document.createElement('h1');
@@ -59,7 +59,7 @@ function appendFirstBox(articles) {
         let secOfSecBox = document.getElementById('secBoxOfSec');
         let img1 = document.createElement('img');
         img1.alt = "Unable to load";
-        ins_small_txt = document.createElement('p');
+        let ins_small_txt = document.createElement('p');
         ins_small_txt.textContent = "inside smallcase";
         ins_small_txt.setAttribute('class', 'text-small text-blue-600 my-3 cursor-pointer');
         let desc2 = document.createElement('h1');
@@ -222,10 +222,6 @@ document.querySelector(`.mainContentDiv`).addEventListener('click',()=>{
         inp.classList.remove('w-52');
         inp.classList.add('w-10');
     }
-    if(!loginBox.classList.contains('hidden')){
-        loginBox.classList.add('hidden');
-        main_cont.removeAttribute('style','filter');
-    }
 });
 
 function showSuggestion(){
@@ -263,6 +259,7 @@ function appendSearchData(articles){
         div_res.append(div);
     });
 }
+
 async function getSearchData(search){
     try{
         let data = await fetch(`https://newsapi.org/v2/everything?q=${search}&sortBy=popularity&apiKey=0f2fb6533d144f24a288ed58d4ef8244`);
@@ -275,17 +272,12 @@ async function getSearchData(search){
     
 }
 
+let backContainer = document.querySelector('.mainContentDiv');
 // navBtn onclick just for checking login card
-navBtn.addEventListener('click',displayLogin);
-console.log(main_cont)
-function displayLogin(){
-    if(loginBox.classList.contains('hidden')){
-        loginBox.classList.remove('hidden');
-        main_cont.setAttribute('style','filter: blur(5px)');
-    }
-}
+navBtn.addEventListener('click',()=>{
+    console.log(backContainer);
+    displayLogin(backContainer);
+});
+loginNSignUpBox.innerHTML  = loginAndSignHtml();
 
-document.querySelector('.closeLoginCard').addEventListener('click',()=>{
-    loginBox.classList.add('hidden');
-    main_cont.removeAttribute('style','filter');
-})
+
