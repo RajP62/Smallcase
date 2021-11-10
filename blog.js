@@ -1,6 +1,6 @@
-import {loginAndSignHtml,displayLogin} from './components/auth.js';
+import {loginBox,signUpBox,displayLogin} from './components/auth.js';
 
-let loginNSignUpBox = document.getElementById('loginNSignUp');
+
 async function getTrendingData() {
     try {
         let body = await fetch(`https://newsapi.org/v2/top-headlines?country=in&category=business&apiKey=0f2fb6533d144f24a288ed58d4ef8244`);
@@ -15,6 +15,8 @@ getTrendingData().then(({ articles }) => {
     console.log(articles)
     appendFirstBox(articles);
 });
+
+let secBoxNews = document.getElementById(`second-box-news`);
 
 function appendFirstBox(articles) {
     // appending first box
@@ -54,6 +56,7 @@ function appendFirstBox(articles) {
         firOfSecBox.append(img1, ins_small_txt, desc2);
     }
 
+   
     {
         let { urlToImage, description } = articles[2];
         let secOfSecBox = document.getElementById('secBoxOfSec');
@@ -85,11 +88,12 @@ function appendFirstBox(articles) {
         secondBox.append(div);
     }
 
+
     // Appending the second box
-    for (let i = 7; i < 13; i++) {
+    var countNews = 7;
+    for (countNews; countNews < 13; countNews++) {
         let div = document.createElement('div');
-        let { urlToImage, description, content } = articles[i];
-        let secBoxNews = document.getElementById(`second-box-news`);
+        let { urlToImage, description, content } = articles[countNews];
         let img = document.createElement('img');
         img.alt = "Unable to load";
         let desc = document.createElement('h1');
@@ -103,6 +107,27 @@ function appendFirstBox(articles) {
         div.append(img,desc,cont)
         secBoxNews.append(div);
     }
+
+    let btnAddMore = document.getElementById('btnSeeMoreNews');
+    btnAddMore.addEventListener('click',()=>{
+        while(countNews<articles.length){
+            let div = document.createElement('div');
+            let { urlToImage, description, content } = articles[countNews];
+            let img = document.createElement('img');
+            img.alt = "Unable to load";
+            let desc = document.createElement('h1');
+            desc.setAttribute('class','font-bold my-2 cursor-pointer hover:text-blue-500 text-xs');
+            let cont = document.createElement('p');
+            img.src = urlToImage;
+            img.setAttribute('class','w-5/5 cursor-pointer h-2/5');
+            desc.textContent = description;
+            cont.setAttribute('class','text-gray-500 cursor-pointer text-sm');
+            cont.textContent = content;
+            div.append(img,desc,cont);
+            secBoxNews.append(div);
+            countNews++;
+        }
+    });
 
 }
 
@@ -123,79 +148,78 @@ function toggleCardsDiv(){
 
 // click listener to cards in collection box
 // for first card
-{
-let card = document.querySelector(`.firCard_collection`);
-card.setAttribute('onmouseover','displayCardDet()');
-card.setAttribute('onmouseout','displayCardDef()');
-let firBox = document.querySelector(`.firCard_collection div`);
-let sec_box = document.querySelector(`.altBox_firCard`);
-
-function displayCardDet(){
-    console.log("In the div");
-    firBox.classList.add('hidden');
-    sec_box.classList.remove('hidden');
-}
-
-function displayCardDef(){
-    firBox.classList.remove('hidden');
-    sec_box.classList.add('hidden');
-}
-}
-// for second card
-{
-let card = document.querySelector(`.secCard_collection`);
-card.setAttribute('onmouseover','displaySecCardDet()');
-card.setAttribute('onmouseout','displaySecCardDef()');
-let firBox = document.querySelector(`.secCard_collection div`);
-let sec_box = document.querySelector(`.altBox_secCard`);
-
-function displaySecCardDet(){
-    firBox.classList.add('hidden');
-    sec_box.classList.remove('hidden');
-}
-
-function displaySecCardDef(){
-    firBox.classList.remove('hidden');
-    sec_box.classList.add('hidden');
-}
-}
-// for third card
-{
-let card = document.querySelector(`.thiCard_collection`);
-card.setAttribute('onmouseover','displayThiCardDet()');
-card.setAttribute('onmouseout','displayThiCardDef()');
-let firBox = document.querySelector(`.thiCard_collection div`);
-let sec_box = document.querySelector(`.altBox_thiCard`);
-
-
-function displayThiCardDet(){
-    firBox.classList.add('hidden');
-    sec_box.classList.remove('hidden');
-}
-
-function displayThiCardDef(){
-    firBox.classList.remove('hidden');
-    sec_box.classList.add('hidden');
-}
-}
-// for fourth card
-{
-let card = document.querySelector(`.fourCard_collection`);
-card.setAttribute('onmouseover','displayFourCardDet()');
-card.setAttribute('onmouseout','displayFourCardDef()');
-let firBox = document.querySelector(`.fourCard_collection div`);
-let sec_box = document.querySelector(`.altBox_fourCard`);
-
-
-function displayFourCardDet(){
-    firBox.classList.add('hidden');
-    sec_box.classList.remove('hidden');
-}
-
-function displayFourCardDef(){
-    firBox.classList.remove('hidden');
-    sec_box.classList.add('hidden');
-}
+    {
+    let card = document.querySelector(`.firCard_collection`);
+    card.addEventListener('mouseover',displayCardDet);
+    card.addEventListener('mouseout',displayCardDef);
+    let firBox = document.querySelector(`.firCard_collection div`);
+    let sec_box = document.querySelector(`.altBox_firCard`);
+    
+    function displayCardDet(){
+        firBox.classList.add('hidden');
+        sec_box.classList.remove('hidden');
+    }
+    
+    function displayCardDef(){
+        firBox.classList.remove('hidden');
+        sec_box.classList.add('hidden');
+    }
+    }
+    // for second card
+    {
+    let card = document.querySelector(`.secCard_collection`);
+    card.addEventListener('mouseover',displaySecCardDet);
+    card.addEventListener('mouseout',displaySecCardDef);
+    let firBox = document.querySelector(`.secCard_collection div`);
+    let sec_box = document.querySelector(`.altBox_secCard`);
+    
+    function displaySecCardDet(){
+        firBox.classList.add('hidden');
+        sec_box.classList.remove('hidden');
+    }
+    
+    function displaySecCardDef(){
+        firBox.classList.remove('hidden');
+        sec_box.classList.add('hidden');
+    }
+    }
+    // for third card
+    {
+    let card = document.querySelector(`.thiCard_collection`);
+    card.addEventListener('mouseover',displayThiCardDet);
+    card.addEventListener('mouseout',displayThiCardDef);
+    let firBox = document.querySelector(`.thiCard_collection div`);
+    let sec_box = document.querySelector(`.altBox_thiCard`);
+    
+    
+    function displayThiCardDet(){
+        firBox.classList.add('hidden');
+        sec_box.classList.remove('hidden');
+    }
+    
+    function displayThiCardDef(){
+        firBox.classList.remove('hidden');
+        sec_box.classList.add('hidden');
+    }
+    }
+    // for fourth card
+    {
+    let card = document.querySelector(`.fourCard_collection`);
+    card.addEventListener('mouseover',displayFourCardDet);
+    card.addEventListener('mouseout',displayFourCardDef);
+    let firBox = document.querySelector(`.fourCard_collection div`);
+    let sec_box = document.querySelector(`.altBox_fourCard`);
+    
+    
+    function displayFourCardDet(){
+        firBox.classList.add('hidden');
+        sec_box.classList.remove('hidden');
+    }
+    
+    function displayFourCardDef(){
+        firBox.classList.remove('hidden');
+        sec_box.classList.add('hidden');
+    }
 }
 
 // debouncing in search bar in navbar
@@ -273,11 +297,14 @@ async function getSearchData(search){
 }
 
 let backContainer = document.querySelector('.mainContentDiv');
-// navBtn onclick just for checking login card
+//  login card & signup functionality
+let login = document.getElementById('loginBox');
+let signUp = document.getElementById('signUpBox');
 navBtn.addEventListener('click',()=>{
-    console.log(backContainer);
     displayLogin(backContainer);
 });
-loginNSignUpBox.innerHTML  = loginAndSignHtml();
+
+login.innerHTML = loginBox();
+signUp.innerHTML = signUpBox();
 
 
