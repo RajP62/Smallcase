@@ -6,6 +6,118 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page</title>
+    <style>
+                .Testimonials__first-tweets-row__1c3VM {
+            -webkit-box-align: end;
+            -ms-flex-align: end;
+            align-items: flex-end;
+        }
+
+        .Testimonials__second-tweets-row__1g2o7 {
+            -webkit-box-align: start;
+            -ms-flex-align: start;
+            align-items: flex-start;
+        }
+
+        .Testimonials__tweets-slider__1P4dW {
+            height: 500px;
+            -webkit-animation: Testimonials__scroll__27Guy 60s linear infinite;
+            animation: Testimonials__scroll__27Guy 60s linear infinite
+        }
+
+        .Testimonials__tweets-slider__1P4dW:hover {
+            -webkit-animation-play-state: paused !important;
+            animation-play-state: paused !important
+        }
+
+        @-webkit-keyframes Testimonials__scroll__27Guy {
+            0% {
+                -webkit-transform: translateX(0);
+                transform: translateX(0)
+            }
+
+            to {
+                -webkit-transform: translateX(-185%);
+                transform: translateX(-185%);
+            }
+        }
+
+        @keyframes Testimonials__scroll__27Guy {
+            0% {
+                -webkit-transform: translateX(0);
+                transform: translateX(0);
+            }
+
+            to {
+                -webkit-transform: translateX(-185%);
+                transform: translateX(-185%);
+            }
+        }
+
+        .TweetCard__card__27-4v,
+        .TweetCard__card__27-4v:hover {
+            -webkit-transition: -webkit-transform .2s ease-out;
+            transition: -webkit-transform .2s ease-out;
+            transition: transform .2s ease-out;
+            transition: transform .2s ease-out, -webkit-transform .2s ease-out;
+        }
+
+        .TweetCard__card__27-4v:hover {
+            -webkit-box-shadow: 0 5px 12px 5px rgba(221, 224, 228, .5);
+            box-shadow: 0 5px 12px 5px rgba(221, 224, 228, .5);
+            -webkit-transform: scale(1.05);
+            transform: scale(1.05);
+        }
+
+        .TweetCard__profile__1cFB5 {
+            height: 70px;
+        }
+
+        .TweetCard__twitter-profile-pic__3KfhP {
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            background-image: url("../images/twitter_sprites.png");
+        }
+
+        .TweetCard__head__11JcH {
+            -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+            justify-content: space-between;
+            -webkit-box-align: start;
+            -ms-flex-align: start;
+            align-items: flex-start;
+        }
+
+        .TweetCard__body__Rp_i_ {
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            letter-spacing: -.01em;
+        }
+
+        .TweetCard__card__27-4v,
+        .TweetCard__card__27-4v:hover {
+            -webkit-transition: -webkit-transform .2s ease-out;
+            transition: -webkit-transform .2s ease-out;
+            transition: transform .2s ease-out;
+            transition: transform .2s ease-out, -webkit-transform .2s ease-out;
+        }
+
+        .TweetCard__card__27-4v {
+            min-width: 270px;
+            padding: 20px;
+            border-radius: 4px;
+            border: 1px solid #e9ecf5;
+            background: #fff;
+        }
+
+        .Testimonials__tweets-container__2QvJU {
+            overflow-x: hidden;
+            height:800px;
+        }
+    </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../src/style.css">
     <link rel="stylesheet" href="style.css">
@@ -333,6 +445,7 @@
             </div>
         </div>
 
+<<<<<<< HEAD
         <!-- moving container twitter  -->
         <div>
             <div>
@@ -378,6 +491,840 @@
                         <img class="w-11/12 h-20 items-center" src="../images/cnbc.svg" >
                     </figure>
                 </a>
+=======
+        <div class="w-full">
+            <div class="w-4/5 m-auto text-lg">
+                <p>Don’t take our word for it</p>
+                <h2 class="font-bold">See what other investors are saying</h2>
+            </div>
+            <div class="Testimonials__tweets-container__2QvJU">
+                <div class="Testimonials__tweets-slider__1P4dW" style="animation-play-state: initial;">
+                    <div class="flex Testimonials__first-tweets-row__1c3VM mb-16">
+                        <div class="TweetCard__card__27-4v mr-16">
+    
+                            <div class="TweetCard__head__11JcH flex text-14 mb-8">
+                                <div class="TweetCard__profile__1cFB5 flex">
+                                    <figure class="TweetCard__twitter-profile-pic__3KfhP mr-8 mb-16"
+                                        style="background-position: 0px -0px;"></figure>
+                                    <div>
+                                        <div class="TweetCard__name__NIHYD text-14 font-medium">Satish Suggala</div>
+                                        <div class="TweetCard__username__H7dqs text-12">@MindYoghurt</div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <a href="#" target="_blank" rel="noopener noreferrer">
+                                        <img src="../images/twitter-icon.svg" alt="twitter">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="TweetCard__body__Rp_i_ flex text-14">
+                                <div>
+                                    <p>
+                                        Lately, been playing w/ stocks & wealth mgmt apps. Amongst all,
+                                        <span>@smallcaseHQ</span>
+                                         is the shining star. Absolute recco on 💻 & 📱
+                                    </p>
+                                </div>
+                                <div>9:40 AM - 4 Jul 2017</div>
+                            </div>
+                        </div>
+                        <div class="TweetCard__card__27-4v mr-16">
+    
+                            <div class="TweetCard__head__11JcH flex text-14 mb-8">
+                                <div class="TweetCard__profile__1cFB5 flex">
+                                    <figure class="TweetCard__twitter-profile-pic__3KfhP mr-8 mb-16"
+                                        style="background-position: 0px -0px;"></figure>
+                                    <div>
+                                        <div class="TweetCard__name__NIHYD text-14 font-medium">Satish Suggala</div>
+                                        <div class="TweetCard__username__H7dqs text-12">@MindYoghurt</div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <a href="#" target="_blank" rel="noopener noreferrer">
+                                        <img src="../images/twitter-icon.svg" alt="twitter">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="TweetCard__body__Rp_i_ flex text-14">
+                                <div>
+                                    <p>
+                                        Lately, been playing w/ stocks & wealth mgmt apps. Amongst all,
+                                        <span>@smallcaseHQ</span>
+                                         is the shining star. Absolute recco on 💻 & 📱
+                                    </p>
+                                </div>
+                                <div>9:40 AM - 4 Jul 2017</div>
+                            </div>
+                        </div>
+                        <div class="TweetCard__card__27-4v mr-16">
+    
+                            <div class="TweetCard__head__11JcH flex text-14 mb-8">
+                                <div class="TweetCard__profile__1cFB5 flex">
+                                    <figure class="TweetCard__twitter-profile-pic__3KfhP mr-8 mb-16"
+                                        style="background-position: 0px -0px;"></figure>
+                                    <div>
+                                        <div class="TweetCard__name__NIHYD text-14 font-medium">Satish Suggala</div>
+                                        <div class="TweetCard__username__H7dqs text-12">@MindYoghurt</div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <a href="#" target="_blank" rel="noopener noreferrer">
+                                        <img src="../images/twitter-icon.svg" alt="twitter">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="TweetCard__body__Rp_i_ flex text-14">
+                                <div>
+                                    <p>
+                                        Lately, been playing w/ stocks & wealth mgmt apps. Amongst all,
+                                        <span>@smallcaseHQ</span>
+                                         is the shining star. Absolute recco on 💻 & 📱
+                                    </p>
+                                </div>
+                                <div>9:40 AM - 4 Jul 2017</div>
+                            </div>
+                        </div>
+                        <div class="TweetCard__card__27-4v mr-16">
+    
+                            <div class="TweetCard__head__11JcH flex text-14 mb-8">
+                                <div class="TweetCard__profile__1cFB5 flex">
+                                    <figure class="TweetCard__twitter-profile-pic__3KfhP mr-8 mb-16"
+                                        style="background-position: 0px -0px;"></figure>
+                                    <div>
+                                        <div class="TweetCard__name__NIHYD text-14 font-medium">Satish Suggala</div>
+                                        <div class="TweetCard__username__H7dqs text-12">@MindYoghurt</div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <a href="#" target="_blank" rel="noopener noreferrer">
+                                        <img src="../images/twitter-icon.svg" alt="twitter">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="TweetCard__body__Rp_i_ flex text-14">
+                                <div>
+                                    <p>
+                                        Lately, been playing w/ stocks & wealth mgmt apps. Amongst all,
+                                        <span>@smallcaseHQ</span>
+                                         is the shining star. Absolute recco on 💻 & 📱
+                                    </p>
+                                </div>
+                                <div>9:40 AM - 4 Jul 2017</div>
+                            </div>
+                        </div>
+                        <div class="TweetCard__card__27-4v mr-16">
+    
+                            <div class="TweetCard__head__11JcH flex text-14 mb-8">
+                                <div class="TweetCard__profile__1cFB5 flex">
+                                    <figure class="TweetCard__twitter-profile-pic__3KfhP mr-8 mb-16"
+                                        style="background-position: 0px -0px;"></figure>
+                                    <div>
+                                        <div class="TweetCard__name__NIHYD text-14 font-medium">Satish Suggala</div>
+                                        <div class="TweetCard__username__H7dqs text-12">@MindYoghurt</div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <a href="#" target="_blank" rel="noopener noreferrer">
+                                        <img src="../images/twitter-icon.svg" alt="twitter">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="TweetCard__body__Rp_i_ flex text-14">
+                                <div>
+                                    <p>
+                                        Lately, been playing w/ stocks & wealth mgmt apps. Amongst all,
+                                        <span>@smallcaseHQ</span>
+                                         is the shining star. Absolute recco on 💻 & 📱
+                                    </p>
+                                </div>
+                                <div>9:40 AM - 4 Jul 2017</div>
+                            </div>
+                        </div>
+                        <div class="TweetCard__card__27-4v mr-16">
+    
+                            <div class="TweetCard__head__11JcH flex text-14 mb-8">
+                                <div class="TweetCard__profile__1cFB5 flex">
+                                    <figure class="TweetCard__twitter-profile-pic__3KfhP mr-8 mb-16"
+                                        style="background-position: 0px -0px;"></figure>
+                                    <div>
+                                        <div class="TweetCard__name__NIHYD text-14 font-medium">Satish Suggala</div>
+                                        <div class="TweetCard__username__H7dqs text-12">@MindYoghurt</div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <a href="#" target="_blank" rel="noopener noreferrer">
+                                        <img src="../images/twitter-icon.svg" alt="twitter">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="TweetCard__body__Rp_i_ flex text-14">
+                                <div>
+                                    <p>
+                                        Lately, been playing w/ stocks & wealth mgmt apps. Amongst all,
+                                        <span>@smallcaseHQ</span>
+                                         is the shining star. Absolute recco on 💻 & 📱
+                                    </p>
+                                </div>
+                                <div>9:40 AM - 4 Jul 2017</div>
+                            </div>
+                        </div>
+                        <div class="TweetCard__card__27-4v mr-16">
+    
+                            <div class="TweetCard__head__11JcH flex text-14 mb-8">
+                                <div class="TweetCard__profile__1cFB5 flex">
+                                    <figure class="TweetCard__twitter-profile-pic__3KfhP mr-8 mb-16"
+                                        style="background-position: 0px -0px;"></figure>
+                                    <div>
+                                        <div class="TweetCard__name__NIHYD text-14 font-medium">Satish Suggala</div>
+                                        <div class="TweetCard__username__H7dqs text-12">@MindYoghurt</div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <a href="#" target="_blank" rel="noopener noreferrer">
+                                        <img src="../images/twitter-icon.svg" alt="twitter">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="TweetCard__body__Rp_i_ flex text-14">
+                                <div>
+                                    <p>
+                                        Lately, been playing w/ stocks & wealth mgmt apps. Amongst all,
+                                        <span>@smallcaseHQ</span>
+                                         is the shining star. Absolute recco on 💻 & 📱
+                                    </p>
+                                </div>
+                                <div>9:40 AM - 4 Jul 2017</div>
+                            </div>
+                        </div>
+                        <div class="TweetCard__card__27-4v mr-16">
+    
+                            <div class="TweetCard__head__11JcH flex text-14 mb-8">
+                                <div class="TweetCard__profile__1cFB5 flex">
+                                    <figure class="TweetCard__twitter-profile-pic__3KfhP mr-8 mb-16"
+                                        style="background-position: 0px -0px;"></figure>
+                                    <div>
+                                        <div class="TweetCard__name__NIHYD text-14 font-medium">Satish Suggala</div>
+                                        <div class="TweetCard__username__H7dqs text-12">@MindYoghurt</div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <a href="#" target="_blank" rel="noopener noreferrer">
+                                        <img src="../images/twitter-icon.svg" alt="twitter">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="TweetCard__body__Rp_i_ flex text-14">
+                                <div>
+                                    <p>
+                                        Lately, been playing w/ stocks & wealth mgmt apps. Amongst all,
+                                        <span>@smallcaseHQ</span>
+                                         is the shining star. Absolute recco on 💻 & 📱
+                                    </p>
+                                </div>
+                                <div>9:40 AM - 4 Jul 2017</div>
+                            </div>
+                        </div>
+                        <div class="TweetCard__card__27-4v mr-16">
+    
+                            <div class="TweetCard__head__11JcH flex text-14 mb-8">
+                                <div class="TweetCard__profile__1cFB5 flex">
+                                    <figure class="TweetCard__twitter-profile-pic__3KfhP mr-8 mb-16"
+                                        style="background-position: 0px -0px;"></figure>
+                                    <div>
+                                        <div class="TweetCard__name__NIHYD text-14 font-medium">Satish Suggala</div>
+                                        <div class="TweetCard__username__H7dqs text-12">@MindYoghurt</div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <a href="#" target="_blank" rel="noopener noreferrer">
+                                        <img src="../images/twitter-icon.svg" alt="twitter">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="TweetCard__body__Rp_i_ flex text-14">
+                                <div>
+                                    <p>
+                                        Lately, been playing w/ stocks & wealth mgmt apps. Amongst all,
+                                        <span>@smallcaseHQ</span>
+                                         is the shining star. Absolute recco on 💻 & 📱
+                                    </p>
+                                </div>
+                                <div>9:40 AM - 4 Jul 2017</div>
+                            </div>
+                        </div>
+                        <div class="TweetCard__card__27-4v mr-16">
+    
+                            <div class="TweetCard__head__11JcH flex text-14 mb-8">
+                                <div class="TweetCard__profile__1cFB5 flex">
+                                    <figure class="TweetCard__twitter-profile-pic__3KfhP mr-8 mb-16"
+                                        style="background-position: 0px -0px;"></figure>
+                                    <div>
+                                        <div class="TweetCard__name__NIHYD text-14 font-medium">Satish Suggala</div>
+                                        <div class="TweetCard__username__H7dqs text-12">@MindYoghurt</div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <a href="#" target="_blank" rel="noopener noreferrer">
+                                        <img src="../images/twitter-icon.svg" alt="twitter">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="TweetCard__body__Rp_i_ flex text-14">
+                                <div>
+                                    <p>
+                                        Lately, been playing w/ stocks & wealth mgmt apps. Amongst all,
+                                        <span>@smallcaseHQ</span>
+                                         is the shining star. Absolute recco on 💻 & 📱
+                                    </p>
+                                </div>
+                                <div>9:40 AM - 4 Jul 2017</div>
+                            </div>
+                        </div>
+                        <div class="TweetCard__card__27-4v mr-16">
+    
+                            <div class="TweetCard__head__11JcH flex text-14 mb-8">
+                                <div class="TweetCard__profile__1cFB5 flex">
+                                    <figure class="TweetCard__twitter-profile-pic__3KfhP mr-8 mb-16"
+                                        style="background-position: 0px -0px;"></figure>
+                                    <div>
+                                        <div class="TweetCard__name__NIHYD text-14 font-medium">Satish Suggala</div>
+                                        <div class="TweetCard__username__H7dqs text-12">@MindYoghurt</div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <a href="#" target="_blank" rel="noopener noreferrer">
+                                        <img src="../images/twitter-icon.svg" alt="twitter">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="TweetCard__body__Rp_i_ flex text-14">
+                                <div>
+                                    <p>
+                                        Lately, been playing w/ stocks & wealth mgmt apps. Amongst all,
+                                        <span>@smallcaseHQ</span>
+                                         is the shining star. Absolute recco on 💻 & 📱
+                                    </p>
+                                </div>
+                                <div>9:40 AM - 4 Jul 2017</div>
+                            </div>
+                        </div>
+                        <div class="TweetCard__card__27-4v mr-16">
+    
+                            <div class="TweetCard__head__11JcH flex text-14 mb-8">
+                                <div class="TweetCard__profile__1cFB5 flex">
+                                    <figure class="TweetCard__twitter-profile-pic__3KfhP mr-8 mb-16"
+                                        style="background-position: 0px -0px;"></figure>
+                                    <div>
+                                        <div class="TweetCard__name__NIHYD text-14 font-medium">Satish Suggala</div>
+                                        <div class="TweetCard__username__H7dqs text-12">@MindYoghurt</div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <a href="#" target="_blank" rel="noopener noreferrer">
+                                        <img src="../images/twitter-icon.svg" alt="twitter">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="TweetCard__body__Rp_i_ flex text-14">
+                                <div>
+                                    <p>
+                                        Lately, been playing w/ stocks & wealth mgmt apps. Amongst all,
+                                        <span>@smallcaseHQ</span>
+                                         is the shining star. Absolute recco on 💻 & 📱
+                                    </p>
+                                </div>
+                                <div>9:40 AM - 4 Jul 2017</div>
+                            </div>
+                        </div>
+                        <div class="TweetCard__card__27-4v mr-16">
+    
+                            <div class="TweetCard__head__11JcH flex text-14 mb-8">
+                                <div class="TweetCard__profile__1cFB5 flex">
+                                    <figure class="TweetCard__twitter-profile-pic__3KfhP mr-8 mb-16"
+                                        style="background-position: 0px -0px;"></figure>
+                                    <div>
+                                        <div class="TweetCard__name__NIHYD text-14 font-medium">Satish Suggala</div>
+                                        <div class="TweetCard__username__H7dqs text-12">@MindYoghurt</div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <a href="#" target="_blank" rel="noopener noreferrer">
+                                        <img src="../images/twitter-icon.svg" alt="twitter">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="TweetCard__body__Rp_i_ flex text-14">
+                                <div>
+                                    <p>
+                                        Lately, been playing w/ stocks & wealth mgmt apps. Amongst all,
+                                        <span>@smallcaseHQ</span>
+                                         is the shining star. Absolute recco on 💻 & 📱
+                                    </p>
+                                </div>
+                                <div>9:40 AM - 4 Jul 2017</div>
+                            </div>
+                        </div>
+                        <div class="TweetCard__card__27-4v mr-16">
+    
+                            <div class="TweetCard__head__11JcH flex text-14 mb-8">
+                                <div class="TweetCard__profile__1cFB5 flex">
+                                    <figure class="TweetCard__twitter-profile-pic__3KfhP mr-8 mb-16"
+                                        style="background-position: 0px -0px;"></figure>
+                                    <div>
+                                        <div class="TweetCard__name__NIHYD text-14 font-medium">Satish Suggala</div>
+                                        <div class="TweetCard__username__H7dqs text-12">@MindYoghurt</div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <a href="#" target="_blank" rel="noopener noreferrer">
+                                        <img src="../images/twitter-icon.svg" alt="twitter">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="TweetCard__body__Rp_i_ flex text-14">
+                                <div>
+                                    <p>
+                                        Lately, been playing w/ stocks & wealth mgmt apps. Amongst all,
+                                        <span>@smallcaseHQ</span>
+                                         is the shining star. Absolute recco on 💻 & 📱
+                                    </p>
+                                </div>
+                                <div>9:40 AM - 4 Jul 2017</div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="flex Testimonials__second-tweets-row__1g2o7">
+                        <div class="TweetCard__card__27-4v mr-16">
+    
+                            <div class="TweetCard__head__11JcH flex text-14 mb-8">
+                                <div class="TweetCard__profile__1cFB5 flex">
+                                    <figure class="TweetCard__twitter-profile-pic__3KfhP mr-8 mb-16"
+                                        style="background-position: 0px -0px;"></figure>
+                                    <div>
+                                        <div class="TweetCard__name__NIHYD text-14 font-medium">Satish Suggala</div>
+                                        <div class="TweetCard__username__H7dqs text-12">@MindYoghurt</div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <a href="#" target="_blank" rel="noopener noreferrer">
+                                        <img src="../images/twitter-icon.svg" alt="twitter">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="TweetCard__body__Rp_i_ flex text-14">
+                                <div>
+                                    <p>
+                                        Lately, been playing w/ stocks & wealth mgmt apps. Amongst all,
+                                        <span>@smallcaseHQ</span>
+                                         is the shining star. Absolute recco on 💻 & 📱
+                                    </p>
+                                </div>
+                                <div>9:40 AM - 4 Jul 2017</div>
+                            </div>
+                        </div>
+                        <div class="TweetCard__card__27-4v mr-16">
+    
+                            <div class="TweetCard__head__11JcH flex text-14 mb-8">
+                                <div class="TweetCard__profile__1cFB5 flex">
+                                    <figure class="TweetCard__twitter-profile-pic__3KfhP mr-8 mb-16"
+                                        style="background-position: 0px -0px;"></figure>
+                                    <div>
+                                        <div class="TweetCard__name__NIHYD text-14 font-medium">Satish Suggala</div>
+                                        <div class="TweetCard__username__H7dqs text-12">@MindYoghurt</div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <a href="#" target="_blank" rel="noopener noreferrer">
+                                        <img src="../images/twitter-icon.svg" alt="twitter">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="TweetCard__body__Rp_i_ flex text-14">
+                                <div>
+                                    <p>
+                                        Lately, been playing w/ stocks & wealth mgmt apps. Amongst all,
+                                        <span>@smallcaseHQ</span>
+                                         is the shining star. Absolute recco on 💻 & 📱
+                                    </p>
+                                </div>
+                                <div>9:40 AM - 4 Jul 2017</div>
+                            </div>
+                        </div>
+                        <div class="TweetCard__card__27-4v mr-16">
+    
+                            <div class="TweetCard__head__11JcH flex text-14 mb-8">
+                                <div class="TweetCard__profile__1cFB5 flex">
+                                    <figure class="TweetCard__twitter-profile-pic__3KfhP mr-8 mb-16"
+                                        style="background-position: 0px -0px;"></figure>
+                                    <div>
+                                        <div class="TweetCard__name__NIHYD text-14 font-medium">Satish Suggala</div>
+                                        <div class="TweetCard__username__H7dqs text-12">@MindYoghurt</div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <a href="#" target="_blank" rel="noopener noreferrer">
+                                        <img src="../images/twitter-icon.svg" alt="twitter">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="TweetCard__body__Rp_i_ flex text-14">
+                                <div>
+                                    <p>
+                                        Lately, been playing w/ stocks & wealth mgmt apps. Amongst all,
+                                        <span>@smallcaseHQ</span>
+                                         is the shining star. Absolute recco on 💻 & 📱
+                                    </p>
+                                </div>
+                                <div>9:40 AM - 4 Jul 2017</div>
+                            </div>
+                        </div>
+                        <div class="TweetCard__card__27-4v mr-16">
+    
+                            <div class="TweetCard__head__11JcH flex text-14 mb-8">
+                                <div class="TweetCard__profile__1cFB5 flex">
+                                    <figure class="TweetCard__twitter-profile-pic__3KfhP mr-8 mb-16"
+                                        style="background-position: 0px -0px;"></figure>
+                                    <div>
+                                        <div class="TweetCard__name__NIHYD text-14 font-medium">Satish Suggala</div>
+                                        <div class="TweetCard__username__H7dqs text-12">@MindYoghurt</div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <a href="#" target="_blank" rel="noopener noreferrer">
+                                        <img src="../images/twitter-icon.svg" alt="twitter">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="TweetCard__body__Rp_i_ flex text-14">
+                                <div>
+                                    <p>
+                                        Lately, been playing w/ stocks & wealth mgmt apps. Amongst all,
+                                        <span>@smallcaseHQ</span>
+                                         is the shining star. Absolute recco on 💻 & 📱
+                                    </p>
+                                </div>
+                                <div>9:40 AM - 4 Jul 2017</div>
+                            </div>
+                        </div>
+                        <div class="TweetCard__card__27-4v mr-16">
+    
+                            <div class="TweetCard__head__11JcH flex text-14 mb-8">
+                                <div class="TweetCard__profile__1cFB5 flex">
+                                    <figure class="TweetCard__twitter-profile-pic__3KfhP mr-8 mb-16"
+                                        style="background-position: 0px -0px;"></figure>
+                                    <div>
+                                        <div class="TweetCard__name__NIHYD text-14 font-medium">Satish Suggala</div>
+                                        <div class="TweetCard__username__H7dqs text-12">@MindYoghurt</div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <a href="#" target="_blank" rel="noopener noreferrer">
+                                        <img src="../images/twitter-icon.svg" alt="twitter">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="TweetCard__body__Rp_i_ flex text-14">
+                                <div>
+                                    <p>
+                                        Lately, been playing w/ stocks & wealth mgmt apps. Amongst all,
+                                        <span>@smallcaseHQ</span>
+                                         is the shining star. Absolute recco on 💻 & 📱
+                                    </p>
+                                </div>
+                                <div>9:40 AM - 4 Jul 2017</div>
+                            </div>
+                        </div>
+                        <div class="TweetCard__card__27-4v mr-16">
+    
+                            <div class="TweetCard__head__11JcH flex text-14 mb-8">
+                                <div class="TweetCard__profile__1cFB5 flex">
+                                    <figure class="TweetCard__twitter-profile-pic__3KfhP mr-8 mb-16"
+                                        style="background-position: 0px -0px;"></figure>
+                                    <div>
+                                        <div class="TweetCard__name__NIHYD text-14 font-medium">Satish Suggala</div>
+                                        <div class="TweetCard__username__H7dqs text-12">@MindYoghurt</div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <a href="#" target="_blank" rel="noopener noreferrer">
+                                        <img src="../images/twitter-icon.svg" alt="twitter">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="TweetCard__body__Rp_i_ flex text-14">
+                                <div>
+                                    <p>
+                                        Lately, been playing w/ stocks & wealth mgmt apps. Amongst all,
+                                        <span>@smallcaseHQ</span>
+                                         is the shining star. Absolute recco on 💻 & 📱
+                                    </p>
+                                </div>
+                                <div>9:40 AM - 4 Jul 2017</div>
+                            </div>
+                        </div>
+                        <div class="TweetCard__card__27-4v mr-16">
+    
+                            <div class="TweetCard__head__11JcH flex text-14 mb-8">
+                                <div class="TweetCard__profile__1cFB5 flex">
+                                    <figure class="TweetCard__twitter-profile-pic__3KfhP mr-8 mb-16"
+                                        style="background-position: 0px -0px;"></figure>
+                                    <div>
+                                        <div class="TweetCard__name__NIHYD text-14 font-medium">Satish Suggala</div>
+                                        <div class="TweetCard__username__H7dqs text-12">@MindYoghurt</div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <a href="#" target="_blank" rel="noopener noreferrer">
+                                        <img src="../images/twitter-icon.svg" alt="twitter">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="TweetCard__body__Rp_i_ flex text-14">
+                                <div>
+                                    <p>
+                                        Lately, been playing w/ stocks & wealth mgmt apps. Amongst all,
+                                        <span>@smallcaseHQ</span>
+                                         is the shining star. Absolute recco on 💻 & 📱
+                                    </p>
+                                </div>
+                                <div>9:40 AM - 4 Jul 2017</div>
+                            </div>
+                        </div>
+                        <div class="TweetCard__card__27-4v mr-16">
+    
+                            <div class="TweetCard__head__11JcH flex text-14 mb-8">
+                                <div class="TweetCard__profile__1cFB5 flex">
+                                    <figure class="TweetCard__twitter-profile-pic__3KfhP mr-8 mb-16"
+                                        style="background-position: 0px -0px;"></figure>
+                                    <div>
+                                        <div class="TweetCard__name__NIHYD text-14 font-medium">Satish Suggala</div>
+                                        <div class="TweetCard__username__H7dqs text-12">@MindYoghurt</div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <a href="#" target="_blank" rel="noopener noreferrer">
+                                        <img src="../images/twitter-icon.svg" alt="twitter">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="TweetCard__body__Rp_i_ flex text-14">
+                                <div>
+                                    <p>
+                                        Lately, been playing w/ stocks & wealth mgmt apps. Amongst all,
+                                        <span>@smallcaseHQ</span>
+                                         is the shining star. Absolute recco on 💻 & 📱
+                                    </p>
+                                </div>
+                                <div>9:40 AM - 4 Jul 2017</div>
+                            </div>
+                        </div>
+                        <div class="TweetCard__card__27-4v mr-16">
+    
+                            <div class="TweetCard__head__11JcH flex text-14 mb-8">
+                                <div class="TweetCard__profile__1cFB5 flex">
+                                    <figure class="TweetCard__twitter-profile-pic__3KfhP mr-8 mb-16"
+                                        style="background-position: 0px -0px;"></figure>
+                                    <div>
+                                        <div class="TweetCard__name__NIHYD text-14 font-medium">Satish Suggala</div>
+                                        <div class="TweetCard__username__H7dqs text-12">@MindYoghurt</div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <a href="#" target="_blank" rel="noopener noreferrer">
+                                        <img src="../images/twitter-icon.svg" alt="twitter">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="TweetCard__body__Rp_i_ flex text-14">
+                                <div>
+                                    <p>
+                                        Lately, been playing w/ stocks & wealth mgmt apps. Amongst all,
+                                        <span>@smallcaseHQ</span>
+                                         is the shining star. Absolute recco on 💻 & 📱
+                                    </p>
+                                </div>
+                                <div>9:40 AM - 4 Jul 2017</div>
+                            </div>
+                        </div>
+                        <div class="TweetCard__card__27-4v mr-16">
+    
+                            <div class="TweetCard__head__11JcH flex text-14 mb-8">
+                                <div class="TweetCard__profile__1cFB5 flex">
+                                    <figure class="TweetCard__twitter-profile-pic__3KfhP mr-8 mb-16"
+                                        style="background-position: 0px -0px;"></figure>
+                                    <div>
+                                        <div class="TweetCard__name__NIHYD text-14 font-medium">Satish Suggala</div>
+                                        <div class="TweetCard__username__H7dqs text-12">@MindYoghurt</div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <a href="#" target="_blank" rel="noopener noreferrer">
+                                        <img src="../images/twitter-icon.svg" alt="twitter">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="TweetCard__body__Rp_i_ flex text-14">
+                                <div>
+                                    <p>
+                                        Lately, been playing w/ stocks & wealth mgmt apps. Amongst all,
+                                        <span>@smallcaseHQ</span>
+                                         is the shining star. Absolute recco on 💻 & 📱
+                                    </p>
+                                </div>
+                                <div>9:40 AM - 4 Jul 2017</div>
+                            </div>
+                        </div>
+                        <div class="TweetCard__card__27-4v mr-16">
+    
+                            <div class="TweetCard__head__11JcH flex text-14 mb-8">
+                                <div class="TweetCard__profile__1cFB5 flex">
+                                    <figure class="TweetCard__twitter-profile-pic__3KfhP mr-8 mb-16"
+                                        style="background-position: 0px -0px;"></figure>
+                                    <div>
+                                        <div class="TweetCard__name__NIHYD text-14 font-medium">Satish Suggala</div>
+                                        <div class="TweetCard__username__H7dqs text-12">@MindYoghurt</div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <a href="#" target="_blank" rel="noopener noreferrer">
+                                        <img src="../images/twitter-icon.svg" alt="twitter">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="TweetCard__body__Rp_i_ flex text-14">
+                                <div>
+                                    <p>
+                                        Lately, been playing w/ stocks & wealth mgmt apps. Amongst all,
+                                        <span>@smallcaseHQ</span>
+                                         is the shining star. Absolute recco on 💻 & 📱
+                                    </p>
+                                </div>
+                                <div>9:40 AM - 4 Jul 2017</div>
+                            </div>
+                        </div>
+                        <div class="TweetCard__card__27-4v mr-16">
+    
+                            <div class="TweetCard__head__11JcH flex text-14 mb-8">
+                                <div class="TweetCard__profile__1cFB5 flex">
+                                    <figure class="TweetCard__twitter-profile-pic__3KfhP mr-8 mb-16"
+                                        style="background-position: 0px -0px;"></figure>
+                                    <div>
+                                        <div class="TweetCard__name__NIHYD text-14 font-medium">Satish Suggala</div>
+                                        <div class="TweetCard__username__H7dqs text-12">@MindYoghurt</div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <a href="#" target="_blank" rel="noopener noreferrer">
+                                        <img src="../images/twitter-icon.svg" alt="twitter">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="TweetCard__body__Rp_i_ flex text-14">
+                                <div>
+                                    <p>
+                                        Lately, been playing w/ stocks & wealth mgmt apps. Amongst all,
+                                        <span>@smallcaseHQ</span>
+                                         is the shining star. Absolute recco on 💻 & 📱
+                                    </p>
+                                </div>
+                                <div>9:40 AM - 4 Jul 2017</div>
+                            </div>
+                        </div>
+                        <div class="TweetCard__card__27-4v mr-16">
+    
+                            <div class="TweetCard__head__11JcH flex text-14 mb-8">
+                                <div class="TweetCard__profile__1cFB5 flex">
+                                    <figure class="TweetCard__twitter-profile-pic__3KfhP mr-8 mb-16"
+                                        style="background-position: 0px -0px;"></figure>
+                                    <div>
+                                        <div class="TweetCard__name__NIHYD text-14 font-medium">Satish Suggala</div>
+                                        <div class="TweetCard__username__H7dqs text-12">@MindYoghurt</div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <a href="#" target="_blank" rel="noopener noreferrer">
+                                        <img src="../images/twitter-icon.svg" alt="twitter">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="TweetCard__body__Rp_i_ flex text-14">
+                                <div>
+                                    <p>
+                                        Lately, been playing w/ stocks & wealth mgmt apps. Amongst all,
+                                        <span>@smallcaseHQ</span>
+                                         is the shining star. Absolute recco on 💻 & 📱
+                                    </p>
+                                </div>
+                                <div>9:40 AM - 4 Jul 2017</div>
+                            </div>
+                        </div>
+                        <div class="TweetCard__card__27-4v mr-16">
+    
+                            <div class="TweetCard__head__11JcH flex text-14 mb-8">
+                                <div class="TweetCard__profile__1cFB5 flex">
+                                    <figure class="TweetCard__twitter-profile-pic__3KfhP mr-8 mb-16"
+                                        style="background-position: 0px -0px;"></figure>
+                                    <div>
+                                        <div class="TweetCard__name__NIHYD text-14 font-medium">Satish Suggala</div>
+                                        <div class="TweetCard__username__H7dqs text-12">@MindYoghurt</div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <a href="#" target="_blank" rel="noopener noreferrer">
+                                        <img src="../images/twitter-icon.svg" alt="twitter">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="TweetCard__body__Rp_i_ flex text-14">
+                                <div>
+                                    <p>
+                                        Lately, been playing w/ stocks & wealth mgmt apps. Amongst all,
+                                        <span>@smallcaseHQ</span>
+                                         is the shining star. Absolute recco on 💻 & 📱
+                                    </p>
+                                </div>
+                                <div>9:40 AM - 4 Jul 2017</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="w-4/5 m-auto">
+                <p>As seen on</p>
+                <div class="flex justify-between">
+                    <a href="#" class="w-1/6 h-32">
+                        <figure>
+                            <img class="w-4/5 h-10 items-center" src="../images/forbes.svg" >
+                        </figure>
+                    </a>
+                    <a href="#" class="w-1/6 h-32">
+                        <figure>
+                            <img class="w-4/5 h-10 items-center" src="../images/fortune.svg" >
+                        </figure>
+                    </a>
+                    <a href="#" class="w-1/6 h-32">
+                        <figure>
+                            <img class="w-4/5 h-10 items-center" src="../images/livemint.svg" >
+                        </figure>
+                    </a>
+                    <a href="#" class="w-1/6 h-32">
+                        <figure>
+                            <img class="w-4/5 h-10 items-center" src="../images/moneycontrol.svg" >
+                        </figure>
+                    </a>
+                    <a href="#" class="w-1/6 h-32">
+                        <figure>
+                            <img class="w-4/5 h-10 items-center" src="../images/economic-times.svg" >
+                        </figure>
+                    </a>
+                    <a href="#" class="w-1/6 h-32">
+                        <figure>
+                            <img class="w-4/5 h-10 items-center" src="../images/cnbc.svg" >
+                        </figure>
+                    </a>
+                </div>
+>>>>>>> c8b565136b39b6025ad48c13a693ab50741ff8e1
             </div>
         </div>
         
