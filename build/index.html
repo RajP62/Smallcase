@@ -6,118 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page</title>
-    <style>
-                .Testimonials__first-tweets-row__1c3VM {
-            -webkit-box-align: end;
-            -ms-flex-align: end;
-            align-items: flex-end;
-        }
-
-        .Testimonials__second-tweets-row__1g2o7 {
-            -webkit-box-align: start;
-            -ms-flex-align: start;
-            align-items: flex-start;
-        }
-
-        .Testimonials__tweets-slider__1P4dW {
-            height: 500px;
-            -webkit-animation: Testimonials__scroll__27Guy 60s linear infinite;
-            animation: Testimonials__scroll__27Guy 60s linear infinite
-        }
-
-        .Testimonials__tweets-slider__1P4dW:hover {
-            -webkit-animation-play-state: paused !important;
-            animation-play-state: paused !important
-        }
-
-        @-webkit-keyframes Testimonials__scroll__27Guy {
-            0% {
-                -webkit-transform: translateX(0);
-                transform: translateX(0)
-            }
-
-            to {
-                -webkit-transform: translateX(-185%);
-                transform: translateX(-185%);
-            }
-        }
-
-        @keyframes Testimonials__scroll__27Guy {
-            0% {
-                -webkit-transform: translateX(0);
-                transform: translateX(0);
-            }
-
-            to {
-                -webkit-transform: translateX(-185%);
-                transform: translateX(-185%);
-            }
-        }
-
-        .TweetCard__card__27-4v,
-        .TweetCard__card__27-4v:hover {
-            -webkit-transition: -webkit-transform .2s ease-out;
-            transition: -webkit-transform .2s ease-out;
-            transition: transform .2s ease-out;
-            transition: transform .2s ease-out, -webkit-transform .2s ease-out;
-        }
-
-        .TweetCard__card__27-4v:hover {
-            -webkit-box-shadow: 0 5px 12px 5px rgba(221, 224, 228, .5);
-            box-shadow: 0 5px 12px 5px rgba(221, 224, 228, .5);
-            -webkit-transform: scale(1.05);
-            transform: scale(1.05);
-        }
-
-        .TweetCard__profile__1cFB5 {
-            height: 70px;
-        }
-
-        .TweetCard__twitter-profile-pic__3KfhP {
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            background-image: url("../images/twitter_sprites.png");
-        }
-
-        .TweetCard__head__11JcH {
-            -webkit-box-pack: justify;
-            -ms-flex-pack: justify;
-            justify-content: space-between;
-            -webkit-box-align: start;
-            -ms-flex-align: start;
-            align-items: flex-start;
-        }
-
-        .TweetCard__body__Rp_i_ {
-            -webkit-box-orient: vertical;
-            -webkit-box-direction: normal;
-            -ms-flex-direction: column;
-            flex-direction: column;
-            letter-spacing: -.01em;
-        }
-
-        .TweetCard__card__27-4v,
-        .TweetCard__card__27-4v:hover {
-            -webkit-transition: -webkit-transform .2s ease-out;
-            transition: -webkit-transform .2s ease-out;
-            transition: transform .2s ease-out;
-            transition: transform .2s ease-out, -webkit-transform .2s ease-out;
-        }
-
-        .TweetCard__card__27-4v {
-            min-width: 270px;
-            padding: 20px;
-            border-radius: 4px;
-            border: 1px solid #e9ecf5;
-            background: #fff;
-        }
-
-        .Testimonials__tweets-container__2QvJU {
-            overflow-x: hidden;
-            height:800px;
-        }
-    </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../src/style.css">
     <link rel="stylesheet" href="style.css">
@@ -141,8 +29,8 @@
         </div>
     </div>
     <div id="intro_container" class=" w-full h-screen ">
-        <div id="intro_container" class=" w-full h-screen bg-contain bg-no-repeat bg-left-bottom bg-"
-            style="background-image: url(../images/back.png);">
+        <div id="intro_container_in"
+            class=" w-full h-4/5 bg-contain bg-no-repeat bg-left-bottom transition-all duration-500">
             <div id="info_main" class="h-full w-4/5 m-auto flex flex-col justify-center gap-2">
                 <h1 class="text-6xl font-bold w-2/5">Stock investing done right</h1>
                 <p class="w-2/5 text-2xl font-light my-2">With smallcases, build your diversified long-term portfolio of
@@ -153,34 +41,36 @@
                         class="w-1/2 h-4/5 font-medium border-2 border-blue-300 rounded text-white bg-blue-500 text-xl transition-all duration-150 transform hover:-translate-y-0.5 hover:shadow-lg">Discover
                         smallcases</button>
                     <button
-                        class="w-1/2 h-4/5 font-medium border-2 border-blue-300 rounded  text-xl text-blue-500 transition-all duration-150 transform hover:-translate-y-0.5 hover:shadow-lg">Download
+                        class="w-1/2 h-4/5 font-medium border-2 border-blue-300 rounded  text-xl text-blue-500 transition-all duration-150 transform hover:-translate-y-0.5 hover:shadow-lg bg-white">Download
                         App</button>
                 </div>
                 <p class="font-light text-xl">Supported on India's largest brokers</p>
                 <div class="flex gap-1">
                     <a href="#" title="5paisa"
-                        class="w-12 h-12 shadow-lg transition-all duration-150 transform hover:-translate-y-0.5 border-solid border-1 border-gray-400 rounded-3xl"><img
+                        class="w-12 h-12 shadow-lg transition-all duration-150 transform hover:-translate-y-0.5 border-solid border-1 border-gray-400 rounded-3xl bg-white"><img
                             class="m-auto my-3" src="../images/fivepaisa.svg" alt="5paisa" /></a>
                     <a href="#" title="5paisa"
-                        class="w-12 h-12 shadow-lg transition-all duration-150 transform hover:-translate-y-0.5 border-solid border-1 border-gray-400 rounded-3xl"><img
+                        class="w-12 h-12 shadow-lg transition-all duration-150 transform hover:-translate-y-0.5 border-solid border-1 border-gray-400 rounded-3xl bg-white"><img
                             class="m-auto my-4 w-5" src="../images/angelbroking.svg" alt="angelbroking" /></a>
                     <a href="#" title="Angel Broking"
-                        class="w-12 h-12 shadow-lg transition-all duration-150 transform hover:-translate-y-0.5 border-solid border-1 border-gray-400 rounded-3xl"><img
+                        class="w-12 h-12 shadow-lg transition-all duration-150 transform hover:-translate-y-0.5 border-solid border-1 border-gray-400 rounded-3xl bg-white"><img
                             class="m-auto my-3" src="../images/hdfc.svg" alt="hdfc" /></a>
                     <a href="#" title="HDFC"
-                        class="w-12 h-12 shadow-lg transition-all duration-150 transform hover:-translate-y-0.5 border-solid border-1 border-gray-400 rounded-3xl"><img
+                        class="w-12 h-12 shadow-lg transition-all duration-150 transform hover:-translate-y-0.5 border-solid border-1 border-gray-400 rounded-3xl bg-white"><img
                             class="m-auto my-3" src="../images/kotak.svg" alt="kotak" /></a>
                     <a href="#" title="Up Stox"
-                        class="w-12 h-12 shadow-lg transition-all duration-150 transform hover:-translate-y-0.5 border-solid border-1 border-gray-400 rounded-3xl"><img
+                        class="w-12 h-12 shadow-lg transition-all duration-150 transform hover:-translate-y-0.5 border-solid border-1 border-gray-400 rounded-3xl bg-white"><img
                             class="m-auto my-3" src="../images/upstox.svg" alt="Up Stox" /></a>
                     <a href="#" title="Kite"
-                        class="w-12 h-12 shadow-lg transition-all duration-150 transform hover:-translate-y-0.5 border-solid border-1 border-gray-400 rounded-3xl"><img
+                        class="w-12 h-12 shadow-lg transition-all duration-150 transform hover:-translate-y-0.5 border-solid border-1 border-gray-400 rounded-3xl bg-white"><img
                             class="m-auto my-3" src="../images/kite.svg" alt="kite" /></a>
                     <a href="#" title="more"
-                        class="w-12 h-12 shadow-lg transition-all duration-150 transform hover:-translate-y-0.5 border-solid border-1 border-gray-400 rounded-3xl py-3 px-3"><span
+                        class="w-12 h-12 shadow-lg transition-all duration-150 transform hover:-translate-y-0.5 border-solid border-1 border-gray-400 rounded-3xl py-3 px-3 bg-white"><span
                             class="text-blue-500">+7</span></a>
                 </div>
             </div>
+        </div>
+        <div id="intro_container_in2" class="w-full -my-40 transition-all duration-500" style="height: 400px;">
         </div>
         <div id="static_info_second" class="flex gap-2 my-48 w-4/5 m-auto">
             <div class="flex flex-col gap-3 w-1/2">
@@ -277,7 +167,8 @@
         <div class="w-4/5 m-auto flex py-32">
             <div class="w-1/2 flex flex-col gap-4 justify-center">
                 <h2 class="font-bold text-4xl w-11/12 px-5">Curated by India's
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; top
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    top
                     investment managers</h2>
                 <p class="text-lg px-4 w-11/12">smallcases are created & managed by leading professionals who are <span
                         class="font-bold">SEBI-licensed</span> research analysts and investment advisors</p>
@@ -312,7 +203,8 @@
                         </div>
                         <div class="px-4">
                             <h4 class="text-xl font-bold">Invest regularly with SIPs</h4>
-                            <p class="text-lg">Invest in a disciplined manner by starting a SIP on your smallcase for every week,
+                            <p class="text-lg">Invest in a disciplined manner by starting a SIP on your smallcase for
+                                every week,
                                 month or quarter</p>
                         </div>
                         <div>
@@ -327,7 +219,8 @@
                         </div>
                         <div class="px-4">
                             <h4 class="text-xl font-bold">Create your own smallcase</h4>
-                            <p class="text-lg">Be your own fund manager & invest in your ideas by creating a smallcase of up to 50
+                            <p class="text-lg">Be your own fund manager & invest in your ideas by creating a smallcase
+                                of up to 50
                                 stocks</p>
                         </div>
                         <div>
@@ -342,7 +235,8 @@
                         </div>
                         <div class="px-4">
                             <h4 class="text-xl font-bold">Buy multiple stocks in 1 click</h4>
-                            <p class="text-lg">Place orders for up to 50 stocks in 1 click as a smallcase and save time</p>
+                            <p class="text-lg">Place orders for up to 50 stocks in 1 click as a smallcase and save time
+                            </p>
                         </div>
                         <div>
                             <div class="">
@@ -356,7 +250,8 @@
                         </div>
                         <div class="px-4">
                             <h4 class="text-xl font-bold">Track smallcases anytime, anywhere</h4>
-                            <p class="text-lg">Track & manage seamlessly with a real time index value, inclusive of corp. actions &
+                            <p class="text-lg">Track & manage seamlessly with a real time index value, inclusive of
+                                corp. actions &
                                 dividends</p>
                         </div>
                         <div>
@@ -371,9 +266,12 @@
                         <div>
                             <div>
                                 <div class="flex">
-                                    <img class="w-full h-full relative transform translate-x-3/4" src="../images/phone.svg" alt="phone">
+                                    <img class="w-full h-full relative transform translate-x-3/4"
+                                        src="../images/phone.svg" alt="phone">
                                     <div class="w-full">
-                                        <video autoplay muted playsinline class=" transform h-full w-full -translate-x-11 translate-y-10 rounded-lg" src="../videos/invest_new.mp4"></video>
+                                        <video autoplay muted playsinline
+                                            class=" transform h-full w-full -translate-x-11 translate-y-10 rounded-lg"
+                                            src="../videos/invest_new.mp4"></video>
                                     </div>
                                 </div>
                             </div>
@@ -389,9 +287,12 @@
                         <div>
                             <div>
                                 <figure class="flex">
-                                    <img class="w-96 relative transform translate-x-3/4" src="../images/phone.svg" alt="phone">
+                                    <img class="w-96 relative transform translate-x-3/4" src="../images/phone.svg"
+                                        alt="phone">
                                     <div>
-                                        <video autoplay muted playsinline class="transform -translate-x-12 translate-y-10 w-72 rounded-lg h-full" src="../videos/track_new.mp4"></video>
+                                        <video autoplay muted playsinline
+                                            class="transform -translate-x-12 translate-y-10 w-72 rounded-lg h-full"
+                                            src="../videos/track_new.mp4"></video>
                                     </div>
                                 </figure>
                             </div>
@@ -407,9 +308,12 @@
                         <div>
                             <div>
                                 <figure class="flex">
-                                    <img class="w-96 relative transform translate-x-3/4" src="../images/phone.svg" alt="phone">
+                                    <img class="w-96 relative transform translate-x-3/4" src="../images/phone.svg"
+                                        alt="phone">
                                     <div>
-                                        <video autoplay muted playsinline class="transform -translate-x-12 translate-y-10 w-72 rounded-lg h-full" src="../videos/sip_new.mp4"></video>
+                                        <video autoplay muted playsinline
+                                            class="transform -translate-x-12 translate-y-10 w-72 rounded-lg h-full"
+                                            src="../videos/sip_new.mp4"></video>
                                     </div>
                                 </figure>
                             </div>
@@ -425,9 +329,12 @@
                         <div>
                             <div>
                                 <figure class="flex">
-                                    <img class="w-96 relative transform translate-x-3/4" src="../images/phone.svg" alt="phone">
+                                    <img class="w-96 relative transform translate-x-3/4" src="../images/phone.svg"
+                                        alt="phone">
                                     <div>
-                                        <video autoplay muted playsinline class="transform -translate-x-12 translate-y-10 w-72 rounded-lg h-full" src="../videos/create_new.mp4"></video>
+                                        <video autoplay muted playsinline
+                                            class="transform -translate-x-12 translate-y-10 w-72 rounded-lg h-full"
+                                            src="../videos/create_new.mp4"></video>
                                     </div>
                                 </figure>
                             </div>
@@ -445,63 +352,16 @@
             </div>
         </div>
 
-<<<<<<< HEAD
-        <!-- moving container twitter  -->
-        <div>
-            <div>
-                <p>Don't take our word for it</p>
-                <h2>See what other investors are saying</h2>
-            </div>
-            <div>
-                <div></div>
-                <div></div>
-            </div>
-        </div>
-
-        <div class="pl-7 w-4/5 m-auto">
-            <p class="text-center text-2xl font-normal text-gray-500 my-10">As seen on</p>
-            <div class="flex justify-between items-center">
-                <a href="#" class="w-56 h-32">
-                    <figure>
-                        <img class="w-4/5 h-10 items-center" src="../images/forbes.svg" >
-                    </figure>
-                </a>
-                <a href="#" class="w-56 h-36">
-                    <figure>
-                        <img class="w-4/5 h-20 items-center" src="../images/fortune.svg" >
-                    </figure>
-                </a>
-                <a href="#" class="w-1/6 h-32">
-                    <figure>
-                        <img class="w-4/5 h-10 items-center" src="../images/livemint.svg" >
-                    </figure>
-                </a>
-                <a href="#" class="w-1/6 h-32">
-                    <figure>
-                        <img class="w-4/5 h-10 items-center" src="../images/moneycontrol.svg" >
-                    </figure>
-                </a>
-                <a href="#" class="w-1/6 h-32">
-                    <figure>
-                        <img class="w-4/5 h-10 items-center" src="../images/economic-times.svg" >
-                    </figure>
-                </a>
-                <a href="#" class="w-60 h-32">
-                    <figure>
-                        <img class="w-11/12 h-20 items-center" src="../images/cnbc.svg" >
-                    </figure>
-                </a>
-=======
         <div class="w-full">
-            <div class="w-4/5 m-auto text-lg">
-                <p>Don’t take our word for it</p>
-                <h2 class="font-bold">See what other investors are saying</h2>
+            <div class="w-4/5 m-auto text-2xl text-center mb-20">
+                <p class="text-gray-500 font-normal mb-5">Don’t take our word for it</p>
+                <h2 class="font-bold text-5xl">See what other investors are saying</h2>
             </div>
             <div class="Testimonials__tweets-container__2QvJU">
                 <div class="Testimonials__tweets-slider__1P4dW" style="animation-play-state: initial;">
                     <div class="flex Testimonials__first-tweets-row__1c3VM mb-16">
                         <div class="TweetCard__card__27-4v mr-16">
-    
+
                             <div class="TweetCard__head__11JcH flex text-14 mb-8">
                                 <div class="TweetCard__profile__1cFB5 flex">
                                     <figure class="TweetCard__twitter-profile-pic__3KfhP mr-8 mb-16"
@@ -522,14 +382,14 @@
                                     <p>
                                         Lately, been playing w/ stocks & wealth mgmt apps. Amongst all,
                                         <span>@smallcaseHQ</span>
-                                         is the shining star. Absolute recco on 💻 & 📱
+                                        is the shining star. Absolute recco on 💻 & 📱
                                     </p>
                                 </div>
                                 <div>9:40 AM - 4 Jul 2017</div>
                             </div>
                         </div>
                         <div class="TweetCard__card__27-4v mr-16">
-    
+
                             <div class="TweetCard__head__11JcH flex text-14 mb-8">
                                 <div class="TweetCard__profile__1cFB5 flex">
                                     <figure class="TweetCard__twitter-profile-pic__3KfhP mr-8 mb-16"
@@ -550,14 +410,14 @@
                                     <p>
                                         Lately, been playing w/ stocks & wealth mgmt apps. Amongst all,
                                         <span>@smallcaseHQ</span>
-                                         is the shining star. Absolute recco on 💻 & 📱
+                                        is the shining star. Absolute recco on 💻 & 📱
                                     </p>
                                 </div>
                                 <div>9:40 AM - 4 Jul 2017</div>
                             </div>
                         </div>
                         <div class="TweetCard__card__27-4v mr-16">
-    
+
                             <div class="TweetCard__head__11JcH flex text-14 mb-8">
                                 <div class="TweetCard__profile__1cFB5 flex">
                                     <figure class="TweetCard__twitter-profile-pic__3KfhP mr-8 mb-16"
@@ -578,14 +438,14 @@
                                     <p>
                                         Lately, been playing w/ stocks & wealth mgmt apps. Amongst all,
                                         <span>@smallcaseHQ</span>
-                                         is the shining star. Absolute recco on 💻 & 📱
+                                        is the shining star. Absolute recco on 💻 & 📱
                                     </p>
                                 </div>
                                 <div>9:40 AM - 4 Jul 2017</div>
                             </div>
                         </div>
                         <div class="TweetCard__card__27-4v mr-16">
-    
+
                             <div class="TweetCard__head__11JcH flex text-14 mb-8">
                                 <div class="TweetCard__profile__1cFB5 flex">
                                     <figure class="TweetCard__twitter-profile-pic__3KfhP mr-8 mb-16"
@@ -606,14 +466,14 @@
                                     <p>
                                         Lately, been playing w/ stocks & wealth mgmt apps. Amongst all,
                                         <span>@smallcaseHQ</span>
-                                         is the shining star. Absolute recco on 💻 & 📱
+                                        is the shining star. Absolute recco on 💻 & 📱
                                     </p>
                                 </div>
                                 <div>9:40 AM - 4 Jul 2017</div>
                             </div>
                         </div>
                         <div class="TweetCard__card__27-4v mr-16">
-    
+
                             <div class="TweetCard__head__11JcH flex text-14 mb-8">
                                 <div class="TweetCard__profile__1cFB5 flex">
                                     <figure class="TweetCard__twitter-profile-pic__3KfhP mr-8 mb-16"
@@ -634,14 +494,14 @@
                                     <p>
                                         Lately, been playing w/ stocks & wealth mgmt apps. Amongst all,
                                         <span>@smallcaseHQ</span>
-                                         is the shining star. Absolute recco on 💻 & 📱
+                                        is the shining star. Absolute recco on 💻 & 📱
                                     </p>
                                 </div>
                                 <div>9:40 AM - 4 Jul 2017</div>
                             </div>
                         </div>
                         <div class="TweetCard__card__27-4v mr-16">
-    
+
                             <div class="TweetCard__head__11JcH flex text-14 mb-8">
                                 <div class="TweetCard__profile__1cFB5 flex">
                                     <figure class="TweetCard__twitter-profile-pic__3KfhP mr-8 mb-16"
@@ -662,14 +522,14 @@
                                     <p>
                                         Lately, been playing w/ stocks & wealth mgmt apps. Amongst all,
                                         <span>@smallcaseHQ</span>
-                                         is the shining star. Absolute recco on 💻 & 📱
+                                        is the shining star. Absolute recco on 💻 & 📱
                                     </p>
                                 </div>
                                 <div>9:40 AM - 4 Jul 2017</div>
                             </div>
                         </div>
                         <div class="TweetCard__card__27-4v mr-16">
-    
+
                             <div class="TweetCard__head__11JcH flex text-14 mb-8">
                                 <div class="TweetCard__profile__1cFB5 flex">
                                     <figure class="TweetCard__twitter-profile-pic__3KfhP mr-8 mb-16"
@@ -690,14 +550,14 @@
                                     <p>
                                         Lately, been playing w/ stocks & wealth mgmt apps. Amongst all,
                                         <span>@smallcaseHQ</span>
-                                         is the shining star. Absolute recco on 💻 & 📱
+                                        is the shining star. Absolute recco on 💻 & 📱
                                     </p>
                                 </div>
                                 <div>9:40 AM - 4 Jul 2017</div>
                             </div>
                         </div>
                         <div class="TweetCard__card__27-4v mr-16">
-    
+
                             <div class="TweetCard__head__11JcH flex text-14 mb-8">
                                 <div class="TweetCard__profile__1cFB5 flex">
                                     <figure class="TweetCard__twitter-profile-pic__3KfhP mr-8 mb-16"
@@ -718,14 +578,14 @@
                                     <p>
                                         Lately, been playing w/ stocks & wealth mgmt apps. Amongst all,
                                         <span>@smallcaseHQ</span>
-                                         is the shining star. Absolute recco on 💻 & 📱
+                                        is the shining star. Absolute recco on 💻 & 📱
                                     </p>
                                 </div>
                                 <div>9:40 AM - 4 Jul 2017</div>
                             </div>
                         </div>
                         <div class="TweetCard__card__27-4v mr-16">
-    
+
                             <div class="TweetCard__head__11JcH flex text-14 mb-8">
                                 <div class="TweetCard__profile__1cFB5 flex">
                                     <figure class="TweetCard__twitter-profile-pic__3KfhP mr-8 mb-16"
@@ -746,14 +606,14 @@
                                     <p>
                                         Lately, been playing w/ stocks & wealth mgmt apps. Amongst all,
                                         <span>@smallcaseHQ</span>
-                                         is the shining star. Absolute recco on 💻 & 📱
+                                        is the shining star. Absolute recco on 💻 & 📱
                                     </p>
                                 </div>
                                 <div>9:40 AM - 4 Jul 2017</div>
                             </div>
                         </div>
                         <div class="TweetCard__card__27-4v mr-16">
-    
+
                             <div class="TweetCard__head__11JcH flex text-14 mb-8">
                                 <div class="TweetCard__profile__1cFB5 flex">
                                     <figure class="TweetCard__twitter-profile-pic__3KfhP mr-8 mb-16"
@@ -774,14 +634,14 @@
                                     <p>
                                         Lately, been playing w/ stocks & wealth mgmt apps. Amongst all,
                                         <span>@smallcaseHQ</span>
-                                         is the shining star. Absolute recco on 💻 & 📱
+                                        is the shining star. Absolute recco on 💻 & 📱
                                     </p>
                                 </div>
                                 <div>9:40 AM - 4 Jul 2017</div>
                             </div>
                         </div>
                         <div class="TweetCard__card__27-4v mr-16">
-    
+
                             <div class="TweetCard__head__11JcH flex text-14 mb-8">
                                 <div class="TweetCard__profile__1cFB5 flex">
                                     <figure class="TweetCard__twitter-profile-pic__3KfhP mr-8 mb-16"
@@ -802,14 +662,14 @@
                                     <p>
                                         Lately, been playing w/ stocks & wealth mgmt apps. Amongst all,
                                         <span>@smallcaseHQ</span>
-                                         is the shining star. Absolute recco on 💻 & 📱
+                                        is the shining star. Absolute recco on 💻 & 📱
                                     </p>
                                 </div>
                                 <div>9:40 AM - 4 Jul 2017</div>
                             </div>
                         </div>
                         <div class="TweetCard__card__27-4v mr-16">
-    
+
                             <div class="TweetCard__head__11JcH flex text-14 mb-8">
                                 <div class="TweetCard__profile__1cFB5 flex">
                                     <figure class="TweetCard__twitter-profile-pic__3KfhP mr-8 mb-16"
@@ -830,14 +690,14 @@
                                     <p>
                                         Lately, been playing w/ stocks & wealth mgmt apps. Amongst all,
                                         <span>@smallcaseHQ</span>
-                                         is the shining star. Absolute recco on 💻 & 📱
+                                        is the shining star. Absolute recco on 💻 & 📱
                                     </p>
                                 </div>
                                 <div>9:40 AM - 4 Jul 2017</div>
                             </div>
                         </div>
                         <div class="TweetCard__card__27-4v mr-16">
-    
+
                             <div class="TweetCard__head__11JcH flex text-14 mb-8">
                                 <div class="TweetCard__profile__1cFB5 flex">
                                     <figure class="TweetCard__twitter-profile-pic__3KfhP mr-8 mb-16"
@@ -858,14 +718,14 @@
                                     <p>
                                         Lately, been playing w/ stocks & wealth mgmt apps. Amongst all,
                                         <span>@smallcaseHQ</span>
-                                         is the shining star. Absolute recco on 💻 & 📱
+                                        is the shining star. Absolute recco on 💻 & 📱
                                     </p>
                                 </div>
                                 <div>9:40 AM - 4 Jul 2017</div>
                             </div>
                         </div>
                         <div class="TweetCard__card__27-4v mr-16">
-    
+
                             <div class="TweetCard__head__11JcH flex text-14 mb-8">
                                 <div class="TweetCard__profile__1cFB5 flex">
                                     <figure class="TweetCard__twitter-profile-pic__3KfhP mr-8 mb-16"
@@ -886,17 +746,17 @@
                                     <p>
                                         Lately, been playing w/ stocks & wealth mgmt apps. Amongst all,
                                         <span>@smallcaseHQ</span>
-                                         is the shining star. Absolute recco on 💻 & 📱
+                                        is the shining star. Absolute recco on 💻 & 📱
                                     </p>
                                 </div>
                                 <div>9:40 AM - 4 Jul 2017</div>
                             </div>
                         </div>
                     </div>
-    
+
                     <div class="flex Testimonials__second-tweets-row__1g2o7">
                         <div class="TweetCard__card__27-4v mr-16">
-    
+
                             <div class="TweetCard__head__11JcH flex text-14 mb-8">
                                 <div class="TweetCard__profile__1cFB5 flex">
                                     <figure class="TweetCard__twitter-profile-pic__3KfhP mr-8 mb-16"
@@ -917,14 +777,14 @@
                                     <p>
                                         Lately, been playing w/ stocks & wealth mgmt apps. Amongst all,
                                         <span>@smallcaseHQ</span>
-                                         is the shining star. Absolute recco on 💻 & 📱
+                                        is the shining star. Absolute recco on 💻 & 📱
                                     </p>
                                 </div>
                                 <div>9:40 AM - 4 Jul 2017</div>
                             </div>
                         </div>
                         <div class="TweetCard__card__27-4v mr-16">
-    
+
                             <div class="TweetCard__head__11JcH flex text-14 mb-8">
                                 <div class="TweetCard__profile__1cFB5 flex">
                                     <figure class="TweetCard__twitter-profile-pic__3KfhP mr-8 mb-16"
@@ -945,14 +805,14 @@
                                     <p>
                                         Lately, been playing w/ stocks & wealth mgmt apps. Amongst all,
                                         <span>@smallcaseHQ</span>
-                                         is the shining star. Absolute recco on 💻 & 📱
+                                        is the shining star. Absolute recco on 💻 & 📱
                                     </p>
                                 </div>
                                 <div>9:40 AM - 4 Jul 2017</div>
                             </div>
                         </div>
                         <div class="TweetCard__card__27-4v mr-16">
-    
+
                             <div class="TweetCard__head__11JcH flex text-14 mb-8">
                                 <div class="TweetCard__profile__1cFB5 flex">
                                     <figure class="TweetCard__twitter-profile-pic__3KfhP mr-8 mb-16"
@@ -973,14 +833,14 @@
                                     <p>
                                         Lately, been playing w/ stocks & wealth mgmt apps. Amongst all,
                                         <span>@smallcaseHQ</span>
-                                         is the shining star. Absolute recco on 💻 & 📱
+                                        is the shining star. Absolute recco on 💻 & 📱
                                     </p>
                                 </div>
                                 <div>9:40 AM - 4 Jul 2017</div>
                             </div>
                         </div>
                         <div class="TweetCard__card__27-4v mr-16">
-    
+
                             <div class="TweetCard__head__11JcH flex text-14 mb-8">
                                 <div class="TweetCard__profile__1cFB5 flex">
                                     <figure class="TweetCard__twitter-profile-pic__3KfhP mr-8 mb-16"
@@ -1001,14 +861,14 @@
                                     <p>
                                         Lately, been playing w/ stocks & wealth mgmt apps. Amongst all,
                                         <span>@smallcaseHQ</span>
-                                         is the shining star. Absolute recco on 💻 & 📱
+                                        is the shining star. Absolute recco on 💻 & 📱
                                     </p>
                                 </div>
                                 <div>9:40 AM - 4 Jul 2017</div>
                             </div>
                         </div>
                         <div class="TweetCard__card__27-4v mr-16">
-    
+
                             <div class="TweetCard__head__11JcH flex text-14 mb-8">
                                 <div class="TweetCard__profile__1cFB5 flex">
                                     <figure class="TweetCard__twitter-profile-pic__3KfhP mr-8 mb-16"
@@ -1029,14 +889,14 @@
                                     <p>
                                         Lately, been playing w/ stocks & wealth mgmt apps. Amongst all,
                                         <span>@smallcaseHQ</span>
-                                         is the shining star. Absolute recco on 💻 & 📱
+                                        is the shining star. Absolute recco on 💻 & 📱
                                     </p>
                                 </div>
                                 <div>9:40 AM - 4 Jul 2017</div>
                             </div>
                         </div>
                         <div class="TweetCard__card__27-4v mr-16">
-    
+
                             <div class="TweetCard__head__11JcH flex text-14 mb-8">
                                 <div class="TweetCard__profile__1cFB5 flex">
                                     <figure class="TweetCard__twitter-profile-pic__3KfhP mr-8 mb-16"
@@ -1057,14 +917,14 @@
                                     <p>
                                         Lately, been playing w/ stocks & wealth mgmt apps. Amongst all,
                                         <span>@smallcaseHQ</span>
-                                         is the shining star. Absolute recco on 💻 & 📱
+                                        is the shining star. Absolute recco on 💻 & 📱
                                     </p>
                                 </div>
                                 <div>9:40 AM - 4 Jul 2017</div>
                             </div>
                         </div>
                         <div class="TweetCard__card__27-4v mr-16">
-    
+
                             <div class="TweetCard__head__11JcH flex text-14 mb-8">
                                 <div class="TweetCard__profile__1cFB5 flex">
                                     <figure class="TweetCard__twitter-profile-pic__3KfhP mr-8 mb-16"
@@ -1085,14 +945,14 @@
                                     <p>
                                         Lately, been playing w/ stocks & wealth mgmt apps. Amongst all,
                                         <span>@smallcaseHQ</span>
-                                         is the shining star. Absolute recco on 💻 & 📱
+                                        is the shining star. Absolute recco on 💻 & 📱
                                     </p>
                                 </div>
                                 <div>9:40 AM - 4 Jul 2017</div>
                             </div>
                         </div>
                         <div class="TweetCard__card__27-4v mr-16">
-    
+
                             <div class="TweetCard__head__11JcH flex text-14 mb-8">
                                 <div class="TweetCard__profile__1cFB5 flex">
                                     <figure class="TweetCard__twitter-profile-pic__3KfhP mr-8 mb-16"
@@ -1113,14 +973,14 @@
                                     <p>
                                         Lately, been playing w/ stocks & wealth mgmt apps. Amongst all,
                                         <span>@smallcaseHQ</span>
-                                         is the shining star. Absolute recco on 💻 & 📱
+                                        is the shining star. Absolute recco on 💻 & 📱
                                     </p>
                                 </div>
                                 <div>9:40 AM - 4 Jul 2017</div>
                             </div>
                         </div>
                         <div class="TweetCard__card__27-4v mr-16">
-    
+
                             <div class="TweetCard__head__11JcH flex text-14 mb-8">
                                 <div class="TweetCard__profile__1cFB5 flex">
                                     <figure class="TweetCard__twitter-profile-pic__3KfhP mr-8 mb-16"
@@ -1141,14 +1001,14 @@
                                     <p>
                                         Lately, been playing w/ stocks & wealth mgmt apps. Amongst all,
                                         <span>@smallcaseHQ</span>
-                                         is the shining star. Absolute recco on 💻 & 📱
+                                        is the shining star. Absolute recco on 💻 & 📱
                                     </p>
                                 </div>
                                 <div>9:40 AM - 4 Jul 2017</div>
                             </div>
                         </div>
                         <div class="TweetCard__card__27-4v mr-16">
-    
+
                             <div class="TweetCard__head__11JcH flex text-14 mb-8">
                                 <div class="TweetCard__profile__1cFB5 flex">
                                     <figure class="TweetCard__twitter-profile-pic__3KfhP mr-8 mb-16"
@@ -1169,14 +1029,14 @@
                                     <p>
                                         Lately, been playing w/ stocks & wealth mgmt apps. Amongst all,
                                         <span>@smallcaseHQ</span>
-                                         is the shining star. Absolute recco on 💻 & 📱
+                                        is the shining star. Absolute recco on 💻 & 📱
                                     </p>
                                 </div>
                                 <div>9:40 AM - 4 Jul 2017</div>
                             </div>
                         </div>
                         <div class="TweetCard__card__27-4v mr-16">
-    
+
                             <div class="TweetCard__head__11JcH flex text-14 mb-8">
                                 <div class="TweetCard__profile__1cFB5 flex">
                                     <figure class="TweetCard__twitter-profile-pic__3KfhP mr-8 mb-16"
@@ -1197,14 +1057,14 @@
                                     <p>
                                         Lately, been playing w/ stocks & wealth mgmt apps. Amongst all,
                                         <span>@smallcaseHQ</span>
-                                         is the shining star. Absolute recco on 💻 & 📱
+                                        is the shining star. Absolute recco on 💻 & 📱
                                     </p>
                                 </div>
                                 <div>9:40 AM - 4 Jul 2017</div>
                             </div>
                         </div>
                         <div class="TweetCard__card__27-4v mr-16">
-    
+
                             <div class="TweetCard__head__11JcH flex text-14 mb-8">
                                 <div class="TweetCard__profile__1cFB5 flex">
                                     <figure class="TweetCard__twitter-profile-pic__3KfhP mr-8 mb-16"
@@ -1225,14 +1085,14 @@
                                     <p>
                                         Lately, been playing w/ stocks & wealth mgmt apps. Amongst all,
                                         <span>@smallcaseHQ</span>
-                                         is the shining star. Absolute recco on 💻 & 📱
+                                        is the shining star. Absolute recco on 💻 & 📱
                                     </p>
                                 </div>
                                 <div>9:40 AM - 4 Jul 2017</div>
                             </div>
                         </div>
                         <div class="TweetCard__card__27-4v mr-16">
-    
+
                             <div class="TweetCard__head__11JcH flex text-14 mb-8">
                                 <div class="TweetCard__profile__1cFB5 flex">
                                     <figure class="TweetCard__twitter-profile-pic__3KfhP mr-8 mb-16"
@@ -1253,14 +1113,14 @@
                                     <p>
                                         Lately, been playing w/ stocks & wealth mgmt apps. Amongst all,
                                         <span>@smallcaseHQ</span>
-                                         is the shining star. Absolute recco on 💻 & 📱
+                                        is the shining star. Absolute recco on 💻 & 📱
                                     </p>
                                 </div>
                                 <div>9:40 AM - 4 Jul 2017</div>
                             </div>
                         </div>
                         <div class="TweetCard__card__27-4v mr-16">
-    
+
                             <div class="TweetCard__head__11JcH flex text-14 mb-8">
                                 <div class="TweetCard__profile__1cFB5 flex">
                                     <figure class="TweetCard__twitter-profile-pic__3KfhP mr-8 mb-16"
@@ -1281,7 +1141,7 @@
                                     <p>
                                         Lately, been playing w/ stocks & wealth mgmt apps. Amongst all,
                                         <span>@smallcaseHQ</span>
-                                         is the shining star. Absolute recco on 💻 & 📱
+                                        is the shining star. Absolute recco on 💻 & 📱
                                     </p>
                                 </div>
                                 <div>9:40 AM - 4 Jul 2017</div>
@@ -1291,51 +1151,55 @@
                 </div>
             </div>
             <div class="w-4/5 m-auto">
-                <p>As seen on</p>
-                <div class="flex justify-between">
+                <p class="text-center text-xl text-gray-500 mb-5">As seen on</p>
+                <div class="flex justify-between pl-12">
                     <a href="#" class="w-1/6 h-32">
                         <figure>
-                            <img class="w-4/5 h-10 items-center" src="../images/forbes.svg" >
+                            <img class="w-4/5 h-10 items-center" src="../images/forbes.svg">
                         </figure>
                     </a>
                     <a href="#" class="w-1/6 h-32">
                         <figure>
-                            <img class="w-4/5 h-10 items-center" src="../images/fortune.svg" >
+                            <img class="w-4/5 h-10 items-center" src="../images/fortune.svg">
                         </figure>
                     </a>
                     <a href="#" class="w-1/6 h-32">
                         <figure>
-                            <img class="w-4/5 h-10 items-center" src="../images/livemint.svg" >
+                            <img class="w-4/5 h-10 items-center" src="../images/livemint.svg">
                         </figure>
                     </a>
                     <a href="#" class="w-1/6 h-32">
                         <figure>
-                            <img class="w-4/5 h-10 items-center" src="../images/moneycontrol.svg" >
+                            <img class="w-4/5 h-10 items-center" src="../images/moneycontrol.svg">
                         </figure>
                     </a>
                     <a href="#" class="w-1/6 h-32">
                         <figure>
-                            <img class="w-4/5 h-10 items-center" src="../images/economic-times.svg" >
+                            <img class="w-4/5 h-10 items-center" src="../images/economic-times.svg">
                         </figure>
                     </a>
                     <a href="#" class="w-1/6 h-32">
                         <figure>
-                            <img class="w-4/5 h-10 items-center" src="../images/cnbc.svg" >
+                            <img class="w-4/5 h-10 items-center" src="../images/cnbc.svg">
                         </figure>
                     </a>
                 </div>
->>>>>>> c8b565136b39b6025ad48c13a693ab50741ff8e1
             </div>
         </div>
-        
+
         <div class="bg-blue-600 bg-opacity-90 rounded partnersBox border flex w-4/5 m-auto mt-4 mb-32">
             <figure>
                 <img src="../images/finance-bg-2.svg" />
             </figure>
             <div class="my-12 mx-36 text-center border border-none">
-                <h1 class="m-auto mb-7 text-white text-center font-semibold text-4xl font-bold w-4/5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; We work with India's &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; most trusted financial brands</h1>
-                <p class="text-xs m-auto text-center text-gray-200 mb-10 text-xl w-11/12 p-3">When you invest in smallcase, stocks you buy are held in your existing demat account. Get started with your trading account</p>
-                <div style="display: grid; grid-template-columns: repeat(3,30%); grid-template-rows: repeat(2,90px); border-radius: 6px; gap: 15px; justify-content: center;">
+                <h1 class="m-auto mb-7 text-white text-center font-semibold text-4xl font-bold w-4/5">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; We work with India's
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; most trusted financial brands</h1>
+                <p class="text-xs m-auto text-center text-gray-200 mb-10 text-xl w-11/12 p-3">When you invest in
+                    smallcase, stocks you buy are held in your existing demat account. Get started with your trading
+                    account</p>
+                <div
+                    style="display: grid; grid-template-columns: repeat(3,30%); grid-template-rows: repeat(2,90px); border-radius: 6px; gap: 15px; justify-content: center;">
                     <div class="bg-white h-full w-4/5 items-center  rounded w-full flex justify-center">
                         <img class="w-4/5 h-1/3" src="../images/angelbroking.png">
                     </div>
@@ -1355,7 +1219,8 @@
                         <img class="w-4/5 h-1/3" src="../images/kite.png" alt="kite">
                     </div>
                 </div>
-                <div class="w-1/5 mt-10 m-auto bg-white rounded h-10 flex align-middle transition-all duration-150 transform hover:-translate-y-0.5 hover:shadow-lg">
+                <div
+                    class="w-1/5 mt-10 m-auto bg-white rounded h-10 flex align-middle transition-all duration-150 transform hover:-translate-y-0.5 hover:shadow-lg">
                     <button class="m-auto font-medium text-blue-500">See All Brokers</button>
                 </div>
             </div>
@@ -1372,48 +1237,76 @@
                     <div class="mb-4 text-xl font-medium text-gray-600  p-2">
                         <p>Getting Started</p>
                     </div>
-                    <div class="font-medium text-xl hover:text-blue-500 flex align-middle text-gray-600 p-2 items-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-500 " viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
-                          </svg>
+                    <div
+                        class="font-medium text-xl hover:text-blue-500 flex align-middle text-gray-600 p-2 items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-500 " viewBox="0 0 20 20"
+                            fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                                clip-rule="evenodd" />
+                        </svg>
                         <a href="#">What are smallcases?</a>
                     </div>
-                    <div class="font-medium text-xl hover:text-blue-500 flex align-middle text-gray-600 p-2 items-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-500 " viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
-                          </svg>
+                    <div
+                        class="font-medium text-xl hover:text-blue-500 flex align-middle text-gray-600 p-2 items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-500 " viewBox="0 0 20 20"
+                            fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                                clip-rule="evenodd" />
+                        </svg>
                         <a href="#">How to invest in smallcases?</a>
                     </div>
-                    <div class="font-medium text-xl hover:text-blue-500 flex align-middle text-gray-600 p-2 items-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-500 " viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
-                          </svg>
+                    <div
+                        class="font-medium text-xl hover:text-blue-500 flex align-middle text-gray-600 p-2 items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-500 " viewBox="0 0 20 20"
+                            fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                                clip-rule="evenodd" />
+                        </svg>
                         <a href="#">Fees and Taxes</a>
                     </div>
-                    <div class="font-medium text-xl hover:text-blue-500 flex align-middle text-gray-600 p-2 items-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-500 " viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
-                          </svg>
+                    <div
+                        class="font-medium text-xl hover:text-blue-500 flex align-middle text-gray-600 p-2 items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-500 " viewBox="0 0 20 20"
+                            fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                                clip-rule="evenodd" />
+                        </svg>
                         <a href="#">Can I buy smallcases as SIP?</a>
                     </div>
                 </div>
                 <div class="flex flex-col w-1/3">
-                    <div class="font-medium text-xl hover:text-blue-500 flex align-middle text-gray-600 p-2 items-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-500 " viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
-                          </svg>
+                    <div
+                        class="font-medium text-xl hover:text-blue-500 flex align-middle text-gray-600 p-2 items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-500 " viewBox="0 0 20 20"
+                            fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                                clip-rule="evenodd" />
+                        </svg>
                         <a href="#">Do you get dividend from smallcases?</a>
                     </div>
-                    <div class="font-medium text-xl hover:text-blue-500 flex align-middle text-gray-600 p-2 items-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-500 " viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
-                          </svg>
+                    <div
+                        class="font-medium text-xl hover:text-blue-500 flex align-middle text-gray-600 p-2 items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-500 " viewBox="0 0 20 20"
+                            fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                                clip-rule="evenodd" />
+                        </svg>
                         <a href="#">What is rebalancing?</a>
                     </div>
-                    <div class="font-medium text-xl hover:text-blue-500 flex align-middle text-gray-600 p-2 items-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-500 " viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
-                          </svg>
+                    <div
+                        class="font-medium text-xl hover:text-blue-500 flex align-middle text-gray-600 p-2 items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-500 " viewBox="0 0 20 20"
+                            fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                                clip-rule="evenodd" />
+                        </svg>
                         <a href="#">Who manages smallcases?</a>
                     </div>
                 </div>
@@ -1421,28 +1314,44 @@
                     <div class="mb-4 text-xl font-medium text-gray-600">
                         <p>Investing with smallcases</p>
                     </div>
-                    <div class="font-medium text-xl hover:text-blue-500 flex align-middle text-gray-600 p-2 items-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-500 " viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
-                          </svg>
+                    <div
+                        class="font-medium text-xl hover:text-blue-500 flex align-middle text-gray-600 p-2 items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-500 " viewBox="0 0 20 20"
+                            fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                                clip-rule="evenodd" />
+                        </svg>
                         <a href="#">Watchlist and Drafts</a>
                     </div>
-                    <div class="font-medium text-xl hover:text-blue-500 flex align-middle text-gray-600 p-2 items-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-500 " viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
-                          </svg>
+                    <div
+                        class="font-medium text-xl hover:text-blue-500 flex align-middle text-gray-600 p-2 items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-500 " viewBox="0 0 20 20"
+                            fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                                clip-rule="evenodd" />
+                        </svg>
                         <a href="#">Creating your own portfolio</a>
                     </div>
-                    <div class="font-medium text-xl hover:text-blue-500 flex align-middle text-gray-600 p-2 items-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-500 " viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
-                          </svg>
+                    <div
+                        class="font-medium text-xl hover:text-blue-500 flex align-middle text-gray-600 p-2 items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-500 " viewBox="0 0 20 20"
+                            fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                                clip-rule="evenodd" />
+                        </svg>
                         <a href="#">Orders and Historys</a>
                     </div>
-                    <div class="font-medium text-xl hover:text-blue-500 flex align-middle text-gray-600 p-2 items-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-500 " viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
-                          </svg>
+                    <div
+                        class="font-medium text-xl hover:text-blue-500 flex align-middle text-gray-600 p-2 items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-500 " viewBox="0 0 20 20"
+                            fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                                clip-rule="evenodd" />
+                        </svg>
                         <a href="#">Tracking a portfolio of stocks</a>
                     </div>
                 </div>
@@ -1450,7 +1359,9 @@
             <div class="w-1/3 m-auto flex flex-col justify-center text-center">
                 <span class="font-medium text-xl text-gray-600">Have more questions or some feedback?</span>
                 <p class="text-xl text-gray-600 my-2">We are just an email away</p>
-                <button class="transition-all duration-150 transform hover:-translate-y-0.5 w-40 rounded font-medium my-4 text-white text-xl bg-blue-500 hover:bg-blue-400 h-16 m-auto">Write to us</button>
+                <button
+                    class="transition-all duration-150 transform hover:-translate-y-0.5 w-40 rounded font-medium my-4 text-white text-xl bg-blue-500 hover:bg-blue-400 h-16 m-auto">Write
+                    to us</button>
                 <p class="text-xl text-gray-600 my-2">Or Visit our
                     <a href="#" class="font-medium text-blue-500">Help Center</a>
                 </p>
@@ -1465,18 +1376,24 @@
                             <img class="w-36" src="../images/smallcase-logo-with-text.svg" alt />
                         </div>
                     </figure>
-                    <p class="my-7 text-gray-600 text-lg">smallcase Technologies builds platforms & investment products to invest better in Indian equities. A smallcase is a basket of stocks/ETFs weighted intelligently to reflect an idea</p>
-                    <p class="text-md font-bold text-gray-600">Get weekly market insights and facts right in your inbox</p>
+                    <p class="my-7 text-gray-600 text-lg">smallcase Technologies builds platforms & investment products
+                        to invest better in Indian equities. A smallcase is a basket of stocks/ETFs weighted
+                        intelligently to reflect an idea</p>
+                    <p class="text-md font-bold text-gray-600">Get weekly market insights and facts right in your inbox
+                    </p>
                     <form class="mt-2 flex gap-4">
                         <div class="border-solid border-2 rounded flex gap-2 p-2">
                             <div>
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-300 font-light" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                                  </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-300 font-light"
+                                    fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                </svg>
                             </div>
                             <input type="email" placeholder="Email Address" />
                         </div>
-                        <button class="border-solid border-2 bg-blue-500 text-white font-bold w-32 h-full rounded-md transition-all duration-150 transform hover:-translate-y-0.5 hover:shadow-lg">Subscribe</button>
+                        <button
+                            class="border-solid border-2 bg-blue-500 text-white font-bold w-32 h-full rounded-md transition-all duration-150 transform hover:-translate-y-0.5 hover:shadow-lg">Subscribe</button>
                     </form>
                 </div>
                 <div class="flex w-7/12 pl-16">
@@ -1548,14 +1465,15 @@
                 <div class="flex w-2/5 flex-col">
                     <div class="flex flex-col gap-2">
                         <p class="">Contact us on
-                           <a href="#">help@smallcase.com</a>
+                            <a href="#">help@smallcase.com</a>
                         </p>
                         <p>Find us on:</p>
                     </div>
                     <div class="flex py-4 items-center">
                         <a href="" class="mr-6">
                             <figure>
-                                <i class="fa fa-facebook bg-gray-500 text-white w-7 h-7 rounded flex items-center px-2"></i>
+                                <i
+                                    class="fa fa-facebook bg-gray-500 text-white w-7 h-7 rounded flex items-center px-2"></i>
                             </figure>
                         </a>
                         <a href="" class="mr-3">
@@ -1565,17 +1483,20 @@
                         </a>
                         <a href="" class="mr-6">
                             <figure>
-                                <i class="fa fa-instagram font-medium text-3xl text-gray-500 w-7 h-7 rounded flex items-center px-2"></i>
+                                <i
+                                    class="fa fa-instagram font-medium text-3xl text-gray-500 w-7 h-7 rounded flex items-center px-2"></i>
                             </figure>
                         </a>
                         <a href="" class="ml-2 mr-5">
                             <figure>
-                                <img class="w-7 opacity-50" src="https://img.icons8.com/material-sharp/24/000000/youtube-play.png"/>
+                                <img class="w-7 opacity-50"
+                                    src="https://img.icons8.com/material-sharp/24/000000/youtube-play.png" />
                             </figure>
                         </a>
                         <a href="" class="mr-6">
                             <figure>
-                                <i class="fa fa-linkedin font-medium text-lg w-6 h-6 px-1 text-white rounded items-center  bg-gray-500"></i>
+                                <i
+                                    class="fa fa-linkedin font-medium text-lg w-6 h-6 px-1 text-white rounded items-center  bg-gray-500"></i>
                             </figure>
                         </a>
                     </div>
@@ -1589,5 +1510,6 @@
             </div>
         </footer>
 </body>
+<script src="index.js"></script>
 
 </html>

@@ -4,3 +4,113 @@
 
 /* custom class  */
 
+.Testimonials__first-tweets-row__1c3VM {
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+    align-items: flex-end;
+}
+
+.Testimonials__second-tweets-row__1g2o7 {
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+}
+
+.Testimonials__tweets-slider__1P4dW {
+    height: 500px;
+    -webkit-animation: Testimonials__scroll__27Guy 60s linear infinite;
+    animation: Testimonials__scroll__27Guy 60s linear infinite
+}
+
+.Testimonials__tweets-slider__1P4dW:hover {
+    -webkit-animation-play-state: paused !important;
+    animation-play-state: paused !important
+}
+
+@-webkit-keyframes Testimonials__scroll__27Guy {
+    0% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0)
+    }
+
+    to {
+        -webkit-transform: translateX(-185%);
+        transform: translateX(-185%);
+    }
+}
+
+@keyframes Testimonials__scroll__27Guy {
+    0% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+
+    to {
+        -webkit-transform: translateX(-185%);
+        transform: translateX(-185%);
+    }
+}
+
+.TweetCard__card__27-4v,
+.TweetCard__card__27-4v:hover {
+    -webkit-transition: -webkit-transform .2s ease-out;
+    transition: -webkit-transform .2s ease-out;
+    transition: transform .2s ease-out;
+    transition: transform .2s ease-out, -webkit-transform .2s ease-out;
+}
+
+.TweetCard__card__27-4v:hover {
+    -webkit-box-shadow: 0 5px 12px 5px rgba(221, 224, 228, .5);
+    box-shadow: 0 5px 12px 5px rgba(221, 224, 228, .5);
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
+}
+
+.TweetCard__profile__1cFB5 {
+    height: 70px;
+}
+
+.TweetCard__twitter-profile-pic__3KfhP {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    background-image: url("../images/twitter_sprites.png");
+}
+
+.TweetCard__head__11JcH {
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+}
+
+.TweetCard__body__Rp_i_ {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    letter-spacing: -.01em;
+}
+
+.TweetCard__card__27-4v,
+.TweetCard__card__27-4v:hover {
+    -webkit-transition: -webkit-transform .2s ease-out;
+    transition: -webkit-transform .2s ease-out;
+    transition: transform .2s ease-out;
+    transition: transform .2s ease-out, -webkit-transform .2s ease-out;
+}
+
+.TweetCard__card__27-4v {
+    min-width: 270px;
+    padding: 20px;
+    border-radius: 4px;
+    border: 1px solid #e9ecf5;
+    background: #fff;
+}
+
+.Testimonials__tweets-container__2QvJU {
+    overflow-x: hidden;
+    height:800px;
+}
