@@ -1,21 +1,13 @@
 {
-  "name": "unit-3-project-smallcase",
+  "name": "project",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "css:build": "tailwind build ./src/style.css -o ./build/style.css"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/rajesh4210/Unit-3-Project-smallcase.git"
+    "css:build": "tailwind build ./style.css -o ./src/style.css"
   },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/rajesh4210/Unit-3-Project-smallcase/issues"
-  },
-  "homepage": "https://github.com/rajesh4210/Unit-3-Project-smallcase#readme",
   "dependencies": {
     "tailwindcss": "^2.2.19"
   }
