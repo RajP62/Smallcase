@@ -12,7 +12,7 @@ function footer(){
             </div>
         </div>
             <div class="ml-20"> 
-                <img class="h-10 p-1" src="./project imege/groww-logo.png">
+                <img class="h-10 p-1" src="./images/groww-logo.png">
                 <p class="text-gray-600">NSE & BSE – SEBI Reg. No.: INZ0123456789 |  CDSL - SEBI Reg. No.: IN-Dk-117-2019</p>
             </div> 
     </div>`
