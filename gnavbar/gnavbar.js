@@ -3,7 +3,7 @@
      <div class=" w-full h-16 border-b border-gray-400 flex"> 
         <div class="h-full flex ml-28 space-x-7">
             <div class=" h-full py-3">
-                <img class="h-full" src="./project imege/groww-logo.png">
+                <img class="h-full" src="./images/groww-logo.png">
             </div>
             <button class="text-gray-600 text-sm">Dashbord</button>
             <button class="text-gray-600 text-sm">Discover</button>
