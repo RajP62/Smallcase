@@ -12,7 +12,7 @@ async function getTrendingData() {
     }
 }
 getTrendingData().then(({ articles }) => {
-    console.log(articles)
+    console.log(articles);
     appendFirstBox(articles);
 });
 
