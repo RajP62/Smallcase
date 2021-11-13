@@ -59,7 +59,11 @@ let appendSearchRes = search=>{
         let {info:{name,shortDescription,imageUrl}} = element;
         if(startCharMatch(name,search)){
             let div = document.createElement('div');
-            div.setAttribute('class','flex justify-between items-center text-small mb-1');
+            div.setAttribute('class','flex justify-between items-center text-small mb-1 cursor-pointer');
+            div.onclick = function(){
+                searchData(element);
+            }
+
             let div2 = document.createElement('div');
             div2.setAttribute('class','text-blue-600 ml-5')
             let img = document.createElement('img');
@@ -86,4 +90,24 @@ let startCharMatch = (firStr,secStr)=>{
         }
     }
     return true;
+}
+
+// using local storage 
+
+if(localStorage.getItem("data_clicked")== null){
+
+    localStorage.setItem("data_clicked", JSON.stringify([]));
+}
+
+function searchData(elem){
+
+    let data_cart = JSON.parse(localStorage.getItem("data_clicked"));
+
+    data_cart = [];
+
+    data_cart.push(elem);
+
+    localStorage.setItem("data_clicked",JSON.stringify(data_cart));
+
+    window.location.assign("search.html");
 }

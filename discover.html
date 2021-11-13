@@ -9,31 +9,32 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-<body>
-    <div class="mx-28">
+<body >
+    <div id="gnavbar"></div>
+    <div class="mx-28 mt-5">
         <div>
             <h2 class="text-2xl font-medium">Discover</h2>
         </div>
         <div class="flex justify-between my-6">
             <div class="flex">
-                <div class="mr-5">
-                    <h3>
+                <div class="mr-5 cursor-pointer hover:text-blue-600">
+                    <h3 >
                         Collection
                     </h3>
                 </div>
-                <div class="mr-5">
+                <div onclick="window.location.href = 'allsmallcase.html'" class="mr-5 cursor-pointer hover:text-blue-600">
                     <h3>
                         All smallcases
                     </h3>
                 </div>
-                <div class="mr-5">
+                <div class="mr-5 cursor-pointer hover:text-blue-600">
                     <h3>
                         Managers
                     </h3>
                 </div>
             </div>
             <div class="pr-10 h-5 w-2/6">
-                <input id="inp_search" type="text" class="px-10" placeholder="Try All Weather or Infosys">
+                <input id="inp_search" type="text" class="px-10 py-2" placeholder="Try All Weather or Infosys">
                 <div id="inp_sugg_box" class="h-60 hidden z-20 sticky border-gray-200 p-2 shadow-lg rounded overflow-scroll bg-white">
                 </div>
             </div>
@@ -52,7 +53,7 @@
     
         <div class="owl-carousel owl-theme">
             <div class="item">
-                <a href="#">
+                <a href="global.html">
                     <div class="border border-gray-300 rounded p-5">
                         <span >Recently Launched </span><span class="text-gray-500">- Exposure to global tech giants like Amazon</span>
                         <div class="flex  mt-3">
@@ -76,74 +77,80 @@
                 </a>
             </div>
             <div class="item">
-                <div class="border border-gray-300 rounded p-5">
-                    <span>Recently Launched </span><span class="text-gray-500">- Striking a balance across asset classes</span>
-                    <div class="flex mt-3">
-                        <div class="w-48">
-                            <img src="https://assets.smallcase.com/images/smallcases/200/SCET_0013.png" class="rounded">
-                        </div>
-                        <div class="ml-3">
-                            <h3 class="font-semibold text-lg">Equity & Debt</h3>
-                            <p class="text-gray-500 mb-2">A unique 2-in-1 portfolio of equity & debt suitable for low risk wealth creation</p>
-                            <div class="flex text-gray-500 w-60 justify-between">
-                                <div>9M Returns</div>
-                                <div>Min. Amount</div>
+                <a href="equtiyAndDebt.html">
+                    <div class="border border-gray-300 rounded p-5">
+                        <span>Recently Launched </span><span class="text-gray-500">- Striking a balance across asset classes</span>
+                        <div class="flex mt-3">
+                            <div class="w-48">
+                                <img src="https://assets.smallcase.com/images/smallcases/200/SCET_0013.png" class="rounded">
                             </div>
-                            <div class="flex w-60 justify-between font-semibold">
-                                <div class="text-green-600">14.27%</div>
-                                <div>₹ 3,056</div>
+                            <div class="ml-3">
+                                <h3 class="font-semibold text-lg">Equity & Debt</h3>
+                                <p class="text-gray-500 mb-2">A unique 2-in-1 portfolio of equity & debt suitable for low risk wealth creation</p>
+                                <div class="flex text-gray-500 w-60 justify-between">
+                                    <div>9M Returns</div>
+                                    <div>Min. Amount</div>
+                                </div>
+                                <div class="flex w-60 justify-between font-semibold">
+                                    <div class="text-green-600">14.27%</div>
+                                    <div>₹ 3,056</div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                </a>
+                
             </div>
     
             <div class="item">
-                <div class="border border-gray-300 rounded p-5">
-                    <span>Favourite </span><span class="text-gray-500">- India's market leaders & gold in one protfolio</span>
-                    <div class="flex mt-3">
-                        <div class="w-44">
-                            <img src="https://assets.smallcase.com/images/smallcases/200/SCET_0005.png" class="rounded">
-                        </div>
-                        <div class="ml-3">
-                            <h3 class="font-semibold text-lg">Equity & Gold</h3>
-                            <p class="text-gray-500 mb-2">Create wealth with equities, stay protected with Gold. The sweet spot</p>
-                            <div class="flex text-gray-500 w-60 justify-between">
-                                <div>3Y CAGR</div>
-                                <div>Min. Amount</div>
+                <a href="equityAndGold.html">
+                    <div class="border border-gray-300 rounded p-5">
+                        <span>Favourite </span><span class="text-gray-500">- India's market leaders & gold in one protfolio</span>
+                        <div class="flex mt-3">
+                            <div class="w-44">
+                                <img src="https://assets.smallcase.com/images/smallcases/200/SCET_0005.png" class="rounded">
                             </div>
-                            <div class="flex w-60 justify-between font-semibold">
-                                <div class="text-green-600">20.19%</div>
-                                <div>₹ 276</div>
+                            <div class="ml-3">
+                                <h3 class="font-semibold text-lg">Equity & Gold</h3>
+                                <p class="text-gray-500 mb-2">Create wealth with equities, stay protected with Gold. The sweet spot</p>
+                                <div class="flex text-gray-500 w-60 justify-between">
+                                    <div>3Y CAGR</div>
+                                    <div>Min. Amount</div>
+                                </div>
+                                <div class="flex w-60 justify-between font-semibold">
+                                    <div class="text-green-600">20.19%</div>
+                                    <div>₹ 276</div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                </a>
             </div>
     
             <div class="item">
-                <div class="border border-gray-300 rounded p-5">
-                    <span>Popular </span><span class="text-gray-500">- India's biggest companies curated in one basket</span>
-                    <div class="flex mt-3">
-                        <div class="w-40">
-                            <img src="https://assets.smallcase.com/images/smallcases/200/SCET_0004.png" class="rounded">
-                        </div>
-                        <div class="ml-3">
-                            <h3 class="font-semibold text-lg">Top 100 Stocks</h3>
-                            <p class="text-gray-500 mb-2">India's most powerful companies in one portfolio. Solid stability</p>
-                            <div class="flex text-gray-500 w-60 justify-between">
-                                <div>3Y CAGR</div>
-                                <div>Min. Amount</div>
+                <a href="top_100.html">
+                    <div class="border border-gray-300 rounded p-5">
+                        <span>Popular </span><span class="text-gray-500">- India's biggest companies curated in one basket</span>
+                        <div class="flex mt-3">
+                            <div class="w-40">
+                                <img src="https://assets.smallcase.com/images/smallcases/200/SCET_0004.png" class="rounded">
                             </div>
-                            <div class="flex w-60 justify-between font-semibold">
-                                <div class="text-green-600">20.58%</div>
-                                <div>₹ 1,226</div>
+                            <div class="ml-3">
+                                <h3 class="font-semibold text-lg">Top 100 Stocks</h3>
+                                <p class="text-gray-500 mb-2">India's most powerful companies in one portfolio. Solid stability</p>
+                                <div class="flex text-gray-500 w-60 justify-between">
+                                    <div>3Y CAGR</div>
+                                    <div>Min. Amount</div>
+                                </div>
+                                <div class="flex w-60 justify-between font-semibold">
+                                    <div class="text-green-600">20.58%</div>
+                                    <div>₹ 1,226</div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                </a>
             </div>
-            
         </div>
     
         <div class="blue_part border rounded bg-blue-500 relative">
@@ -374,11 +381,21 @@
         </div>
     </div>
     
-    
+    <div id="footer"></div>
 
     
 
+    <script type="module">
+        import navbar from "./gnavbar/gnavbar.js"; 
+   let gnavbar_div = document.getElementById("gnavbar")
 
+   gnavbar_div.innerHTML = navbar(); 
+
+   import footer from "./gnavbar/gfooter.js"; 
+   let footer_div = document.getElementById("footer");
+
+   footer_div.innerHTML = footer(); 
+    </script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>

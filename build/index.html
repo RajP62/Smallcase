@@ -7,8 +7,134 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../src/style.css">
     <link rel="stylesheet" href="style.css">
-    <style>
+</head>
+
+<style>
+    .Intro__container__m1YT4 {
+            position: relative;
+            margin-bottom: 128px;
+            background: -webkit-gradient(linear,left top,right top,color-stop(28%,#FBFEFF),color-stop(62%,#A6E6F5),color-stop(97%,#D3F3FA));
+            background: linear-gradient(90deg,#FBFEFF 28%,#A6E6F5 62%,#D3F3FA 97%);
+            background-repeat: repeat-x;
+            background-position: bottom;
+        }
+        .box.arrow-right:after {
+            content: " ";
+            position: absolute;
+            right: -15px;
+            top: 15px;
+            border-top: 15px solid transparent;
+            border-right: none;
+            border-left: 15px solid black;
+            border-bottom: 15px solid transparent;
+        }
+        .Intro__card__1VHo2 {
+            z-index: 3;
+            position: absolute;
+            right: 420px;
+            bottom: 16px;
+        }
+        .SmallcaseCard__card-appear__3pHS7 {
+            opacity: 1!important;
+            -webkit-transform: translateX(0)!important;
+            transform: translateX(0)!important;
+        }
+        .SmallcaseCard__card-disappear__3pHS7 {
+            opacity: 1!important;
+            -webkit-transform: translateX(0)!important;
+            transform: translateX(16px)!important;
+        }
+        .SmallcaseCard__container__2vRs- {
+            /* max-width: 250px; */
+            opacity: 0;
+            -webkit-transform: translateX(16px);
+            transform: translateX(16px);
+            -webkit-transition: all .2s ease-out;
+            transition: all .2s ease-out;
+            background-color: #fff;
+            -webkit-box-shadow: 0 1px 2px 2px rgb(0 0 0 / 8%);
+            box-shadow: 0 1px 2px 2px rgb(0 0 0 / 8%);
+        }
+        .SmallcaseCard__container__2vRs-:after {
+            content: "";
+        }
+        .SmallcaseCard__arrow-right__34Mgt {
+            top: 40%;
+            right: -10px;
+            width: 0;
+            height: 0;
+            border-top: 20px solid transparent;
+            border-bottom: 20px solid transparent;
+            border-left: 20px solid #fff;
+        }
+        .SmallcaseCard_cardhead_diof {
+        }
+        .SmallcaseCard__growth-rate__2g565 {
+            -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+            justify-content: space-between;
+        }
+        .SmallcaseCard__g-rate-text__2Apd7 {
+            font-weight: 600;
+            letter-spacing: .42px;
+            margin-bottom: 0;
+        }
+        .btn-secondary-blue {
+            background-color: #fff;
+            color: #1F7AE0;
+            border: 1px solid rgba(31,122,224,.3);
+            -webkit-box-shadow: 0 1px 2px 0 rgb(0 0 0 / 6%);
+            box-shadow: 0 1px 2px 0 rgb(0 0 0 / 6%);
+        }
+        .btn {
+            display: inline-block;
+            white-space: nowrap;
+            font-family: Graphik Web Medium,sans-serif;
+            font-size: 13px;
+            text-align: center;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            border-radius: 4px;
+            border: 1px solid transparent;
+            cursor: pointer;
+            padding: 9px 13px;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            outline: none;
+            -webkit-transition: -webkit-transform .15s ease,-webkit-box-shadow .15s ease;
+            transition: -webkit-transform .15s ease,-webkit-box-shadow .15s ease;
+            transition: transform .15s ease,box-shadow .15s ease;
+            transition: transform .15s ease,box-shadow .15s ease,-webkit-transform .15s ease,-webkit-box-shadow .15s ease;
+        }
+        .Intro__couple-img-container__2Zcuw {
+            z-index: 2;
+            position: absolute;
+            bottom: -2px;
+            right: 0;
+            overflow-y: hidden;
+        }
+        .Intro__couple-image-appear__XfnIY {
+            opacity: 1!important;
+            -webkit-transform: translateY(0)!important;
+            transform: translateY(0)!important;
+        }
+        .Intro__couple-image-disappear__XfnIY {
+            opacity: 1!important;
+            -webkit-transform: translateY(0)!important;
+            transform: translateY(48)!important;
+        }
+        .Intro__couple-image__1f3dG {
+            position: relative;
+            opacity: 0;
+            -webkit-transform: translateY(48px);
+            transform: translateY(48px);
+            -webkit-transition: all .3s ease-out;
+            transition: all .3s ease-out;
+        }
         /* custom class  */
 
         .Testimonials__first-tweets-row__1c3VM {
@@ -121,29 +247,108 @@
             overflow-x: hidden;
             height:800px;
         }
-    </style>
-</head>
+        .text-small{
+            font-size: 9.7px;
+        }
+        .text-exsm{
+            font-size: 11px;
+        }
+        .btnInNav {
+            background-color: #1A80E0;
+        }
+
+        #firBoxOfSec {
+            border-bottom: 0.5px solid rgb(236, 230, 230);
+        }
+
+        #secBoxOfSec {
+            border-bottom: 0.5px solid rgb(236, 230, 230);
+        }
+
+        .subscribe_box {
+            background: linear-gradient(to right, #1A80E0, #029DDE);
+        }
+        .colGrayBlue{
+            background-color: #F2F8FF;
+        }
+        .partnersBox{
+            background-image: url('./images/partnersBox_backImg.svg'),url('./images/partnersBox_backImg_Right.svg');
+            background-position:0%,100%;
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+        input{
+            width: 90%;
+        }
+        .btnSignup{
+            width: 90%;
+        }
+        .inpSignup{
+            width: 90%;
+        }
+        .backInSignup{
+            background-image: url(../images/signup_leftBack.png),url(../images/signup_rightBack.svg);
+            background-repeat: no-repeat;
+            background-position: 0%,100%;
+            background-size: contain;
+        }
+        .inpSignup,.inpInLogin::placeholder{
+            font-size: 18px;
+        }
+</style>
 
 <body>
     <div id="navbar"
-        class="fixed w-full flex justify-between h-16 items-center pl-32 pr-32 border-b border-gray-400 bg-white z-10">
+        class="select-none fixed w-full flex justify-between h-16 items-center pl-32 pr-32 border-b border-gray-400 bg-white z-10">
         <div id="left" class="flex gap-12">
             <img src="../images/logo-full.svg" alt="website_log" class="w-36" />
-            <a href="#" class="font-medium hover:text-black text-gray-400 p-1">Discover smallcases</a>
+            <a id="btnGoToSmallcase" class="cursor-pointer font-medium hover:text-black text-gray-400 p-1">Discover smallcases</a>
             <a href="#" class="font-medium hover:text-black text-gray-400 p-1">For Businesses</a>
 
         </div>
         <div id="right" class="flex gap-12 items-center">
-            <a href="#" class="font-medium hover:text-black text-gray-400 p-1">We're Hiring</a>
-            <a href="#" class="font-medium hover:text-black text-gray-400 p-1">Blog</a>
-            <a href="#" class="font-medium hover:text-black text-gray-400 p-1">Open Broker Account</a>
-            <button
+            <a href="../Were_Hiring.html" class="font-medium hover:text-black text-gray-400 p-1">We're Hiring</a>
+            <a href="../blog.html" class="font-medium hover:text-black text-gray-400 p-1">Blog</a>
+            <a id="openBroker" class="font-medium hover:text-black text-gray-400 p-1">Open Broker Account</a>
+            <button id="btnLogin"
                 class="border-solid border-2 border-blue-500 text-blue-600 font-bold w-20 h-12 rounded-md transition-all duration-150 transform hover:-translate-y-0.5 hover:shadow-lg">Login</button>
         </div>
     </div>
+
+
+    <div class="Intro__card__1VHo2 w-80">
+        <div class="w-full SmallcaseCard__container__2vRs- p-5 border-2 border-solid rounded-md SmallcaseCard__card-appear__3pHS7" id="innerarrow_box">
+            <div class="w-full SmallcaseCard__arrow-right__34Mgt absolute"></div>
+            <a href="#" id="arrowbox_link">
+                <div>
+                    <img class="w-20 h-20 mb-4" id="image_change_arrowbox" src="../images/SCAW_0001.png" >
+                    <div>
+                        <h3 class="text-xl mb-1 font-medium" id="arrowbox_head">Brand Value</h3>
+                        <p class="text-lg mb-6" id="arrowbox_after_head">Invest in India’s growing love for branded products</p>
+                    </div>
+                </div>
+                <div class="SmallcaseCard__growth-rate__2g565 flex">
+                    <div>
+                        <p class="mb-2" id="arrowbox_value">6Y CAGR</p>
+                        <p class="SmallcaseCard__g-rate-text__2Apd7 text-2xl text-green-500" id="arrowbox_share">20.29
+                            %
+                        </p>
+                    </div>
+                    <button class="border-solid border-2 border-blue-500 text-blue-600 font-bold rounded-md transition-all duration-150 transform hover:-translate-y-0.5 hover:shadow-lg w-1/2">Invest Now</button>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div id="loginBox" class="bg-white z-10 hidden loginBox border border-gray-200 rounded absolute top-20 shadow-lg w-3/12 mt-30 sticky m-auto select-none"></div>
+
+    <!-- Signup Box -->
+
+    <div id="signUpBox" class="bg-white z-10 hidden signupBox border border-gray-200 rounded absolute top-20 shadow-lg w-3/12 mt-30 sticky m-auto select-none"></div> 
+
     <div id="intro_container" class=" w-full h-screen ">
-        <div id="intro_container" class=" w-full h-screen bg-contain bg-no-repeat bg-left-bottom bg-"
-            style="background-image: url(../images/back.png);">
+        <div id="intro_container_in"
+            class=" w-full h-4/5 bg-contain bg-no-repeat bg-left-bottom transition-all duration-500">
             <div id="info_main" class="h-full w-4/5 m-auto flex flex-col justify-center gap-2">
                 <h1 class="text-6xl font-bold w-2/5">Stock investing done right</h1>
                 <p class="w-2/5 text-2xl font-light my-2">With smallcases, build your diversified long-term portfolio of
@@ -154,34 +359,39 @@
                         class="w-1/2 h-4/5 font-medium border-2 border-blue-300 rounded text-white bg-blue-500 text-xl transition-all duration-150 transform hover:-translate-y-0.5 hover:shadow-lg">Discover
                         smallcases</button>
                     <button
-                        class="w-1/2 h-4/5 font-medium border-2 border-blue-300 rounded  text-xl text-blue-500 transition-all duration-150 transform hover:-translate-y-0.5 hover:shadow-lg">Download
+                        class="w-1/2 h-4/5 font-medium border-2 border-blue-300 rounded  text-xl text-blue-500 transition-all duration-150 transform hover:-translate-y-0.5 hover:shadow-lg bg-white">Download
                         App</button>
                 </div>
                 <p class="font-light text-xl">Supported on India's largest brokers</p>
                 <div class="flex gap-1">
                     <a href="#" title="5paisa"
-                        class="w-12 h-12 shadow-lg transition-all duration-150 transform hover:-translate-y-0.5 border-solid border-1 border-gray-400 rounded-3xl"><img
+                        class="w-12 h-12 shadow-lg transition-all duration-150 transform hover:-translate-y-0.5 border-solid border-1 border-gray-400 rounded-3xl bg-white"><img
                             class="m-auto my-3" src="../images/fivepaisa.svg" alt="5paisa" /></a>
                     <a href="#" title="5paisa"
-                        class="w-12 h-12 shadow-lg transition-all duration-150 transform hover:-translate-y-0.5 border-solid border-1 border-gray-400 rounded-3xl"><img
+                        class="w-12 h-12 shadow-lg transition-all duration-150 transform hover:-translate-y-0.5 border-solid border-1 border-gray-400 rounded-3xl bg-white"><img
                             class="m-auto my-4 w-5" src="../images/angelbroking.svg" alt="angelbroking" /></a>
                     <a href="#" title="Angel Broking"
-                        class="w-12 h-12 shadow-lg transition-all duration-150 transform hover:-translate-y-0.5 border-solid border-1 border-gray-400 rounded-3xl"><img
+                        class="w-12 h-12 shadow-lg transition-all duration-150 transform hover:-translate-y-0.5 border-solid border-1 border-gray-400 rounded-3xl bg-white"><img
                             class="m-auto my-3" src="../images/hdfc.svg" alt="hdfc" /></a>
                     <a href="#" title="HDFC"
-                        class="w-12 h-12 shadow-lg transition-all duration-150 transform hover:-translate-y-0.5 border-solid border-1 border-gray-400 rounded-3xl"><img
+                        class="w-12 h-12 shadow-lg transition-all duration-150 transform hover:-translate-y-0.5 border-solid border-1 border-gray-400 rounded-3xl bg-white"><img
                             class="m-auto my-3" src="../images/kotak.svg" alt="kotak" /></a>
                     <a href="#" title="Up Stox"
-                        class="w-12 h-12 shadow-lg transition-all duration-150 transform hover:-translate-y-0.5 border-solid border-1 border-gray-400 rounded-3xl"><img
+                        class="w-12 h-12 shadow-lg transition-all duration-150 transform hover:-translate-y-0.5 border-solid border-1 border-gray-400 rounded-3xl bg-white"><img
                             class="m-auto my-3" src="../images/upstox.svg" alt="Up Stox" /></a>
                     <a href="#" title="Kite"
-                        class="w-12 h-12 shadow-lg transition-all duration-150 transform hover:-translate-y-0.5 border-solid border-1 border-gray-400 rounded-3xl"><img
+                        class="w-12 h-12 shadow-lg transition-all duration-150 transform hover:-translate-y-0.5 border-solid border-1 border-gray-400 rounded-3xl bg-white"><img
                             class="m-auto my-3" src="../images/kite.svg" alt="kite" /></a>
                     <a href="#" title="more"
-                        class="w-12 h-12 shadow-lg transition-all duration-150 transform hover:-translate-y-0.5 border-solid border-1 border-gray-400 rounded-3xl py-3 px-3"><span
+                        class="w-12 h-12 shadow-lg transition-all duration-150 transform hover:-translate-y-0.5 border-solid border-1 border-gray-400 rounded-3xl py-3 px-3 bg-white"><span
                             class="text-blue-500">+7</span></a>
                 </div>
             </div>
+        </div>
+        <div class="Intro__couple-img-container__2Zcuw">
+            <img src="../images/couple.png" class="Intro__couple-image-appear__XfnIY Intro__couple-image__1f3dG " id="couple_img">
+        </div>
+        <div id="intro_container_in2" class="w-full -my-40 transition-all duration-500" style="height: 400px;">
         </div>
         <div id="static_info_second" class="flex gap-2 my-48 w-4/5 m-auto">
             <div class="flex flex-col gap-3 w-1/2">
@@ -377,25 +587,25 @@
                         <div>
                             <div>
                                 <div class="flex">
-                                    <img class="w-full h-full relative transform translate-x-3/4"
+                                    <img class="relative transform translate-x-3/4" style="width: 480px; position:absolute; height: 620px;transform: translateX(290px);"
                                         src="../images/phone.svg" alt="phone">
-                                    <div class="w-full">
+                                    <div>
                                         <video autoplay muted playsinline
-                                            class=" transform h-full w-full -translate-x-11 translate-y-10 rounded-lg"
-                                            src="../videos/invest_new.mp4"></video>
+                                            class="rounded-lg"
+                                            src="../videos/invest_new.mp4" style="height: 570px;position: absolute;transform: translateX(290px);transform: translateY(60px);right: 180px;"></video>
                                     </div>
                                 </div>
                             </div>
-                            <div>
+                            <!-- <div>
                                 <figure>
                                     <img src=" " alt="phone">
                                 </figure>
                                 <div>
                                     <video playsinline src="#"></video>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
-                        <div>
+                        <!-- <div>
                             <div>
                                 <figure class="flex">
                                     <img class="w-96 relative transform translate-x-3/4" src="../images/phone.svg"
@@ -457,7 +667,7 @@
                                     <video playsinline src="#"></video>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -1620,6 +1830,40 @@
                 </div>
             </div>
         </footer>
+
+        <script type="module">
+            import {loginBox,signUpBox,displayLogin} from '../components/auth.js';
+            let loginBtn = document.getElementById('btnLogin');
+            let backContainer = document.getElementById('intro_container');
+            //  login card & signup functionality
+            let login = document.getElementById('loginBox');
+            let signUp = document.getElementById('signUpBox');
+            loginBtn.addEventListener('click',()=>{
+                displayLogin(backContainer);
+            });
+
+            login.innerHTML = loginBox();
+            signUp.innerHTML = signUpBox();
+
+            var userLogged = false;
+
+            let discSmallcase = document.getElementById('btnGoToSmallcase');
+            discSmallcase.addEventListener('click',()=>{
+                displayLogin(backContainer);
+            });
+
+            let broker_acc = document.getElementById('openBroker');
+            broker_acc.addEventListener('click',()=>{
+                signUp.classList.remove('hidden');
+            });
+
+            let closeSign = document.getElementById('closeSignup');
+            closeSign.addEventListener('click',()=>{
+                location.reload();
+            })
+
+        </script>
 </body>
+<script src="index.js"></script>
 
 </html>
