@@ -33,10 +33,6 @@ This project is a part of our build week in coding bootcamp name ***masai school
 
 *<p style="color:purple">As we know that news is an important part of decision making of an investor so, we have implement a beautiful- eye catching UI as well as search option for latest news with the functionality of debouncing.<p>*
 
- <img src="images/blogpage.png">
-
-<hr>
-
  <img src="images/blogWithDeb.png">
 
 #### Discover page
