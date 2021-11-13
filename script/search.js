@@ -71,22 +71,34 @@ new Chart("myChart", {
 let stockData = document.getElementById("stockdata");
 stockData.innerText = "₹"+yValues[yValues.length-1];
 
-// Appending the values
-let dataToDisplay = JSON.parse(localStorage.getItem('cartcases'));
+//appending data using local storage
 
-{
-let {info:{name,shortDescription,imageUrl},stats:{minInvestAmount,ratios:{cagr,riskLabel}},} = dataToDisplay;
+let cart_data = JSON.parse(localStorage.getItem("data_clicked"));
+console.log(cart_data);
 
-let imgEl = document.getElementById('image');
-let nameEl = document.getElementById('name');
-let shortDescEl = document.getElementById('shortDesc');
-let cagrEl = document.getElementById('cagr');
-let volLevEl = document.getElementById('volatilityLev');
-let minInvEl = document.getElementById('min_amount');
-imgEl.setAttribute('src',imageUrl);
-nameEl.textContent = name;
-shortDescEl.textContent = shortDescription;
-cagrEl.textContent = `${(cagr*100).toFixed(2)} %`;
-volLevEl.textContent = riskLabel;
-minInvEl.textContent = "₹ "+minInvestAmount;
+function append_local(){
+
+  cart_data.forEach((data)=>{
+
+    let img = document.getElementById("onlyImg");
+    img.src = data.info.imageUrl;
+
+    let title = document.getElementById("title");
+    title.innerText = data.info.name;
+
+    let cagr = document.getElementById("cagr");
+    let change = data.stats.ratios.cagr;
+
+    change = (change * 100).toFixed(2);
+
+    cagr.innerText = change+"%";
+
+    let min_invest = document.getElementById("min_amount");
+    min_invest.innerText = "₹"+ data.stats.minInvestAmount;
+
+    let description = document.getElementById("description");
+    description.innerText = data.info.shortDescription;
+  })
 }
+
+append_local();

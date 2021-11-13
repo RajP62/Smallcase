@@ -20,14 +20,15 @@
     </style>
 </head>
 <body>
-    <div class="w-4/5 m-auto select-none">
+    <div id="gnavbar"></div>
+    <div class="w-4/5 m-auto select-none mt-5">
         <div>
             <h2 class="text-2xl text-xs font-semibold cursor-pointer">Discover</h2>
         </div>
         <div class="flex text-xs justify-between my-6">
             <div class="flex">
                 <div class="mr-5 cursor-pointer hover:text-blue-600">
-                    <h3>
+                    <h3 onclick="window.location.href = 'discover.html'">
                         Collection
                     </h3>
                 </div>
@@ -43,7 +44,7 @@
                 </div>
             </div>
             <div class="pr-10 h-5 w-2/6">
-                <input id="inp_search" type="text" class="px-10" placeholder="Try All Weather or Infosys">
+                <input id="inp_search" type="text" class="px-10 border-gray-500 border p-2 rounded" placeholder="Try All Weather or Infosys">
                 <div id="inp_sugg_box" class="hidden h-60 sticky border-gray-200 p-2 shadow-lg rounded overflow-scroll bg-white">
                 </div>
             </div>
@@ -179,6 +180,21 @@
         <!-- For appending smallcases -->
         <div id="mainCont" class="w-9/12 select-none"></div>
     </div>
+
+    <div id="footer"></div>
+
+    <script type="module">
+        import navbar from "./gnavbar/gnavbar.js"; 
+   let gnavbar_div = document.getElementById("gnavbar")
+
+   gnavbar_div.innerHTML = navbar(); 
+
+   import footer from "./gnavbar/gfooter.js"; 
+   let footer_div = document.getElementById("footer");
+
+   footer_div.innerHTML = footer(); 
+
+    </script>
 
     <script src="allsmallcase.js"></script>
 </body>

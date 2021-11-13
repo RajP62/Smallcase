@@ -1,5 +1,7 @@
 let mainCont = document.getElementById('mainCont');
-
+if(localStorage.getItem('cartcases')===null){
+    localStorage.setItem('cartcases',JSON.stringify({}));
+}
 let getSmallcases = async ()=>{
     let data = await fetch(`http://localhost:5000/api/allsmallcase`);
     let res = await data.json();
@@ -14,6 +16,11 @@ function appendAllSmallcase(){
        res.forEach(element => {
            let {info:{name,shortDescription,imageUrl},stats:{minInvestAmount,ratios:{cagr,riskLabel}},} = element;
            let div = document.createElement('div');
+           div.addEventListener('click',()=>{
+            let elem = {...element};
+                localStorage.setItem('cartcases',JSON.stringify(elem));
+                window.location.href = 'top_100.html';
+            })
            div.setAttribute('class','grid grid-cols-2 hover:bg-gray-100 cursor-pointer rounded');
            let div1 = document.createElement('div');
            div1.setAttribute('class','flex');
@@ -118,6 +125,11 @@ function appendByAmount(el){
         let {info:{name,shortDescription,imageUrl},stats:{minInvestAmount,ratios:{cagr,riskLabel}},} = element;
         if(minInvestAmount<=el.value){
             let div = document.createElement('div');
+            div.addEventListener('click',()=>{
+                let elem = {...element};
+                localStorage.setItem('cartcases',JSON.stringify(elem));
+                window.location.href = 'top_100.html';
+            })
         div.setAttribute('class','grid grid-cols-2 hover:bg-gray-100 cursor-pointer rounded');
         let div1 = document.createElement('div');
         div1.setAttribute('class','flex');
@@ -214,6 +226,11 @@ function sortByRisk(level){
         let {info:{name,shortDescription,imageUrl},stats:{minInvestAmount,ratios:{cagr,riskLabel}},} = element;
         if(riskLabel===level){
             let div = document.createElement('div');
+            div.addEventListener('click',()=>{
+                let elem = {...element};
+                localStorage.setItem('cartcases',JSON.stringify(elem));
+                window.location.href = 'top_100.html';
+            })
         div.setAttribute('class','grid grid-cols-2 hover:bg-gray-100 cursor-pointer rounded');
         let div1 = document.createElement('div');
         div1.setAttribute('class','flex');
@@ -305,7 +322,12 @@ function sortByInvStr(strategy){
         let {info:{name,shortDescription,imageUrl,investmentStrategy},stats:{minInvestAmount,ratios:{cagr,riskLabel}},} = element;
         investmentStrategy.forEach(({key})=>{
         if(key===strategy){
-            let div = document.createElement('div');
+        let div = document.createElement('div');
+        div.addEventListener('click',()=>{
+            let elem = {...element};
+                localStorage.setItem('cartcases',JSON.stringify(elem));
+                window.location.href = 'top_100.html';
+        })
         div.setAttribute('class','grid grid-cols-2 hover:bg-gray-100 cursor-pointer rounded');
         let div1 = document.createElement('div');
         div1.setAttribute('class','flex');
@@ -417,6 +439,11 @@ let appendSearchRes = search=>{
         let {info:{name,shortDescription,imageUrl}} = element;
         if(startCharMatch(name,search)){
             let div = document.createElement('div');
+            div.addEventListener('click',()=>{
+                let elem = {...element};
+                localStorage.setItem('cartcases',JSON.stringify(elem));
+                window.location.href = 'top_100.html';
+            })
             div.setAttribute('class','flex justify-between items-center text-small mb-1');
             let div2 = document.createElement('div');
             div2.setAttribute('class','text-blue-600 ml-5')

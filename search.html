@@ -4,9 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Details</title>
+    <title>Search Result</title>
     <link rel="stylesheet" href="./build/style.css">
-    <link rel="icon" href="./images/siteLogo.png" sizes="32x32">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 
@@ -18,20 +17,20 @@
     </style>
 </head>
 <body>
-    <div id="gnavbar"></div>
+    
     <div class="mx-20">
 
         <div class="mt-8 flex justify-between p-8 bg-gray-50 rounded">
             <div class="flex">
                 <div class="w-20 mr-6">
-                    <img id="image" class="w-full h-20 rounded" src="https://assets.smallcase.com/images/smallcases/200/SCET_0004.png">
+                    <img class="w-full h-20 rounded" id="onlyImg">
                 </div>
                 <div>
                     <p class="mt-2">
-                        <span id="name" class="text-2xl font-bold">Top 100 Stocks</span>
+                        <span id="title" class="text-2xl font-bold"></span>
                         <span class="ml-2 bg-blue-50 text-xs text-blue-700 px-1">Free Access</span>
                     </p>
-                    <p id="shortDesc" class="mt-2 text-base">India's most powerful companies in one portfolio. Solid stability</p>
+                    <p id="description" class="mt-2 text-base"></p>
 
                 </div>
             </div>
@@ -39,12 +38,12 @@
             <div class="w-3/12 p-4">
                 <p class="text-sm text-gray-500">3Y CAGR</p>
                 <div class="flex justify-between">
-                    <div id="cagr" class="text-xl text-green-600">21.26%</div>
+                    <div id="cagr" class="text-xl text-green-600"></div>
                     <div class="border border-gray-300 rounded px-2 flex">
                         <div class="w-6 h-6 mr-1">
                             <img src="./images/risk_mid.jpg">
                         </div>
-                        <div id="volatilityLev" class="text-gray-600">
+                        <div class="text-gray-600">
                             Med. volatility
                         </div>
                     </div>
@@ -93,7 +92,7 @@
             <div class="absolute top-60 right-24 w-1/5">
                 <p class="text-sm text-gray-500">Minimun Investment Amount</p>
                 <div class="flex">
-                    <div id="min_amount" class="text-xl text-gray-800 mt-1 font-medium">₹1,236</div>
+                    <div id="min_amount" class="text-xl text-gray-800 mt-1 font-medium"></div>
                     <div class="text-gray-500 mt-3">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
                             <path fill-rule="evenodd" d="M4 2a1 1 0 011 1v2.101a7.002 7.002 0 0111.601 2.566 1 1 0 11-1.885.666A5.002 5.002 0 005.999 7H9a1 1 0 010 2H4a1 1 0 01-1-1V3a1 1 0 011-1zm.008 9.057a1 1 0 011.276.61A5.002 5.002 0 0014.001 13H11a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0v-2.101a7.002 7.002 0 01-11.601-2.566 1 1 0 01.61-1.276z" clip-rule="evenodd" />
@@ -103,7 +102,7 @@
                 <p class="text-sm text-gray-600 mt-6">Get access for free forever</p>
                 <p class="font-medium text-sm text-blue-600 mt-1">See more benifits</p>
                 <div class="mt-8">
-                    <a href="invest.html" class="rounded px-20 py-3 bg-green-400 font-medium text-white">Invest Now</a>
+                    <a href="invest.html" class="cursor-pointer select-none rounded px-20 py-3 bg-green-400 font-medium text-white">Invest Now</a>
                 </div>
                 <div class="mt-10">
                     <a href="#" class="rounded text-blue-600 border border-green-200 font-medium px-16 py-3">Add to Watchlist</a>
@@ -176,31 +175,8 @@
         </div>
 
     </div>
-    <div id="footer"></div>
-
-    <script type="module">
-        import navbar from "./gnavbar/gnavbar.js"; 
-   let gnavbar_div = document.getElementById("gnavbar")
-
-   gnavbar_div.innerHTML = navbar(); 
-
-   import footer from "./gnavbar/gfooter.js"; 
-   let footer_div = document.getElementById("footer")
-
-   footer_div.innerHTML = footer(); 
 
 
-async function appendnifty(){
-    let data = await fetch(`https://www.nseindia.com/api/chart-databyindex?index=NIFTY%20FINANCIAL%20SERVICES&indices=true&preopen=true`)
-    let {closePrice} = await data.json();
-    // console.log(res)
-    document.querySelector('.nifty').textContent = closePrice;
-
-}
-
-appendnifty();
-    </script>
-
-    <script src="script/top_100.js"></script>
+    <script src="script/search.js"></script>
 </body>
 </html>

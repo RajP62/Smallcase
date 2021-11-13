@@ -19,4 +19,8 @@ function send_data(){
     detail_cart.push(data);
 
     localStorage.setItem("details", JSON.stringify(detail_cart));
+
+    window.location.href = "congrats.html";
 }
+
+
