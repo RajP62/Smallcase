@@ -27,7 +27,7 @@ function startSlideshow() {
         container.style.backgroundImage = `url(${back[counter]})`;
         counter++;
 
-    }, 4000);
+    }, 5000);
 }
 
 startSlideshow();
