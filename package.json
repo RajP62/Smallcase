@@ -4,7 +4,8 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "css:build": "tailwind build ./src/style.css -o ./build/style.css"
+    "css:build": "tailwind build ./tailwindconf/style.css -o ./src/public/css/style.css",
+    "server": "nodemon -e ejs,html,js src/server.js"
   },
   "repository": {
     "type": "git",
@@ -17,7 +18,11 @@
   },
   "homepage": "https://github.com/rajesh4210/Unit-3-Project-smallcase#readme",
   "dependencies": {
+    "dotenv": "^10.0.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
     "json-server": "^0.17.0",
+    "mongoose": "^6.1.1",
     "tailwindcss": "^2.2.19"
   }
 }
