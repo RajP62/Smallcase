@@ -3,7 +3,7 @@ const {Schema, model} = require("mongoose");
 
 const smallcaseSchema = new Schema({
     id: {type:Number, required:true},
-    info: {creator: {type:String,required:true}, owner:{name:{type:String,required:true},userid:{type:Schema.Types.ObjectId,ref:"user",required:true}},
+    info: {creator: {type:String,required:true}, owner:{name:{type:String,required:true},userId:{type:Schema.Types.ObjectId,ref:"users",required:true}},
     tags: [{type:Schema.Types.ObjectId, ref:"tags"}],
     tier:Schema.Types.Mixed,
     type: {type:Schema.Types.ObjectId,ref:"types", required:true},
@@ -21,7 +21,7 @@ const smallcaseSchema = new Schema({
     lastRebalanced: String,
     slug: String,
     micrositeUrl: String,
-    investmentStrategy: [{key: {type:Schema.Types.ObjectId,ref:"investmentstrategy",required: true}, displayName: {type:String, required:true}}],
+    investmentStrategy: [{type:Schema.Types.ObjectId,ref:"investmentstrategies", required:true}]},
     flags:{active:Boolean,locked:Boolean,private:Boolean, historicalData:Boolean,preferredSipType:String,blocked:Boolean},
     stats:{returns:{daily:Number,weekly:Number,monthly:Number,quarterly:Number,halfyearly:Number,yearly:Number,threeYear:Number,fiveYear:Number,sinceInception:Number,sinceLaunch:Number},
     indexValue: Number,
@@ -63,7 +63,6 @@ const smallcaseSchema = new Schema({
             }
         }
     }
-}
-});
+},{versionKey:false, timestamps: true});
 
 module.exports = model("smallcase",smallcaseSchema);

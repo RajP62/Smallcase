@@ -3,6 +3,8 @@ const {Schema, model} = require("mongoose");
 const userSchema = new Schema({
     email: {type:String, required:true},
     password: {type:String, required:true},
+    partner:{type:String, required:true},
+    smallcase:[{type:Schema.Types.ObjectId, ref:"smallcases", required:true}]
 },
 {
     versionKey: false,
