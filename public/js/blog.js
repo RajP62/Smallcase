@@ -1,6 +1,3 @@
-import {loginBox,signUpBox,displayLogin} from './components/auth.js';
-
-
 async function getTrendingData() {
     try {
         let body = await fetch(`https://newsapi.org/v2/top-headlines?country=in&category=business&apiKey=0f2fb6533d144f24a288ed58d4ef8244`);
@@ -296,15 +293,18 @@ async function getSearchData(search){
     
 }
 
-let backContainer = document.querySelector('.mainContentDiv');
-//  login card & signup functionality
-let login = document.getElementById('loginBox');
-let signUp = document.getElementById('signUpBox');
-navBtn.addEventListener('click',()=>{
-    displayLogin(backContainer);
-});
+// let backContainer = document.querySelector('.mainContentDiv');
+// //  login card & signup functionality
+// let login = document.getElementById('loginBox');
+// let signUp = document.getElementById('signUpBox');
+// navBtn.addEventListener('click',()=>{
+//     displayLogin(backContainer);
+// });
 
-login.innerHTML = loginBox();
-signUp.innerHTML = signUpBox();
+// login.innerHTML = loginBox();
+// signUp.innerHTML = signUpBox();
 
+
+
+// module.exports = blogJs;
 

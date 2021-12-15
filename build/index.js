@@ -23,6 +23,7 @@ function startSlideshow() {
         counter++;
     }, 6000);
 }
+
 startSlideshow();
 // setTimeout(() => {
    
