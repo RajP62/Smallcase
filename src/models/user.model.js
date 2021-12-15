@@ -9,7 +9,7 @@ const userSchema = new Schema({
 {
     versionKey: false,
     timestamps:true,
-})
+});
 
 userSchema.pre("save", function (next) {
     // create and update

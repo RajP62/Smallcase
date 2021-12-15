@@ -3,7 +3,7 @@ const {Schema, model} = require("mongoose");
 
 const smallcaseSchema = new Schema({
     id: {type:Number, required:true},
-    info: {creator: {type:String,required:true}, owner:{name:{type:String,required:true},userId:{type:Schema.Types.ObjectId,ref:"users",required:true}},
+    info: {creator: {type:String}, owner:{name:{type:String}},
     tags: [{type:Schema.Types.ObjectId, ref:"tags"}],
     tier:Schema.Types.Mixed,
     type: {type:Schema.Types.ObjectId,ref:"types", required:true},
