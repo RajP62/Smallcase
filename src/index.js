@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const path = require("path");
-const smallcaseController = require("./controller/smallcase.controller");
+const smallcaseController = require("./controllers/smallcase.controller");
 const blogController = require('./controllers/blog.controller');
 
 const { register, login } = require("./controllers/auth.controller");
