@@ -1,8 +1,11 @@
 const express = require("express");
 const app = express();
 const path = require("path");
-const smallcaseController = require("./controller/smallcase.controller");
+const smallcaseController = require("./controllers/smallcase.controller");
 const blogController = require('./controllers/blog.controller');
+const investmentStrategyController = require("./controllers/investmentstrategy.controller");
+const tagController = require("./controllers/tag.controller");
+const typeController = require("./controllers/type.controller");
 
 const { register, login } = require("./controllers/auth.controller");
 
@@ -17,8 +20,10 @@ app.use("/blog", blogController)
 
 app.post("/register",register);
 
-app.use("/blog",blogController);
 app.use("/smallcase",smallcaseController)
 app.post("/login", login);
+app.use("/investmentStrategy",investmentStrategyController);
+app.use("/tags", tagController);
+app.use("/types", typeController);
 
 module.exports = app;

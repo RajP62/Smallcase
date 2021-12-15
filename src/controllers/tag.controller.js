@@ -1,10 +1,12 @@
-const express = require("express");
+const express = require('express');
+
 const router = express.Router();
-const Smallcase = require("../models/smallcase.model");
+
+const Tag = require("../models/tag.model");
 
 router.get("", async(req,res)=>{
     try {
-        const operation =await Smallcase.find().lean().exec();
+        const operation =await Tag.find().lean().exec();
         return res.status(200).send(operation);
     } catch (e) {
         res.status(500).json({message:"Internal server error"});
@@ -13,7 +15,7 @@ router.get("", async(req,res)=>{
 
 router.post("", async(req,res)=>{
     try {
-        const operation = await Smallcase.create(req.body);
+        const operation = await Tag.create(req.body);
         return res.status(200).send(operation);
     } catch (e) {
         return res.status(500).json({message: e.message});
@@ -22,7 +24,7 @@ router.post("", async(req,res)=>{
 
 router.patch("/:id",async(req,res)=>{
     try {
-        const operation =await Smallcase.findByIdAndUpdate(req.params.id,req.body,{new:true});
+        const operation =await Tag.findByIdAndUpdate(req.params.id,req.body,{new:true});
         return res.status(200).send(operation);
         } catch (e) {
         res.status(500).json({message: "Internal server error"});
@@ -32,7 +34,7 @@ router.patch("/:id",async(req,res)=>{
 
 router.delete("/:id",async(req,res)=>{
     try {
-        const operation = await Smallcase.findOneAndDelete(req.params.id);
+        const operation = await Tag.findOneAndDelete(req.params.id);
         return res.status(200).send(operation);
 
     } catch (e) {
@@ -40,5 +42,4 @@ router.delete("/:id",async(req,res)=>{
     }
 });
 
-
-module.exports = router;
+module.exports = router

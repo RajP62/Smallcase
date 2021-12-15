@@ -3,7 +3,9 @@ const {Schema, model} = require("mongoose");
 const userSchema = new Schema({
     email: {type:String, required:true},
     password: {type:String, required:true},
+    partner: {type:String, required:true}
 },
+
 {
     versionKey: false,
     timestamps:true,
@@ -27,3 +29,5 @@ userSchema.methods.checkpassword = function (password) {
         })
     })
 }
+
+module.exports = model("user",userSchema);
