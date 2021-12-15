@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const Smallcase = require("../model/smallcase.model");
+const Smallcase = require("../models/smallcase.model");
 
 router.post("", async(req,res)=>{
     try {
