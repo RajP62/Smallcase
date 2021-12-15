@@ -1,6 +1,7 @@
 const { Schema, model } = require("mongoose");
 
 const userSchema = new Schema({
+<<<<<<< HEAD
     email: { type: String, required: true, unique: true },
     password: { type: String, required: true },
     partner: { type: String, required: true },
@@ -9,6 +10,17 @@ const userSchema = new Schema({
         versionKey: false,
         timestamps: true,
     })
+=======
+    email: {type:String, required:true},
+    password: {type:String, required:true},
+    partner:{type:String, required:true},
+    smallcase:[{type:Schema.Types.ObjectId, ref:"smallcases", required:true}]
+},
+{
+    versionKey: false,
+    timestamps:true,
+});
+>>>>>>> 7431d0a122a24fb60e227b48f3b6e5314afb7073
 
 userSchema.pre("save", function (next) {
     // create and update
