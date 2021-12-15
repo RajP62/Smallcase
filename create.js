@@ -1,4 +1,4 @@
-let timerId;
+    let timerId;
 function texttranform(){
     let pre=document.getElementById("performance");
     pre.style.textDecoration="none";
