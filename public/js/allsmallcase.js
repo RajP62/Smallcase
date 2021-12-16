@@ -3,9 +3,8 @@ if(localStorage.getItem('cartcases')===null){
     localStorage.setItem('cartcases',JSON.stringify({}));
 }
 let getSmallcases = async ()=>{
-    let data = await fetch(`http://localhost:5000/api/allsmallcase`);
+    let data = await fetch(`http://localhost:2000/smallcases/all`);
     let res = await data.json();
-    console.log(res)
     return res;
 }
 var allSmallcaseData;

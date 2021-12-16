@@ -4,17 +4,26 @@ const Smallcase = require("../models/smallcase.model");
 
 router.get("", async(req,res)=>{
     try {
-        const operation =await Smallcase.find().lean().exec();
-        return res.status(200).send(operation);
+        const operation =await Smallcase.find().populate({path:"info",populate:{path:"type"}}).lean().exec();   
+        return res.render("allsmallcase",{data:operation});
     } catch (e) {
         res.status(500).json({message:"Internal server error"});
     }
 });
 
+router.get("/all", async(req,res)=>{
+    try {
+        const operation = await Smallcase.find().populate({path:"info",populate: "type"}).lean().exec(); 
+        return res.status(200).send(operation);
+    } catch (e) {
+        res.status(500).json({message: e.message});
+    }
+})
+
 router.post("", async(req,res)=>{
     try {
         const operation =await Smallcase.create(req.body);
-        res.status(200).send(operation);
+        return res.status(200).send(operation);
         } catch (e) {
         res.status(500).json({message: e});
     }
