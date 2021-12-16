@@ -5,8 +5,8 @@
   "main": "allsmallcase.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "css:build":"tailwind build ./tailwindconf/style.css -o ./src/public/css/style.css",
-    "server": "nodemon -e html,ejs,js ./src/server.js"
+    "css:build": "tailwind build ./tailwindconf/style.css -o ./public/css/style.css",
+    "server": "nodemon src/server"
   },
   "repository": {
     "type": "git",

@@ -8,6 +8,9 @@ const tagController = require("./controllers/tag.controller");
 const typeController = require('./controllers/type.controller');
 const stockController = require("./controllers/stock.controller");
 const discoverController = require("./controllers/discover.controller");
+const loginController = require("./controllers/login.controller");
+const userController = require("./controllers/user.controller");
+const homeController = require("./controllers/home.controller")
 
 const { register, login } = require("./controllers/auth.controller");
 
@@ -20,6 +23,7 @@ app.use(express.static('public'));
 
 app.use("/blog", blogController);
 
+app.use("/users",userController)
 app.post("/register",register);
 app.use("/smallcases",smallcaseController);
 app.use("/investmentStrategies",investmentStrategyController);
@@ -28,5 +32,9 @@ app.use("/discover",discoverController);
 app.use("/types", typeController);
 app.use("/stocks", stockController);
 app.post("/login", login);
+
+app.use("/home", homeController)
+
+app.use("/login",loginController)
 
 module.exports = app;
