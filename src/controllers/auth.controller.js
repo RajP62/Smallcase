@@ -59,7 +59,7 @@ const login = async (req, res) => {
         // return the user and the token
         // return res.status(201).json({user, token})
 
-        return res.status(201).json({ user, token })
+        return res.status(201).render("discover",{ user, token })
 
     } catch (e) {
         return res.status(500).json({ status: "failed", message: e.message });

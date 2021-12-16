@@ -1830,40 +1830,6 @@
                 </div>
             </div>
         </footer>
-
-        <script type="module">
-            import {loginBox,signUpBox,displayLogin} from '../components/auth.js';
-            let loginBtn = document.getElementById('btnLogin');
-            let backContainer = document.getElementById('intro_container');
-            //  login card & signup functionality
-            let login = document.getElementById('loginBox');
-            let signUp = document.getElementById('signUpBox');
-            loginBtn.addEventListener('click',()=>{
-                displayLogin(backContainer);
-            });
-
-            login.innerHTML = loginBox();
-            signUp.innerHTML = signUpBox();
-
-            var userLogged = false;
-
-            let discSmallcase = document.getElementById('btnGoToSmallcase');
-            discSmallcase.addEventListener('click',()=>{
-                displayLogin(backContainer);
-            });
-
-            let broker_acc = document.getElementById('openBroker');
-            broker_acc.addEventListener('click',()=>{
-                signUp.classList.remove('hidden');
-            });
-
-            let closeSign = document.getElementById('closeSignup');
-            closeSign.addEventListener('click',()=>{
-                location.reload();
-            })
-
-        </script>
 </body>
-<script src="js/index.js"></script>
-
 </html>
+<script src="js/index.js"></script>

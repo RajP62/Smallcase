@@ -5,7 +5,6 @@ btn.addEventListener('click',() => {
 
 
 function checkemail() {
-    let email = document.getElementById("email").value;
 
     if(!email) alert("Enter a valid email");
     else {
@@ -17,33 +16,26 @@ function checkemail() {
             checkemail();
         })
 
-        // if(localStorage.getItem('login')===null){
-        //     localStorage.setItem('login',JSON.stringify({}));
-        // }
-
-        // login = {
-        //     email
-        // }
-
-        // localStorage.setItem("login",JSON.stringify(login))
-
         btn.addEventListener('click',() => {
-            checkpassword(email);
+            checkpassword();
         })
     }
 }
 
-async function checkpassword(email) {
+async function checkpassword() {
+
+    let email = document.getElementById("email").value;
+
     let password = document.getElementById("password").value;
 
     if(!password) alert("Enter a valid email and password");
     else {
-        // let partner = JSON.parse(localStorage.getItem("partner"))
+        let partner = JSON.parse(localStorage.getItem("partner"))
 
         let login = {
             email,
             password,
-            // partner
+            partner
         }
         console.log(login)
 
@@ -58,9 +50,12 @@ async function checkpassword(email) {
                 body: JSON.stringify(login),
                 });
                 
-            // console.log(response)
-            const data = await response.json()
-            window.location.href = "http://localhost:2000/discover"            
+            // console.log(response.status)
+            if(response.status == 400) {
+               return alert("Invalid email and password");
+            }
+
+            return window.location.href = "http://localhost:2000/discover"            
 
         } catch (e) {
             alert("Invalid email address and password")

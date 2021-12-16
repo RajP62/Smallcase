@@ -25,30 +25,20 @@ function startSlideshow() {
 }
 
 startSlideshow();
-// setTimeout(() => {
-   
-//     var outer = document.createElement('div');
-//     outer.classList.add("Intro__card__1VHo2","w-80");
-//     var justouter = document.createElement('div');
-//     justouter.classList.add("w-full","SmallcaseCard__container__2vRs","p-5","border-2","border-solid","rounded-md","SmallcaseCard__card-appear__3pHS7");
-//     var intervalarrowbox = setInterval(() => {
-//         justouter.classList.toggle("SmallcaseCard__card-disappear__3pHS7")
-//     },500);
-//     // intervalarrowbox;
-//     var arrow = document.createElement('div');
-//     arrow.classList.add("w-full","SmallcaseCard__arrow-right__34Mgt", "absolute");
-// },1000)
-var arrow_link = ["#","#"];
-var images_arrow = ["../images/SCAW_0001.png","../images/SCNM_0007.png"];
-var arrow_head = ["All Weather Investing","Brand Value"];
-var arrow_content = ["Invest in India’s growing love for branded products","Build a foundation with a portfolio of equity, gold & fixed income ETFs"];
-var arrow_value = ["6Y CAGR","3Y CAGR"];
-var arrow_share = ["20.29 %","13.72 %"];
+
+
+var arrow_link = ["#", "#"];
+var images_arrow = ["../images/SCAW_0001.png", "../images/SCNM_0007.png"];
+var arrow_head = ["All Weather Investing", "Brand Value"];
+var arrow_content = ["Invest in India’s growing love for branded products", "Build a foundation with a portfolio of equity, gold & fixed income ETFs"];
+var arrow_value = ["6Y CAGR", "3Y CAGR"];
+var arrow_share = ["20.29 %", "13.72 %"];
 var couple = [
     "../images/couple.png",
     "../images/couple_2.png"
 ]
-// ../images/SCAW_0001.png
+
+
 var coupleImage = document.getElementById("couple_img");
 var arrow_box = document.getElementById("innerarrow_box");
 var arrowLink = document.getElementById("arrowbox_link");
@@ -58,14 +48,15 @@ var arrowContent = document.getElementById("arrowbox_after_head");
 var arrowValue = document.getElementById("arrowbox_value");
 var arrowboxShare = document.getElementById("arrowbox_share");
 var counter_arrow = 0;
+
 setInterval(() => {
     coupleImage.classList.remove("hidden")
-    
+
     arrow_box.classList.remove("hidden");
-    
+
     coupleImage.src = `${couple[counter_arrow]}`;
     arrowLink.href = `${arrow_link[counter_arrow]}`;
-    
+
     arrowImage.src = `${images_arrow[counter_arrow]}`;
     arrowHead.innerText = `${arrow_head[counter_arrow]}`;
     arrowContent.innerText = `${arrow_content[counter_arrow]}`;
@@ -74,35 +65,116 @@ setInterval(() => {
     setTimeout(() => {
         coupleImage.classList.add("hidden")
         arrow_box.classList.add("hidden");
-    },5000)
+    }, 5000)
     counter_arrow++;
-    if(counter_arrow == arrow_share.length) {
+    if (counter_arrow == arrow_share.length) {
         counter_arrow = 0;
     }
-},6000);
+}, 6000);
+
 setInterval(() => {
     arrow_box.classList.toggle("SmallcaseCard__card-disappear__3pHS7");
-},6500);
+}, 6500);
 
 
-{/* <script type="module">
-            import {loginBox,signUpBox,displayLogin} from '../components/auth.js';
-            let loginBtn = document.getElementById('btnLogin');
-            let backContainer = document.getElementById('intro_container');
-            //  login card & signup functionality
-            let login = document.getElementById('loginBox');
-            let signUp = document.getElementById('signUpBox');
-            loginBtn.addEventListener('click',()=>{
-                displayLogin(backContainer);
-            });
 
-            login.innerHTML = loginBox();
-            signUp.innerHTML = signUpBox();
+let loginBox = () => {
+    return `<div>
+        <span class="float-right closeLoginCard"><svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-gray-600 cursor-pointer mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg></span>
+        <h1 class="font-semibold m-3 text-xl">Login with your broker</h1>
+        <p class="text-gray-500 m-3 text-sm">Choose a broker to start investing in smallcase seamlessly</p>
+        <div id="loginBoxCont" class="broking_part m-3 grid grid-cols-3">
+            <div partner="Groww" class="logByPartners grid grid-rows-2 p-3 hover:bg-gray-50 items-center justify-center border border-gray-100 rounded cursor-pointer">
+                    <img src="images/groww.svg" class="w-6 block m-auto" alt="">
+                    <p class="text-sm hover:text-blue-600 cursor-pointer font-semibold">Groww</p>
+            </div>
+            <div partner="Alice Blue" class="logByPartners grid grid-rows-2 p-3 hover:bg-gray-50 items-center justify-center border border-gray-100 rounded cursor-pointer">
+                    <img src="images/aliceblue.svg" class="w-6 block m-auto" alt="">
+                    <p class="text-sm hover:text-blue-600 cursor-pointer font-semibold">Alice Blue</p>
+            </div>
+            <div partner="5Paisa" class="logByPartners grid grid-rows-2 p-3 hover:bg-gray-50 items-center justify-center border border-gray-100 rounded cursor-pointer">
+                    <img src="images/fivepaisa.svg" class="w-4 block m-auto" alt="">
+                    <p class="text-sm hover:text-blue-600 cursor-pointer font-semibold">5Paisa</p>
+            </div>
+            <div partner="Angel One" class="logByPartners grid grid-rows-2 p-3 hover:bg-gray-50 items-center justify-center border border-gray-100 rounded cursor-pointer cursor-pointer">
+                    <img src="images/angelbroking.svg" class="w-6 block m-auto" alt="">
+                    <p class="text-sm hover:text-blue-600 cursor-pointer font-semibold">Angel One</p>
+            </div>
+            <div partner="HDFC Sec" class="logByPartners grid grid-rows-2 p-3 hover:bg-gray-50 items-center justify-center border border-gray-100 rounded cursor-pointer">
+                    <img src="images/hdfc.svg" class="w-6 block m-auto" alt="">
+                    <p class="text-sm hover:text-blue-600 cursor-pointer font-semibold">HDFC Sec</p>
+            </div>
+            <div partner="Kotak Sec" class="logByPartners grid grid-rows-2 p-3 hover:bg-gray-50 items-center justify-center border border-gray-100 rounded cursor-pointer">
+                    <img src="images/kotak.svg" class="w-6 block m-auto" alt="">
+                    <p class="text-sm hover:text-blue-600 cursor-pointer font-semibold">Kotak Sec</p>
+            </div>
+            <div partner="Upstox" class="logByPartners grid grid-rows-2 p-3 hover:bg-gray-50 items-center justify-center border border-gray-100 rounded cursor-pointer">
+                    <img src="images/upstox.svg" class="w-6 block m-auto" alt="">
+                    <p class="text-sm hover:text-blue-600 cursor-pointer font-semibold">Upstox</p>
+            </div>
+            <div partner="Zerodha" class="logByPartners grid grid-rows-2 p-3 hover:bg-gray-50 items-center justify-center border border-gray-100 rounded cursor-pointer">
+                    <img src="images/kite.svg" class="w-6 block m-auto" alt="">
+                    <p class="text-sm hover:text-blue-600 cursor-pointer font-semibold">Zerodha</p>
+            </div>
+            <div partner="Nothing" class="logByPartners flex p-3 hover:bg-gray-50 items-center justify-center border border-gray-100 rounded cursor-pointer">
+                    <p class="text-sm text-blue-600 cursor-pointer font-semibold">+5 More</p>
+            </div>
+        </div>
+        <p class="text-sm m-3 text-center text-gray-600">————Don't have a broker account?———</p>
+        <button id="btnGoTo" class="border border-blue-600 text-sm p-4 block m-auto w-4/5 text-blue-600 font-semibold mb-5 rounded">Open an account online</button>
+    </div>
 
-            var userLogged = false;
+    <!-- Login box ends here -->`;
+}
 
-            let discSmallcase = document.getElementById('btnGoToSmallcase');
-            discSmallcase.addEventListener('click',()=>{
-                displayLogin(backContainer);
-            })
-        </script> */}
+
+let displayLogin = backCont => {
+    let loginBox = document.querySelector('.loginBox');
+    let allLoginParts = document.querySelectorAll('.logByPartners');
+    allLoginParts.forEach(element => {
+        element.addEventListener('click', () => {
+
+            let partner = element.getAttribute("partner");
+
+            if(localStorage.getItem("partner") == null) {
+                localStorage.setItem('partner',JSON.stringify(partner));
+            }
+            localStorage.setItem('partner',JSON.stringify(partner));
+
+            window.location.href = "http://localhost:2000/login"
+        })
+    })
+    if (loginBox.classList.contains('hidden')) {
+        loginBox.classList.remove('hidden');
+        backCont.setAttribute('style', 'filter: blur(5px)');
+    }
+    document.querySelector('.closeLoginCard').addEventListener('click', () => {
+        loginBox.classList.add('hidden');
+        backCont.removeAttribute('style', 'filter');
+        location.reload();
+    });
+}
+
+
+let loginBtn = document.getElementById('btnLogin');
+let backContainer = document.getElementById('intro_container');
+//  login card & signup functionality
+let login = document.getElementById('loginBox');
+let signUp = document.getElementById('signUpBox');
+loginBtn.addEventListener('click', () => {
+    displayLogin(backContainer);
+});
+
+login.innerHTML = loginBox();
+
+var userLogged = false;
+
+let discSmallcase = document.getElementById('btnGoToSmallcase');
+
+discSmallcase.addEventListener('click', () => {
+    displayLogin(backContainer);
+});
+
+

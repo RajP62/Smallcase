@@ -1,4 +1,4 @@
-let loginBox = ()=>{
+let loginBox = () => {
     return `<div>
         <span class="float-right closeLoginCard"><svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-gray-600 cursor-pointer mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
@@ -49,7 +49,7 @@ let loginBox = ()=>{
     <!-- Login box ends here -->`;
 }
 
-let signUpBox = ()=>{
+let signUpBox = () => {
     return `<div>
     <span id="closeSignup" class="float-right closeSignupBox"><svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-gray-600 cursor-pointer mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
@@ -83,56 +83,56 @@ let signUpBox = ()=>{
 <!-- Signup box ends here -->`;
 }
 
-let displayLogin = backCont=> {
+let displayLogin = backCont => {
     let loginBox = document.querySelector('.loginBox');
     let signupBox = document.querySelector('.signupBox');
     let btnSignUp = document.getElementById('btnSignUp');
     let allLoginParts = document.querySelectorAll('.logByPartners');
-    allLoginParts.forEach(element=>{
-        element.addEventListener('click',appendLoginOpt);
+    allLoginParts.forEach(element => {
+        element.addEventListener('click', appendLoginOpt);
     })
-    if(loginBox.classList.contains('hidden')){
+    if (loginBox.classList.contains('hidden')) {
         loginBox.classList.remove('hidden');
-        backCont.setAttribute('style','filter: blur(5px)');
+        backCont.setAttribute('style', 'filter: blur(5px)');
     }
-    btnSignUp.onclick = event=>{
+    btnSignUp.onclick = event => {
         event.preventDefault();
         let inp_name = document.getElementById('inp_name_signup').value;
         let inp_email = document.getElementById('inp_email_signup').value;
-        console.log(typeof(inp_email.includes('@gmail.com')))
+        console.log(typeof (inp_email.includes('@gmail.com')))
         let inp_pass = document.getElementById('inp_pass_signup').value;
-        if(inp_name.length>2 && inp_email.includes('@gmail.com') && inp_pass.length>4){
-            registerUser(inp_name,inp_email,inp_pass);
+        if (inp_name.length > 2 && inp_email.includes('@gmail.com') && inp_pass.length > 4) {
+            registerUser(inp_name, inp_email, inp_pass);
         }
-        else if(inp_name.length<=3){
+        else if (inp_name.length <= 3) {
             alert('Username cannot be less than 3 digits');
         }
-        else if(!inp_email.contains('@gmail.com')){
+        else if (!inp_email.contains('@gmail.com')) {
             alert('Valid email should contain @gmail.com');
         }
-        else if(inp_pass.length<5){
+        else if (inp_pass.length < 5) {
             alert('Password minimum should be of 5 digits')
         }
     }
-    document.getElementById('btnGoTo').addEventListener('click',()=>{
+    document.getElementById('btnGoTo').addEventListener('click', () => {
         loginBox.classList.add('hidden');
         signupBox.classList.remove('hidden');
     });
-    document.querySelector('.closeSignupBox').addEventListener('click',()=>{
-        if(!signupBox.classList.contains('hidden')){
+    document.querySelector('.closeSignupBox').addEventListener('click', () => {
+        if (!signupBox.classList.contains('hidden')) {
             signupBox.classList.add('hidden');
-            backCont.removeAttribute('style','filter');
+            backCont.removeAttribute('style', 'filter');
         }
         location.reload();
     });
-    document.querySelector('.closeLoginCard').addEventListener('click',()=>{
+    document.querySelector('.closeLoginCard').addEventListener('click', () => {
         loginBox.classList.add('hidden');
-        backCont.removeAttribute('style','filter');
+        backCont.removeAttribute('style', 'filter');
         location.reload();
     });
 
     // func for reg user
-    async function registerUser(name,email,pass){
+    async function registerUser(name, email, pass) {
         let userDet = {
             name,
             email,
@@ -140,55 +140,55 @@ let displayLogin = backCont=> {
         }
         userDet = JSON.stringify(userDet);
 
-        try{
-            fetch(`http://localhost:5000/api/userAuth`,{
-                method:'POST',
-                body:userDet,
-                headers:{
-                    'Content-Type':'application/json'
+        try {
+            fetch(`http://localhost:5000/api/userAuth`, {
+                method: 'POST',
+                body: userDet,
+                headers: {
+                    'Content-Type': 'application/json'
                 }
-            }).then(()=>{
+            }).then(() => {
                 window.location.href = "../discover.html";
             })
         }
-        catch(err){
+        catch (err) {
             console.log(err);
         }
     }
 
-    async function loginUser(mail,Password){
-        try{
+    async function loginUser(mail, Password) {
+        try {
             let data = await fetch(`http://localhost:5000/api/userAuth`);
             let res = await data.json();
             var flagUserExist = false;
             res.forEach(element => {
-                let {email,pass} = element;
-                if(email===mail && pass===Password){
+                let { email, pass } = element;
+                if (email === mail && pass === Password) {
                     window.location.href = "../discover.html";
                     flagUserExist = true;
                 }
             });
-            if(!flagUserExist){
+            if (!flagUserExist) {
                 alert('Invalid credentials');
             }
         }
 
-        catch(err){
+        catch (err) {
             console.log(err);
         }
     }
 
-    function appendLoginOpt(){
+    function appendLoginOpt() {
         let LoginCont = document.getElementById('loginBoxCont');
         LoginCont.innerHTML = null;
         let div = document.createElement('div');
         let head = document.createElement('h1');
-        head.classList.add('font-semibold','text-xl','text-blue-600','my-3');
+        head.classList.add('font-semibold', 'text-xl', 'text-blue-600', 'my-3');
         head.textContent = "Use your registered email and password";
-        div.setAttribute('class','m-3');
-        LoginCont.classList.remove('grid-cols-3','grid');
+        div.setAttribute('class', 'm-3');
+        LoginCont.classList.remove('grid-cols-3', 'grid');
         let inp_email_log = document.createElement('input');
-        inp_email_log.setAttribute('class','inpInLogin border border:gray-600 py-3 px-2 m-2 rounded text-sm');
+        inp_email_log.setAttribute('class', 'inpInLogin border border:gray-600 py-3 px-2 m-2 rounded text-sm');
         inp_email_log.type = "email";
         inp_email_log.placeholder = "Email";
         inp_email_log.id = "emailData_log"
@@ -196,28 +196,28 @@ let displayLogin = backCont=> {
         inp_pass_log.type = "password";
         inp_pass_log.placeholder = "Password";
         inp_pass_log.id = "passData_log"
-        inp_pass_log.setAttribute('class','inpInLogin border border:gray-600 py-3 px-2 m-2 rounded text-sm');
+        inp_pass_log.setAttribute('class', 'inpInLogin border border:gray-600 py-3 px-2 m-2 rounded text-sm');
         let btnSubmit = document.createElement('button');
         // btnSubmit.id = "btnLoginUser";
-        btnSubmit.addEventListener('click',()=>{
+        btnSubmit.addEventListener('click', () => {
             let inpEmail = document.getElementById('emailData_log').value;
             let inpPass = document.getElementById('passData_log').value;
-            if(inpEmail.includes('@gmail.com') && inpPass.length>4){
-                loginUser(inpEmail,inpPass);
+            if (inpEmail.includes('@gmail.com') && inpPass.length > 4) {
+                loginUser(inpEmail, inpPass);
             }
-            else if(!inpEmail.includes('@gmail.com')){
+            else if (!inpEmail.includes('@gmail.com')) {
                 alert('Email should contain @gmail.com');
             }
-            else if(inpPass.length<5){
+            else if (inpPass.length < 5) {
                 alert('Password should be of minimum 5 characters');
             }
         })
-        btnSubmit.setAttribute('class','bg-blue-600 mb-2 rounded text-white px-2 p-2 block m-auto text-xl font-bold');
+        btnSubmit.setAttribute('class', 'bg-blue-600 mb-2 rounded text-white px-2 p-2 block m-auto text-xl font-bold');
         btnSubmit.innerHTML = "Submit";
         let hr1 = document.createElement('hr');
-        div.append(head,inp_email_log,inp_pass_log,btnSubmit,hr1);
+        div.append(head, inp_email_log, inp_pass_log, btnSubmit, hr1);
         LoginCont.append(div);
     }
-}  
+}
 
-export {loginBox,signUpBox,displayLogin};
+module.exports = { loginBox, signUpBox, displayLogin };
