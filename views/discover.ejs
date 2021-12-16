@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body >
+    <div id="gnavbar"></div>
+    <div class="mx-28 mt-5">
+        <div>
+            <h2 class="text-2xl font-medium">Discover</h2>
+        </div>
+        <div class="flex justify-between my-6">
+            <div class="flex">
+                <div class="mr-5 cursor-pointer hover:text-blue-600">
+                    <h3 >
+                        Collection
+                    </h3>
+                </div>
+                <div onclick="window.location.href = 'allsmallcase.html'" class="mr-5 cursor-pointer hover:text-blue-600">
+                    <h3>
+                        All smallcases
+                    </h3>
+                </div>
+                <div class="mr-5 cursor-pointer hover:text-blue-600">
+                    <h3>
+                        Managers
+                    </h3>
+                </div>
+            </div>
+            <div class="pr-10 h-5 w-2/6">
+                <input id="inp_search" type="text" class="px-10 py-2" placeholder="Try All Weather or Infosys">
+                <div id="inp_sugg_box" class="h-60 hidden z-20 sticky border-gray-200 p-2 shadow-lg rounded overflow-scroll bg-white">
+                </div>
+            </div>
+
+        </div>
+        <hr>
+    
+        <div class="flex mt-8 mb-4">
+            <div>
+                <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMjRweCIgaGVpZ2h0PSIyNHB4IiB2aWV3Qm94PSIwIDAgMjQgMjQiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8IS0tIEdlbmVyYXRvcjogU2tldGNoIDQ4LjIgKDQ3MzI3KSAtIGh0dHA6Ly93d3cuYm9oZW1pYW5jb2RpbmcuY29tL3NrZXRjaCAtLT4KICAgIDx0aXRsZT5pY29ucy9zcG90bGlnaHQ8L3RpdGxlPgogICAgPGRlc2M+Q3JlYXRlZCB3aXRoIFNrZXRjaC48L2Rlc2M+CiAgICA8ZGVmcz48L2RlZnM+CiAgICA8ZyBpZD0iUGFnZS0xIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj4KICAgICAgICA8ZyBpZD0iaWNvbnMvc3BvdGxpZ2h0Ij4KICAgICAgICAgICAgPGcgaWQ9Ikdyb3VwIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxLjUwMDAwMCwgMS41MDAwMDApIj4KICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik0xMC41LDE1Ljc1IEM1LjAyMTA0MTY3LDE1Ljc1IDAuNTgzMzMzMzMzLDE2LjkyMjUgMC41ODMzMzMzMzMsMTguMzc1IEMwLjU4MzMzMzMzMywxOS44Mjc1IDUuMDIxMDQxNjcsMjEgMTAuNSwyMSBDMTUuOTc4OTU4MywyMSAyMC40MTY2NjY3LDE5LjgyNzUgMjAuNDE2NjY2NywxOC4zNzUgQzIwLjQxNjY2NjcsMTYuOTIyNSAxNS45Nzg5NTgzLDE1Ljc1IDEwLjUsMTUuNzUgWiIgaWQ9IlBhdGgiIGZpbGw9IiNGOERBOTYiPjwvcGF0aD4KICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik0xMC41LDguMzA5NjY2OTggTDIwLjQxNjY2NjcsMS4yNDM0NDk3OWUtMTQgTDIwLjQxNjY2NjcsMTUuODM3NSBDMTkuODMyMzMwNywxNS40NzUwMDUgMTkuMTI4MjUsMTUuMTgzMzE0IDE4LjM2MzYyMjEsMTQuOTQ4NzY2IEMxNi45MjgzMjcsMTQuNTc2ODQyOSAxNS40NzEzOTAyLDE0LjMxMzE4MDEgMTQuMDAzNzczOCwxNC4xNTkxMTY4IEMxMi41NjcwOTUzLDE0LjAyNTc4MzYgMTEuMjgxMDY0MywxNCAxMC41LDE0IEM5LjcxODkzNTc1LDE0IDguNDMyOTA0NzMsMTQuMDI1NzgzNiA2Ljk5NjIyNjIsMTQuMTU5MTE2OCBDNS41Mjg2MDk3OSwxNC4zMTMxODAxIDQuMDcxNjczLDE0LjU3Njg0MjkgMi42MzYzNzc5MywxNC45NDg3NjYgQzEuODcxNzUwMDIsMTUuMTgzMzE0IDEuMTY3NjY5MzIsMTUuNDc1MDA1IDAuNTgzMzMzMzMzLDE1LjgzNzUgTDAuNTgzMzMzMzMzLDEuMjQzNDQ5NzllLTE0IEwxMC41LDguMzA5NjY2OTggWiIgaWQ9IkNvbWJpbmVkLVNoYXBlIiBmaWxsPSIjRjhEQTk2Ij48L3BhdGg+CiAgICAgICAgICAgICAgICA8cGF0aCBkPSJNMTAuNSwxNS43NSBDMTUuOTc4OTU4MywxNS43NSAyMC40MTY2NjY3LDE2LjkyMjUgMjAuNDE2NjY2NywxOC4zNzUgQzIwLjQxNjY2NjcsMTkuODI3NSAxNS45Nzg5NTgzLDIxIDEwLjUsMjEgQzUuMDIxMDQxNjcsMjEgMC41ODMzMzMzMzMsMTkuODI3NSAwLjU4MzMzMzMzMywxOC4zNzUgQzAuNTgzMzMzMzMzLDE2LjkyMjUgNS4wMjEwNDE2NywxNS43NSAxMC41LDE1Ljc1IFoiIGlkPSJQYXRoIiBmaWxsPSIjRjRDNjVCIj48L3BhdGg+CiAgICAgICAgICAgICAgICA8cGF0aCBkPSJNMTAuNSw4LjMwOTY2Njk4IEwxOC40NDk4NjExLDE0Ljk3MTI1IEMxOC40MjExMjM1LDE0Ljk2MzcxMTkgMTguMzkyMzc3MSwxNC45NTYyMTczIDE4LjM2MzYyMjEsMTQuOTQ4NzY2IEMxNi45OTEyOTQxLDE0LjUyNzgwNzQgMTUuNDIzOTMyNSwxNC4yOTA5MTY5IDE0LjAwMzc3MzgsMTQuMTU5MTE2OCBDMTIuODQwNzM3NSwxNC4wMzcwMjY5IDExLjY3MDk5NDQsMTMuOTgzNzY1OCAxMC41LDE0IEM5LjMyOTAwNTU3LDEzLjk4Mzc2NTggOC4xNTkyNjI0NywxNC4wMzcwMjY5IDYuOTk2MjI2MiwxNC4xNTkxMTY4IEM1LjU3NjA2NzUxLDE0LjI5MDkxNjkgNC4wMDg3MDU4NiwxNC41Mjc4MDc0IDIuNjM2Mzc3OTMsMTQuOTQ4NzY2IEMyLjYwNzYyMjg2LDE0Ljk1NjIxNzMgMi41Nzg4NzY0OSwxNC45NjM3MTE5IDIuNTUwMTM4ODksMTQuOTcxMjUgTDEwLjUsOC4zMDk2NjY5OCBaIiBpZD0iQ29tYmluZWQtU2hhcGUiIGZpbGw9IiNGNEM2NUIiPjwvcGF0aD4KICAgICAgICAgICAgPC9nPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+">
+            </div>
+            <div class="ml-4 text-lg font-medium">
+                In the spotlight
+            </div>
+        </div>
+        <div class="owl-carousel owl-theme">
+            <div class="item">
+                <a href="global.html">
+                    <div class="border border-gray-300 rounded p-5">
+                        <span >Recently Launched </span><span class="text-gray-500">- Exposure to global tech giants like Amazon</span>
+                        <div class="flex  mt-3">
+                            <div class="w-40">
+                                <img src="https://assets.smallcase.com/images/smallcases/200/SCET_0014.png" class="rounded">
+                            </div>
+                            <div class="ml-3">
+                                <h3 class="font-semibold text-lg">Global Opportunities</h3>
+                                <p class="text-gray-500 mb-2">Invest in global tech leaders along with largest Indian companies</p>
+                                <div class="flex text-gray-500 w-60 justify-between">
+                                    <div>9M Returns</div>
+                                    <div>Min. Amount</div>
+                                </div>
+                                <div class="flex w-60 justify-between font-semibold">
+                                    <div class="text-green-600">19.61%</div>
+                                    <div>₹ 1,800</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="item">
+                <a href="equtiyAndDebt.html">
+                    <div class="border border-gray-300 rounded p-5">
+                        <span>Recently Launched </span><span class="text-gray-500">- Striking a balance across asset classes</span>
+                        <div class="flex mt-3">
+                            <div class="w-48">
+                                <img src="https://assets.smallcase.com/images/smallcases/200/SCET_0013.png" class="rounded">
+                            </div>
+                            <div class="ml-3">
+                                <h3 class="font-semibold text-lg">Equity & Debt</h3>
+                                <p class="text-gray-500 mb-2">A unique 2-in-1 portfolio of equity & debt suitable for low risk wealth creation</p>
+                                <div class="flex text-gray-500 w-60 justify-between">
+                                    <div>9M Returns</div>
+                                    <div>Min. Amount</div>
+                                </div>
+                                <div class="flex w-60 justify-between font-semibold">
+                                    <div class="text-green-600">14.27%</div>
+                                    <div>₹ 3,056</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                
+            </div>
+    
+            <div class="item">
+                <a href="equityAndGold.html">
+                    <div class="border border-gray-300 rounded p-5">
+                        <span>Favourite </span><span class="text-gray-500">- India's market leaders & gold in one protfolio</span>
+                        <div class="flex mt-3">
+                            <div class="w-44">
+                                <img src="https://assets.smallcase.com/images/smallcases/200/SCET_0005.png" class="rounded">
+                            </div>
+                            <div class="ml-3">
+                                <h3 class="font-semibold text-lg">Equity & Gold</h3>
+                                <p class="text-gray-500 mb-2">Create wealth with equities, stay protected with Gold. The sweet spot</p>
+                                <div class="flex text-gray-500 w-60 justify-between">
+                                    <div>3Y CAGR</div>
+                                    <div>Min. Amount</div>
+                                </div>
+                                <div class="flex w-60 justify-between font-semibold">
+                                    <div class="text-green-600">20.19%</div>
+                                    <div>₹ 276</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+    
+            <div class="item">
+                <a href="top_100.html">
+                    <div class="border border-gray-300 rounded p-5">
+                        <span>Popular </span><span class="text-gray-500">- India's biggest companies curated in one basket</span>
+                        <div class="flex mt-3">
+                            <div class="w-40">
+                                <img src="https://assets.smallcase.com/images/smallcases/200/SCET_0004.png" class="rounded">
+                            </div>
+                            <div class="ml-3">
+                                <h3 class="font-semibold text-lg">Top 100 Stocks</h3>
+                                <p class="text-gray-500 mb-2">India's most powerful companies in one portfolio. Solid stability</p>
+                                <div class="flex text-gray-500 w-60 justify-between">
+                                    <div>3Y CAGR</div>
+                                    <div>Min. Amount</div>
+                                </div>
+                                <div class="flex w-60 justify-between font-semibold">
+                                    <div class="text-green-600">20.58%</div>
+                                    <div>₹ 1,226</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    
+        <div class="blue_part border rounded bg-blue-500 relative">
+            <div class="w-2/5 mx-14 my-10">
+                <div class="text-white text-2xl font-semibold">All Weather Investing</div>
+                <div class="text-base text-white my-4">Build recession proof wealth with an intelligent protfolio of equity, gold & fixed income ETFs</div>
+                <div class="text-white font-medium flex my-5">
+                    <div class="flex mr-5">
+                        <div class="mr-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 1.414L10.586 9H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z" clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <div>
+                            Stable Returns
+                        </div>
+                    </div>
+                    <div class="flex mr-5">
+                        <div class="mr-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <div>
+                            Lower Risk
+                        </div>
+                    </div>
+                    <div class="flex">
+                        <div class="mr-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 5a1 1 0 100 2h1a2 2 0 011.732 1H7a1 1 0 100 2h2.732A2 2 0 018 11H7a1 1 0 00-.707 1.707l3 3a1 1 0 001.414-1.414l-1.483-1.484A4.008 4.008 0 0011.874 10H13a1 1 0 100-2h-1.126a3.976 3.976 0 00-.41-1H13a1 1 0 100-2H7z" clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <div>
+                            Minimal Fees
+                        </div>
+                    </div>
+                </div>
+    
+                <button class="border rounded bg-white text-blue-600 px-4 py-2 text-sm"> Learn More</button>
+            </div>
+    
+            <div class="absolute bottom-0 right-28">
+                <img class=" w-48 h-64" src="https://www.smallcase.com/static/pngs/awi/awi-discover-explore.png">
+            </div>
+            
+        </div>
+    
+        <div class="more_filters my-16 ">
+            <div class="text-lg font-bold mb-4 text-gray-800">
+                More filters you can try
+            </div>
+    
+            <div id="outerflex" class="flex ">
+                <div class="flex border border-gray-300 rounded mr-4 p-3">
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 1.414L10.586 9H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z" clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                    <div class="text-sm text-gray-700 ml-2 font-medium">
+                        Top gians in last year
+                    </div>
+                </div>
+    
+                <div class="flex border border-gray-300 rounded mr-4 p-3">
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 5a1 1 0 100 2h1a2 2 0 011.732 1H7a1 1 0 100 2h2.732A2 2 0 018 11H7a1 1 0 00-.707 1.707l3 3a1 1 0 001.414-1.414l-1.483-1.484A4.008 4.008 0 0011.874 10H13a1 1 0 100-2h-1.126a3.976 3.976 0 00-.41-1H13a1 1 0 100-2H7z" clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                    <div class="text-sm text-gray-700 ml-2 font-medium">
+                        Low investment amount
+                    </div>
+                </div>
+                
+                <div class="flex border border-gray-300 rounded mr-4 p-3">
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M12.395 2.553a1 1 0 00-1.45-.385c-.345.23-.614.558-.822.88-.214.33-.403.713-.57 1.116-.334.804-.614 1.768-.84 2.734a31.365 31.365 0 00-.613 3.58 2.64 2.64 0 01-.945-1.067c-.328-.68-.398-1.534-.398-2.654A1 1 0 005.05 6.05 6.981 6.981 0 003 11a7 7 0 1011.95-4.95c-.592-.591-.98-.985-1.348-1.467-.363-.476-.724-1.063-1.207-2.03zM12.12 15.12A3 3 0 017 13s.879.5 2.5.5c0-1 .5-4 1.25-4.5.5 1 .786 1.293 1.371 1.879A2.99 2.99 0 0113 13a2.99 2.99 0 01-.879 2.121z" clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                    <div class="text-sm text-gray-700 ml-2 font-medium">
+                        Popular investment strategies
+                    </div>
+                </div>
+    
+                <div class="flex border border-gray-300 rounded p-3">
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1.323l3.954 1.582 1.599-.8a1 1 0 01.894 1.79l-1.233.616 1.738 5.42a1 1 0 01-.285 1.05A3.989 3.989 0 0115 15a3.989 3.989 0 01-2.667-1.019 1 1 0 01-.285-1.05l1.715-5.349L11 6.477V16h2a1 1 0 110 2H7a1 1 0 110-2h2V6.477L6.237 7.582l1.715 5.349a1 1 0 01-.285 1.05A3.989 3.989 0 015 15a3.989 3.989 0 01-2.667-1.019 1 1 0 01-.285-1.05l1.738-5.42-1.233-.617a1 1 0 01.894-1.788l1.599.799L9 4.323V3a1 1 0 011-1zm-5 8.274l-.818 2.552c.25.112.526.174.818.174.292 0 .569-.062.818-.174L5 10.274zm10 0l-.818 2.552c.25.112.526.174.818.174.292 0 .569-.062.818-.174L15 10.274z" clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                    <div class="text-sm text-gray-700 text-gray-700 ml-2 font-medium">
+                        Recently rebalanced
+                    </div>
+                </div>
+               
+            </div>
+    
+        </div>
+    
+        <div>
+            <div class="flex mb-8">
+                <div>
+                    <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMjRweCIgaGVpZ2h0PSIyNHB4IiB2aWV3Qm94PSIwIDAgMjQgMjQiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8IS0tIEdlbmVyYXRvcjogU2tldGNoIDUwLjEgKDU1MDQ0KSAtIGh0dHA6Ly93d3cuYm9oZW1pYW5jb2RpbmcuY29tL3NrZXRjaCAtLT4KICAgIDx0aXRsZT5pY29ucy9jb2xsZWN0aW9uczwvdGl0bGU+CiAgICA8ZGVzYz5DcmVhdGVkIHdpdGggU2tldGNoLjwvZGVzYz4KICAgIDxkZWZzPjwvZGVmcz4KICAgIDxnIGlkPSJpY29ucy9jb2xsZWN0aW9ucyIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPGcgaWQ9ImNvbGxlY3Rpb25zLWxhcmdlIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgyLjAwMDAwMCwgMy4wMDAwMDApIiBmaWxsPSIjMUY3QUUwIj4KICAgICAgICAgICAgPHBhdGggZD0iTTIuNjMxNTc4OTUsNC4yMjIyMjIyMiBDMi42MzE1Nzg5NSwzLjYzOTAyNzc4IDMuMTA1MjYzMTYsMy4xNjY2NjY2NyAzLjY3OTQ3MzY4LDMuMTY2NjY2NjcgTDE2LjMyMTA1MjYsMy4xNjY2NjY2NyBDMTYuODk5NDczNywzLjE2NjY2NjY3IDE3LjM2ODQyMTEsMy42MzUzMzMzMyAxNy4zNjg0MjExLDQuMjIyMjIyMjIgQzE3LjM2ODQyMTEsNC44MDU0MTY2NyAxNi44OTQ3MzY4LDUuMjc3Nzc3NzggMTYuMzIwNTI2Myw1LjI3Nzc3Nzc4IEwzLjY3ODk0NzM3LDUuMjc3Nzc3NzggQzMuNDAwMjUzNjgsNS4yNzc3ODEzMSAzLjEzMzA1MDcsNS4xNjY0MDMxNiAyLjkzNjQ3OTAyLDQuOTY4Mjk0OTEgQzIuNzM5OTA3MzQsNC43NzAxODY2NiAyLjYzMDE3ODQ4LDQuNTAxNjg2NTMgMi42MzE1Nzg5NSw0LjIyMjIyMjIyIFoiIGlkPSJTaGFwZSIgZmlsbC1vcGFjaXR5PSIwLjUzOSIgZmlsbC1ydWxlPSJub256ZXJvIj48L3BhdGg+CiAgICAgICAgICAgIDxwYXRoIGQ9Ik00LjczNjg0MjExLDEuMDU1NTU1NTYgQzQuNzM2ODM0ODYsMS42MzY0Njc5IDUuMjA0OTE0NiwyLjEwODIwNjU1IDUuNzg0MjEwNTMsMi4xMTExMTExMSBMMTQuMjE1Nzg5NSwyLjExMTExMTExIEMxNC43OTM2ODQyLDIuMTExMTExMTEgMTUuMjYzMTU3OSwxLjY0MjQ0NDQ0IDE1LjI2MzE1NzksMS4wNTU1NTU1NiBDMTUuMjYzMTY1MSwwLjQ3NDY0MzIxNiAxNC43OTUwODU0LDAuMDAyOTA0NTYxNjUgMTQuMjE1Nzg5NSwwIEw1Ljc4NDIxMDUzLDAgQzUuMjA2MzE1NzksMCA0LjczNjg0MjExLDAuNDY4NjY2NjY3IDQuNzM2ODQyMTEsMS4wNTU1NTU1NiBaIiBpZD0iU2hhcGUiIGZpbGwtb3BhY2l0eT0iMC4yNjIiPjwvcGF0aD4KICAgICAgICAgICAgPHBhdGggZD0iTTAuODUzNjg0MjExLDE2Ljk5ODY2NjcgQzAuOTY1Nzg5NDc0LDE4LjEyMDE5NDQgMS45MzI2MzE1OCwxOSAzLjA1MzY4NDIxLDE5IEwxNi43NDczNjg0LDE5IEMxNy44NjQyMTA1LDE5IDE4LjgzNjMxNTgsMTguMTE2NSAxOC45NDczNjg0LDE2Ljk5ODY2NjcgTDE5Ljc5MDUyNjMsOC41NDQ3MjIyMiBDMTkuOTEwNTI2Myw3LjM0MDMzMzMzIDE5LDYuMzMzMzMzMzMgMTcuNzk0NzM2OCw2LjMzMzMzMzMzIEwyLjAwNjg0MjExLDYuMzMzMzMzMzMgQzAuNzk5NDczNjg0LDYuMzMzMzMzMzMgLTAuMTA4OTQ3MzY4LDcuMzQyNDQ0NDQgMC4wMTA1MjYzMTU4LDguNTQ0NzIyMjIgTDAuODUzNjg0MjExLDE2Ljk5ODY2NjcgWiIgaWQ9IlNoYXBlIj48L3BhdGg+CiAgICAgICAgPC9nPgogICAgPC9nPgo8L3N2Zz4=">
+                </div>
+                <div class="text-lg font-bold text-gray-800 ml-4">
+                    All Collections
+                </div>
+            </div>
+    
+            <div id="more_collection" class="grid grid-cols-3 gap-x-8 gap-y-6">
+                <div class="flex p-6 border border-gray-300 rounded">
+                    <div class="w-20">
+                        <img class="" src="https://assets.smallcase.com/images/collections/200/lrr7_6vsw.png">
+                    </div>
+                    <div class="ml-5">
+                        <p class="text-gray-800 text-medium font-medium">Diwali Discounts</p>
+                        <p class="text-sm text-gray-600">Up to 20% discount on Subscription fees! Use code DIWALI21</p>
+                        <p class="text-sm text-blue-500 mt-2">See all 12 smallcases</p>
+                    </div>
+                </div>
+        
+                <div class="flex p-6 border border-gray-300 rounded">
+                    <div class="w-20">
+                        <img class="" src="https://assets.smallcase.com/images/collections/200/P90BquO2E.png">
+                    </div>
+                    <div class="ml-5">
+                        <p class="text-gray-800 text-medium font-medium">Smart Beta</p>
+                        <p class="text-sm text-gray-600 ">Modern strategies that aim for market-beating returns</p>
+                        <p class="text-sm text-blue-500 mt-2">See all 2 smallcases</p>
+                    </div>
+                </div>
+        
+                <div class="flex  p-6 border border-gray-300 rounded">
+                    <div class="w-20">
+                        <img class="" src="https://assets.smallcase.com/images/collections/200/7i-PLiv4D.png">
+                    </div>
+                    <div class="ml-5">
+                        <p class="text-gray-800 text-medium font-medium">Dividend and Income</p>
+                        <p class="text-sm text-gray-600">Modern strategies focused on generating extra dividend income</p>
+                        <p class="text-sm text-blue-500 mt-2">See all 3 smallcases</p>
+                    </div>
+                </div>
+        
+                <div class="flex  p-6 border border-gray-300 rounded">
+                    <div class="w-20">
+                        <img class="" src="https://assets.smallcase.com/images/collections/200/GKPw4-QVb.png">
+                    </div>
+                    <div class="ml-5">
+                        <p class="text-gray-800 text-medium font-medium">Ideal for New Investors</p>
+                        <p class="text-sm text-gray-600">smallcases for new investors to start their wealth creartion journey</p>
+                        <p class="text-sm text-blue-500 mt-2">See all 4 smallcases</p>
+                    </div>
+                </div>
+        
+                <div class="flex  p-6 border border-gray-300 rounded">
+                    <div class="w-20">
+                        <img class="" src="https://assets.smallcase.com/images/collections/200/8Hn4KgdWWx9v79Ri8WawM.png">
+                    </div>
+                    <div class="ml-5">
+                        <p class="text-gray-800 text-medium font-medium">ETF smallcases</p>
+                        <p class="text-sm text-gray-600">Model portfolios built using exchange traded funds (ETFs)</p>
+                        <p class="text-sm text-blue-500 mt-2">See all 6 smallcases</p>
+                    </div>
+                </div>
+        
+                <div class="flex  p-6 border border-gray-300 rounded">
+                    <div class="w-20">
+                        <img class="" src="https://assets.smallcase.com/images/collections/200/ozWxyC7RX.png">
+                    </div>
+                    <div class="ml-5">
+                        <p class="text-gray-800 text-medium font-medium">ICICI Prudential ETF smallcases</p>
+                        <p class="text-sm text-gray-600">Long term ETF portfolios, created by ICICI Pridential AMC</p>
+                        <p class="text-sm text-blue-500 mt-2">See all 3 smallcases</p>
+                    </div>
+                </div>
+        
+                <div class="flex  p-6 border border-gray-300 rounded">
+                    <div class="w-20">
+                        <img class="" src="https://assets.smallcase.com/images/collections/200/QXv5hRTEM.png">
+                    </div>
+                    <div class="ml-5">
+                        <p class="text-gray-800 text-medium font-medium">Growth Investing</p>
+                        <p class="text-sm text-gray-600">Modern strategies focussed on indentifying high growth companies</p>
+                        <p class="text-sm text-blue-500 mt-2">See all 3 smallcases</p>
+                    </div>
+                </div>
+        
+                <div class="flex  p-6 border border-gray-300 rounded">
+                    <div class="w-20">
+                        <img class="" src="https://assets.smallcase.com/images/collections/200/longterm.png">
+                    </div>
+                    <div class="ml-5">
+                        <p class="text-gray-800 text-medium font-medium">Long Term</p>
+                        <p class="text-sm text-gray-600">Broder macro and sectoral trends that will have significant future.....</p>
+                        <p class="text-sm text-blue-500 mt-2">See all 7 smallcases</p>
+                    </div>
+                </div>
+        
+                <div class="flex  p-6 border border-gray-300 rounded">
+                    <div class="w-20">
+                        <img class="" src="https://assets.smallcase.com/images/collections/200/sectortrackers.png">
+                    </div>
+                    <div class="ml-5">
+                        <p class="text-gray-800 text-medium font-medium">Trackers</p>
+                        <p class="text-sm text-gray-600">smallcases that take exposure to a certain sector or business house</p>
+                        <p class="text-sm text-blue-500 mt-2">See all 13 smallcases</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr class="mt-14 mb-8">
+
+        <div class="border border-gray-300 rounded p-8 relative">
+            <div class="w-5/12">
+                <p class="text-sm text-gray-700">Built by research you can trust</p>
+                <p class="text-2xl font-semibold text-gray-800">smallcases are managed by India's top financial experts</p>
+            </div>
+
+            <div class="w-2/6 absolute bottom-0 right-56">
+                <img class="h-36" src="./images/pro.png">
+            </div>
+
+            <button class="px-6 py-3 bg-blue-600 text-white absolute bottom-12 right-8 rounded">See Managers</button>
+        </div>
+    </div>
+    
+    <div id="footer"></div>
+
+    
+
+    <script type="module">
+        import navbar from "./gnavbar/gnavbar.js"; 
+   let gnavbar_div = document.getElementById("gnavbar")
+
+   gnavbar_div.innerHTML = navbar(); 
+
+   import footer from "./gnavbar/gfooter.js"; 
+   let footer_div = document.getElementById("footer");
+
+   footer_div.innerHTML = footer(); 
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="js/discover.js"></script>
+
+</body>
+</html>
