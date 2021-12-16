@@ -21,7 +21,7 @@ const smallcaseSchema = new Schema({
     lastRebalanced: String,
     slug: String,
     micrositeUrl: String,
-    investmentStrategy: [{type:Schema.Types.ObjectId,ref:"investmentstrategies", required:true}]},
+    investmentStrategy: [{type:Schema.Types.ObjectId,ref:"investmentstrategy", required:true}]},
     flags:{active:Boolean,locked:Boolean,private:Boolean, historicalData:Boolean,preferredSipType:String,blocked:Boolean},
     stats:{returns:{daily:Number,weekly:Number,monthly:Number,quarterly:Number,halfyearly:Number,yearly:Number,threeYear:Number,fiveYear:Number,sinceInception:Number,sinceLaunch:Number},
     indexValue: Number,

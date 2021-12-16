@@ -178,7 +178,11 @@
         <!-- Investment amount form ended -->
 
         <!-- For appending smallcases -->
-        <div id="mainCont" class="w-9/12 select-none"></div>
+        <div id="mainCont" class="w-9/12 select-none">
+            <%data.forEach(el=>{%>
+                <div class="grid grid-cols-2 hover:bg-gray-100 cursor-pointer rounded"><div class="flex"><div class="m-5 flex"><img class="w-12 h-12 rounded" alt="Unable to load" src=<%=el.info.imageUrl%>><div class="ml-2"><h1 class="text-sm font-semibold"><%=el.info.name%></h1><p class="text-small text-gray-700"><%=el.info.shortDescription%></p></div></div></div><div class="m-5 h-12 flex gap-5 justify-between items-end"><div><h1 class="text-gray-600 text-small">Min. Amount</h1><p class="text-sm">₹ <%=el.stats.minInvestAmount%></p></div><div><h1 class="text-gray-600 text-small">3Y CAGR</h1><p class="text-green-500 text-sm font-semibold"><%=el.stats.ratios.cagr3y%> %</p></div><div class="h-full"><div class="h-full flex items-center"><img src="./images/risk_low.jpg" class="w-4 inline"><p class="inline text-small text-gray-600">Low Volatility</p></div></div></div></div>
+            <%})%>
+        </div>
     </div>
 
     <div id="footer"></div>
