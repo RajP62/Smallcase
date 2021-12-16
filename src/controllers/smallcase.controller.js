@@ -1,8 +1,6 @@
 const express = require("express");
 const router = express.Router();
 const Smallcase = require("../models/smallcase.model");
-<<<<<<< HEAD
-=======
 
 router.get("", async(req,res)=>{
     try {
@@ -12,7 +10,6 @@ router.get("", async(req,res)=>{
         res.status(500).json({message:"Internal server error"});
     }
 });
->>>>>>> 7431d0a122a24fb60e227b48f3b6e5314afb7073
 
 router.post("", async(req,res)=>{
     try {

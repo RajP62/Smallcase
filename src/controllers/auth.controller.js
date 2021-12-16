@@ -12,7 +12,8 @@ const register = async (req, res) => {
         // check the format of email and password(if you want a proper password)
 
         //check the email is already there in database
-        let user = await User.find({ email: req.body.email }).lean().exec();
+        let user = await User.findOne({ email: req.body.email });
+        console.log(user)
 
         // if yes then throw an error 
         if (user) return res.status(400).json({ status: "failed", message: "Provide different Email" })
@@ -40,6 +41,7 @@ const login = async (req, res) => {
         // check the format of email first if not proper throw an error 
 
         // else check wheather email is present
+
         const user = await User.findOne({ email: req.body.email });
 
         // if not present throw an error 
@@ -55,8 +57,9 @@ const login = async (req, res) => {
         const token = newToken(user);
 
         // return the user and the token
+        // return res.status(201).json({user, token})
 
-        return res.status(201).json({ user, token });
+        return res.status(201).json({ user, token })
 
     } catch (e) {
         return res.status(500).json({ status: "failed", message: e.message });
