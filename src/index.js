@@ -6,6 +6,8 @@ const blogController = require('./controllers/blog.controller');
 const investmentStrategyController = require("./controllers/investmentstrategy.controller");
 const tagController = require("./controllers/tag.controller");
 const typeController = require('./controllers/type.controller');
+const stockController = require("./controllers/stock.controller");
+const discoverController = require("./controllers/discover.controller");
 
 const { register, login } = require("./controllers/auth.controller");
 
@@ -22,7 +24,9 @@ app.post("/register",register);
 app.use("/smallcases",smallcaseController);
 app.use("/investmentStrategies",investmentStrategyController);
 app.use("/tags",tagController);
+app.use("/discover",discoverController);
 app.use("/types", typeController);
+app.use("/stocks", stockController);
 app.post("/login", login);
 
 module.exports = app;
