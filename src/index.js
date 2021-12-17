@@ -9,6 +9,8 @@ const typeController = require('./controllers/type.controller');
 const stockController = require("./controllers/stock.controller");
 const discoverController = require("./controllers/discover.controller");
 const werehiringController = require("./controllers/werehiring.controller");
+const growDashboardController = require("./controllers/growDashboard.controller");
+const investmentsController = require("./controllers/investments.controller");
 
 const { register, login } = require("./controllers/auth.controller");
 
@@ -28,6 +30,8 @@ app.use("/tags",tagController);
 app.use("/discover",discoverController);
 app.use("/types", typeController);
 app.use("/werehiring",werehiringController);
+app.use("/growDashboard",growDashboardController);
+app.use("/investments",investmentsController );
 app.use("/stocks", stockController);
 app.post("/login", login);
 
