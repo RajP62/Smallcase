@@ -105,7 +105,7 @@ function searchData(elem){
 
     data_cart = [];
 
-    data_cart.push(elem);
+    data_cart.push(JSON.stringify(elem));
 
     localStorage.setItem("data_clicked",JSON.stringify(data_cart));
     

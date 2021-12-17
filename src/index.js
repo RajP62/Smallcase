@@ -12,6 +12,7 @@ const discoverController = require("./controllers/discover.controller");
 const investController = require("./controllers/invest.controller");
 const searchController = require("./controllers/search.controller");
 const razorpayController = require("./controllers/razorpay.controller");
+const congratsController = require("./controllers/congrats.controller");
 
 const { register, login } = require("./controllers/auth.controller");
 
@@ -34,6 +35,7 @@ app.use("/stocks", stockController);
 app.use("/invest", investController); 
 app.use("/search", searchController);  
 app.use("/razorpay", razorpayController);
+app.use("/congrats",congratsController);
 app.use("/create",createController);
 app.post("/login", login);  
 

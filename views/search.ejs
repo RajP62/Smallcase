@@ -101,7 +101,7 @@
                     </div>
                 </div>
                 <p class="text-sm text-gray-600 mt-6">Get access for free forever</p>
-                <p class="font-medium text-sm text-blue-600 mt-1">See more bene fits</p>
+                <p class="font-medium text-sm text-blue-600 mt-1">See more benefits</p>
                 <div class="mt-8">
                     <a onclick="proceedPayment()" class="cursor-pointer select-none rounded px-20 py-3 bg-green-400 font-medium text-white">Invest Now</a>
                 </div>
@@ -182,28 +182,75 @@
     <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
     <script>
         // Razorpay configuration
+        let currItem = JSON.parse(localStorage.getItem("data_clicked"));;
+        let currItemObj = JSON.parse(currItem[0]);
+        let price = currItemObj.stats.minInvestAmount * 100;
 
-        function proceedPayment(){
-        console.log("entered the func")
-        axios.post(`http://localhost:2000/razorpay/createorder`).then((info)=>{
+        async function proceedPayment(){
+            // try{
+            //     axios.post(`http://localhost:2000/razorpay/createorder`, 
+            //     JSON.stringify(price),
+            //     {
+            //     headers:{
+            //         'Content-Type' : 'text/plain' 
+            //     }
+            //     }
+            //     ).then((info)=>{
         
-            var options = {
-            "key": "rzp_test_PgZQM6gNPhgqhv", 
-            "name": "Smallcase",
-            "description": "Proceed to invest",
-            "image": "https://is3-ssl.mzstatic.com/image/thumb/Purple125/v4/ee/6b/11/ee6b115c-516e-8aa8-155b-d7059325a22a/AppIcon-0-0-1x_U007emarketing-0-0-0-7-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/1200x630wa.png",
-            "order_id": info.data.id,
-            "callback_url": "https://eneqd3r9zrjok.x.pipedream.net/",
-            "theme": {
-                "color": "#3399cc"
-            }   
-            };
+                // var options = {
+                // "key": "rzp_test_PgZQM6gNPhgqhv", 
+                // "name": "Smallcase",
+                // "description": "Proceed to invest",
+                // "image": "https://is3-ssl.mzstatic.com/image/thumb/Purple125/v4/ee/6b/11/ee6b115c-516e-8aa8-155b-d7059325a22a/AppIcon-0-0-1x_U007emarketing-0-0-0-7-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/1200x630wa.png",
+                // "order_id": info.data.id,
+                // "callback_url": "http://localhost:2000/razorpay/result",
+                // "theme": {
+                //     "color": "#3399cc"
+                // }   
+                // };
 
-            let rzp1 = new Razorpay(options);
-            rzp1.open();
-        });
+                // let rzp1 = new Razorpay(options);
+                // rzp1.open();
+                // });
+            // }
+            // catch(e){
+            //     console.log(e.message);
+            // }
 
-    }
+
+            try{
+                let data = await fetch("http://localhost:2000/razorpay/createorder",{
+                    method:'POST',
+                    body:JSON.stringify({price: price}),
+                    headers:{
+                        'Content-Type':"application/json"
+                    }
+                });
+
+                let info = await data.json();
+
+                var options = {
+                "key": "rzp_test_PgZQM6gNPhgqhv", 
+                "name": "Smallcase",
+                "description": "Proceed to invest",
+                "image": "https://is3-ssl.mzstatic.com/image/thumb/Purple125/v4/ee/6b/11/ee6b115c-516e-8aa8-155b-d7059325a22a/AppIcon-0-0-1x_U007emarketing-0-0-0-7-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/1200x630wa.png",
+                "order_id": info.id,
+                "callback_url": "http://localhost:2000/razorpay/result",
+                "theme": {
+                    "color": "#3399cc"
+                }   
+                };
+
+
+                let rzp1 = new Razorpay(options);
+                rzp1.open();
+
+
+            }
+            catch(e){
+                console.log(e.message);
+            }
+        }
     </script>
 </body>
 </html>
