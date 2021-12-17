@@ -2,7 +2,7 @@ const {Schema, model} = require("mongoose");
 
 
 const smallcaseSchema = new Schema({
-    id: {type:Number, required:true},
+    id: {type:Number},
     info: {creator: {type:String}, owner:{name:{type:String}},
     tags: [{type:Schema.Types.ObjectId, ref:"tag"}],
     tier:Schema.Types.Mixed,
@@ -21,7 +21,8 @@ const smallcaseSchema = new Schema({
     lastRebalanced: String,
     slug: String,
     micrositeUrl: String,
-    investmentStrategy: [{type:Schema.Types.ObjectId,ref:"investmentstrategy", required:true}]},
+    investmentStrategy: {type:String, required:true}
+    },
     flags:{active:Boolean,locked:Boolean,private:Boolean, historicalData:Boolean,preferredSipType:String,blocked:Boolean},
     stats:{returns:{daily:Number,weekly:Number,monthly:Number,quarterly:Number,halfyearly:Number,yearly:Number,threeYear:Number,fiveYear:Number,sinceInception:Number,sinceLaunch:Number},
     indexValue: Number,

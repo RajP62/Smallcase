@@ -411,64 +411,111 @@
 // }
 
 // // Debouncing functionality
-// let timeoutForDeb;
-// let inp_sear = document.getElementById('inp_search');
-// inp_sear.addEventListener('keyup',appendSuggestion);
-// let suggBox = document.getElementById('inp_sugg_box');
+let timeoutForDeb;
+let inp_sear = document.getElementById('inp_search');
+inp_sear.addEventListener('keyup',appendSuggestion);
+let suggBox = document.getElementById('inp_sugg_box');
 
-// function appendSuggestion(){
-//     if(timeoutForDeb){
-//         clearTimeout(timeoutForDeb);
-//     }
-//     if(suggBox.classList.contains('hidden')){
-//         suggBox.classList.remove('hidden');
-//     }
-//     let search = document.getElementById('inp_search').value;
-//     if(!search){
-//         suggBox.classList.add('hidden');
-//         return;
-//     }
-//     timeoutForDeb = setTimeout(() => {
-//         appendSearchRes(search);
-//     }, 600);
-// }
+function appendSuggestion(){
+    if(timeoutForDeb){
+        clearTimeout(timeoutForDeb);
+    }
+    if(suggBox.classList.contains('hidden')){
+        suggBox.classList.remove('hidden');
+    }
+    let search = document.getElementById('inp_search').value;
+    if(!search){
+        suggBox.classList.add('hidden');
+        return;
+    }
+    timeoutForDeb = setTimeout(() => {
+        appendSearchRes(search);
+    }, 600);
+}
 
-// let appendSearchRes = search=>{
-//     suggBox.innerHTML = null;
-//     allSmallcaseData.forEach(element => {
-//         let {info:{name,shortDescription,imageUrl}} = element;
-//         if(startCharMatch(name,search)){
-//             let div = document.createElement('div');
-//             div.addEventListener('click',()=>{
-//                 let elem = {...element};
-//                 localStorage.setItem('cartcases',JSON.stringify(elem));
-//                 window.location.href = 'top_100.html';
-//             })
-//             div.setAttribute('class','flex justify-between items-center text-small mb-1');
-//             let div2 = document.createElement('div');
-//             div2.setAttribute('class','text-blue-600 ml-5')
-//             let img = document.createElement('img');
-//             img.setAttribute('class','w-5 h-5');
-//             let nameOfCase = document.createElement('h1');
-//             nameOfCase.setAttribute('class','text-small font-semibold text-gray-500');
-//             let shortDesc = document.createElement('p');
-//             shortDesc.setAttribute('class','text-small')
-//             img.src = imageUrl;
-//             nameOfCase = `${name} : `;
-//             shortDesc = shortDescription;
-//             div2.append(nameOfCase,shortDesc);
-//             div.append(img,div2);
-//             let hr = document.createElement('hr');
-//             suggBox.append(div,hr);
-//         }
-//     });
-// }
+let appendSearchRes = async search=>{
+    let res = await fetch('http://localhost:2000/smallcases/all');
+    let realData =await res.json();
 
-// let startCharMatch = (firStr,secStr)=>{
-//     for(let i=0; i<firStr.length && i<secStr.length; i++){
-//         if(firStr[i]!==secStr[i]){
-//             return false;
-//         }
-//     }
-//     return true;
-// }
+    allSmallcaseData = realData;
+    suggBox.innerHTML = null;
+    allSmallcaseData.forEach(element => {
+        let {info:{name,shortDescription,imageUrl}} = element;
+        if(startCharMatch(name,search)){
+            let div = document.createElement('div');
+            div.addEventListener('click',()=>{
+                let elem = {...element};
+                localStorage.setItem('cartcases',JSON.stringify(elem));
+                window.location.href = 'top_100.html';
+            })
+            div.setAttribute('class','flex justify-between items-center text-small mb-1 cursor-pointer');
+            let div2 = document.createElement('div');
+            div2.setAttribute('class','text-blue-600 ml-5')
+            let img = document.createElement('img');
+            img.setAttribute('class','w-5 h-5');
+            let nameOfCase = document.createElement('h1');
+            nameOfCase.setAttribute('class','text-small font-semibold text-gray-500');
+            let shortDesc = document.createElement('p');
+            shortDesc.setAttribute('class','text-small')
+            img.src = imageUrl;
+            nameOfCase = `${name} : `;
+            shortDesc = shortDescription;
+            div2.append(nameOfCase,shortDesc);
+            div.append(img,div2);
+            let hr = document.createElement('hr');
+            suggBox.append(div,hr);
+        }
+    });
+}
+
+let startCharMatch = (firStr,secStr)=>{
+    for(let i=0; i<firStr.length && i<secStr.length; i++){
+        if(firStr[i]!==secStr[i]){
+            return false;
+        }
+    }
+    return true;
+}
+
+// Sorting through backend
+
+
+// By Investment Amount
+function under(value){
+    const myUrl = new URL(window.location.href);
+    myUrl.searchParams.set("investmentrange", value);
+    window.location.href = myUrl;
+}
+
+// By Volatility
+function byRisk(level){
+    const myUrl = new URL(window.location.href);
+    myUrl.searchParams.set("volatility",level);
+    window.location.href = myUrl;
+}
+
+// By Strategy
+function byStrategy(strategy){
+    const myUrl = new URL(window.location.href);
+    myUrl.searchParams.set("strategy",strategy);
+    window.location.href = myUrl;
+}
+
+// By Page
+function prevPage(){
+    const myUrl = new URL(window.location.href);
+    let currPage = myUrl.searchParams.get("page") || 1;
+    console.log(currPage);
+    if(currPage<=1){
+        currPage = 2;
+    }
+    myUrl.searchParams.set("page",+currPage-1);
+    window.location.href = myUrl;
+}
+
+function nextPage(){
+    const myUrl = new URL(window.location.href);
+    let currPage = myUrl.searchParams.get("page") || 1;
+    myUrl.searchParams.set("page",+currPage+1);
+    window.location.href = myUrl;
+}
