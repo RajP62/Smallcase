@@ -3,6 +3,7 @@ const app = express();
 const path = require("path");
 const smallcaseController = require("./controllers/smallcase.controller");
 const blogController = require('./controllers/blog.controller');
+const createController = require("./controllers/create.controller");
 const investmentStrategyController = require("./controllers/investmentstrategy.controller");
 const tagController = require("./controllers/tag.controller");
 const typeController = require('./controllers/type.controller');
@@ -27,6 +28,7 @@ app.use("/tags",tagController);
 app.use("/discover",discoverController);
 app.use("/types", typeController);
 app.use("/stocks", stockController);
+app.use("/create",createController);
 app.post("/login", login);
 
 module.exports = app;
