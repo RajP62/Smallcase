@@ -26,7 +26,7 @@ inp_sear.addEventListener('keyup',appendSuggestion);
 let suggBox = document.getElementById('inp_sugg_box');
 
 let getSmallcases = async ()=>{
-    let data = await fetch(`http://localhost:5000/api/allsmallcase`);
+    let data = await fetch(`http://localhost:2000/smallcases/all`);
     let res = await data.json();
     console.log(res)
     return res;
@@ -108,6 +108,6 @@ function searchData(elem){
     data_cart.push(elem);
 
     localStorage.setItem("data_clicked",JSON.stringify(data_cart));
-
-    window.location.assign("search.html");
+    
+    window.location.assign("search");
 }

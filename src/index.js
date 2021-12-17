@@ -9,6 +9,9 @@ const tagController = require("./controllers/tag.controller");
 const typeController = require('./controllers/type.controller');
 const stockController = require("./controllers/stock.controller");
 const discoverController = require("./controllers/discover.controller");
+const investController = require("./controllers/invest.controller");
+const searchController = require("./controllers/search.controller");
+const razorpayController = require("./controllers/razorpay.controller");
 
 const { register, login } = require("./controllers/auth.controller");
 
@@ -28,7 +31,10 @@ app.use("/tags",tagController);
 app.use("/discover",discoverController);
 app.use("/types", typeController);
 app.use("/stocks", stockController);
+app.use("/invest", investController); 
+app.use("/search", searchController);  
+app.use("/razorpay", razorpayController);
 app.use("/create",createController);
-app.post("/login", login);
+app.post("/login", login);  
 
 module.exports = app;
