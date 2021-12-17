@@ -11,6 +11,7 @@ const discoverController = require("./controllers/discover.controller");
 const werehiringController = require("./controllers/werehiring.controller");
 const growDashboardController = require("./controllers/growDashboard.controller");
 const investmentsController = require("./controllers/investments.controller");
+const watchlistController = require("./controllers/watchlist.controller");
 
 const { register, login } = require("./controllers/auth.controller");
 
@@ -32,6 +33,7 @@ app.use("/types", typeController);
 app.use("/werehiring",werehiringController);
 app.use("/growDashboard",growDashboardController);
 app.use("/investments",investmentsController );
+app.use("/watchlist",watchlistController );
 app.use("/stocks", stockController);
 app.post("/login", login);
 
