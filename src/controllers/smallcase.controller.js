@@ -30,7 +30,7 @@ router.get("", async(req,res)=>{
         return res.render("allsmallcase",{data});*/
 
     } catch (e) {
-        res.status(500).json({message: e.message});
+        res.status(500).render("allsmallcase",{message: e.message});
     }
 });
 
