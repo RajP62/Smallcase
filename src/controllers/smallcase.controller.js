@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const Smallcase = require("../models/smallcase.model");
+const client = require('../config/redis');
 
 router.get("", async(req,res)=>{
     try {
@@ -36,8 +37,17 @@ router.get("", async(req,res)=>{
 
 router.get("/all", async(req,res)=>{
     try {
+        client.get("allsmallcases",async(err, smallcases)=>{
+            if(err) return res.status(400).json({message:"Bad request found"});
+            if(smallcases && smallcases!=null){
+                return res.send(JSON.parse(smallcases));
+            }
+            
         const data =await Smallcase.find().populate({path:"info",populate: ["type"]}).lean().exec();
+        client.set("allsmallcases",JSON.stringify(data));
         return res.status(200).send(data);
+        });
+
     } catch (e) {
         res.status(500).json({message: e.message});
     }
@@ -46,6 +56,9 @@ router.get("/all", async(req,res)=>{
 router.post("", async(req,res)=>{
     try {
         const operation =await Smallcase.create(req.body);
+
+        let allSmallcases = await Smallcase.find().lean().exec();
+        client.set("allsmallcases", JSON.stringify(allSmallcases));
         return res.status(200).send(operation);
         } catch (e) {
         res.status(500).json({message: e});
@@ -55,6 +68,9 @@ router.post("", async(req,res)=>{
 router.patch("/:id",async(req,res)=>{
     try {
         const operation =await Smallcase.findByIdAndUpdate(req.params.id,req.body,{new:true});
+
+        let allSmallcases = await Smallcase.find().lean().exec();
+        client.set("allsmallcases", JSON.stringify(allSmallcases));
         return res.status(200).send(operation);
         } catch (e) {
         res.status(500).json({message: "Internal server error"});
@@ -64,6 +80,10 @@ router.patch("/:id",async(req,res)=>{
 router.delete("/:id",async(req,res)=>{
     try {
         const operation = await Smallcase.findOneAndDelete(req.params.id);
+
+        let allSmallcases = await Smallcase.find().lean().exec();
+
+        client.set("allsmallcases", JSON.stringify(allSmallcases));
         return res.status(200).send(operation);
 
     } catch (e) {

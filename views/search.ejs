@@ -182,41 +182,12 @@
     <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
     <script>
         // Razorpay configuration
-        let currItem = JSON.parse(localStorage.getItem("data_clicked"));;
+        let currItem = JSON.parse(localStorage.getItem("data_clicked"));
         let currItemObj = JSON.parse(currItem[0]);
         let price = currItemObj.stats.minInvestAmount * 100;
 
         async function proceedPayment(){
-            // try{
-            //     axios.post(`http://localhost:2000/razorpay/createorder`, 
-            //     JSON.stringify(price),
-            //     {
-            //     headers:{
-            //         'Content-Type' : 'text/plain' 
-            //     }
-            //     }
-            //     ).then((info)=>{
-        
-                // var options = {
-                // "key": "rzp_test_PgZQM6gNPhgqhv", 
-                // "name": "Smallcase",
-                // "description": "Proceed to invest",
-                // "image": "https://is3-ssl.mzstatic.com/image/thumb/Purple125/v4/ee/6b/11/ee6b115c-516e-8aa8-155b-d7059325a22a/AppIcon-0-0-1x_U007emarketing-0-0-0-7-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/1200x630wa.png",
-                // "order_id": info.data.id,
-                // "callback_url": "http://localhost:2000/razorpay/result",
-                // "theme": {
-                //     "color": "#3399cc"
-                // }   
-                // };
-
-                // let rzp1 = new Razorpay(options);
-                // rzp1.open();
-                // });
-            // }
-            // catch(e){
-            //     console.log(e.message);
-            // }
-
+    
 
             try{
                 let data = await fetch("http://localhost:2000/razorpay/createorder",{
