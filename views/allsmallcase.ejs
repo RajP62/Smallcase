@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Choose your smallcase | Discover smallcase on Groww</title>
     <link rel="icon" href="images/siteLogo.png" sizes="32x32">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <style>
         /* div{
@@ -180,8 +181,8 @@
 
         <!-- For appending smallcases -->
         <div id="mainCont" class="w-9/12 select-none">
-            <%data.forEach(el=>{%>
-                <div class="grid grid-cols-2 hover:bg-gray-100 cursor-pointer rounded"><div class="flex"><div class="m-5 flex"><img class="w-12 h-12 rounded" alt="Unable to load" src=<%=el.info.imageUrl%>><div class="ml-2"><h1 class="text-sm font-semibold"><%=el.info.name%></h1><p class="text-small text-gray-700"><%=el.info.shortDescription%></p></div></div></div><div class="m-5 h-12 flex gap-5 justify-between items-end"><div><h1 class="text-gray-600 text-small">Min. Amount</h1><p class="text-sm">₹ <%=el.stats.minInvestAmount%></p></div><div><h1 class="text-gray-600 text-small">3Y CAGR</h1><p class="text-green-500 text-exsm font-semibold"><%=(el.stats.ratios.cagr3y * 100).toFixed(2)%> %</p></div><div class="h-full"><div class="h-full flex items-center"><p class="inline text-small text-gray-600">
+            <%data.forEach((el,index)=>{%>
+                <div onclick="showInDetail('<%=JSON.stringify(el)%>')" class="grid grid-cols-2 hover:bg-gray-100 cursor-pointer rounded"><div class="flex"><div class="m-5 flex"><img class="w-12 h-12 rounded" alt="Unable to load" src=<%=el.info.imageUrl%>><div class="ml-2"><h1 class="text-sm font-semibold"><%=el.info.name%></h1><p class="text-small text-gray-700"><%=el.info.shortDescription%></p></div></div></div><div class="m-5 h-12 flex gap-5 justify-between items-end"><div><h1 class="text-gray-600 text-small">Min. Amount</h1><p class="text-sm">₹ <%=el.stats.minInvestAmount%></p></div><div><h1 class="text-gray-600 text-small">3Y CAGR</h1><p class="text-green-500 text-exsm font-semibold"><%=(el.stats.ratios.cagr3y * 100).toFixed(2)%> %</p></div><div class="h-full"><div class="h-full flex items-center"><p class="inline text-small text-gray-600">
                     <%if(el.stats.ratios.riskLabel==="Low Volatility"){%>
                             <img class="w-4 inline" src='images/risk_low.jpg'> <%=el.stats.ratios.riskLabel%>
                     <%}else if(el.stats.ratios.riskLabel==="Medium Volatility"){%>
@@ -198,16 +199,17 @@
 
     <div class="m-auto block w-5/5 flex items-center text-center">
         <div class="m-auto mt-5">
-            <svg xmlns="http://www.w3.org/2000/svg" onclick="prevPage()" class="h-5 w-5 inline hover:bg-gray-400 rounded cursor-pointer" viewBox="0 0 20 20" fill="currentColor">
+            <svg xmlns="http://www.w3.org/2000/svg" onclick="prevPage()" class="h-5 w-5 inline hover:bg-gray-400 rounded select-none cursor-pointer" viewBox="0 0 20 20" fill="currentColor">
                 <path fill-rule="evenodd" d="M7.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l2.293 2.293a1 1 0 010 1.414z" clip-rule="evenodd" />
             </svg>
-            <svg xmlns="http://www.w3.org/2000/svg" onclick="nextPage()" class="h-5 w-5 inline ml-10 hover:bg-gray-400 rounded cursor-pointer" viewBox="0 0 20 20" fill="currentColor">
+            <svg xmlns="http://www.w3.org/2000/svg" onclick="nextPage()" class="h-5 w-5 inline ml-10 select-none hover:bg-gray-400 rounded cursor-pointer" viewBox="0 0 20 20" fill="currentColor">
                 <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
             </svg>
         </div>
         </div>
 
     <div id="footer"></div>
+
     <script src="js/allsmallcase.js"></script>
 </body>
 </html>

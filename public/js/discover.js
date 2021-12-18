@@ -65,7 +65,6 @@ let getSmallcases = async ()=>{
 }
 getSmallcases().then(res=>{
     allSmallcaseData = res;
-    console.log(allSmallcaseData)
 }) 
 
 

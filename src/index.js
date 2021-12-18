@@ -1,7 +1,6 @@
 require("dotenv").config()
 const express = require("express");
 const app = express();
-const path = require("path");
 const messagebird = require("messagebird")(process.env.MESSAGEBIRD_KEY);
 
 const passport = require("./config/passport")
@@ -12,16 +11,17 @@ const createController = require("./controllers/create.controller");
 const stockController = require("./controllers/stock.controller")
 const smallcaseController = require("./controllers/smallcase.controller");
 const blogController = require('./controllers/blog.controller');
-const discoverController = require("./controllers/discover.controller")
+const discoverController = require("./controllers/discover.controller");
+const investController = require("./controllers/invest.controller");
+const searchController = require("./controllers/search.controller");
+const razorpayController = require("./controllers/razorpay.controller");
+const congratsController = require("./controllers/congrats.controller");
 const investmentStrategyController = require("./controllers/investmentstrategy.controller");
 const tagController = require("./controllers/tag.controller");
 const typeController = require('./controllers/type.controller');
 const loginController = require("./controllers/login.controller");
 const userController = require("./controllers/user.controller");
 const homeController = require("./controllers/home.controller");
-const investController = require("./controllers/invest.controller");
-const searchController = require("./controllers/search.controller");
-const razorpayController = require("./controllers/razorpay.controller");
 const investmentsController = require("./controllers/investments.controller");
 const growDashboardController = require("./controllers/growDashboard.controller");
 
@@ -70,9 +70,16 @@ app.post("/register", validator({
     partner: ["required"],
 }), register);
 app.use("/smallcases",smallcaseController);
-app.use("/investmentStrategies", investmentStrategyController);
-app.use("/tags", tagController);
+app.use("/investmentStrategies",investmentStrategyController);
+app.use("/tags",tagController);
+app.use("/discover",discoverController);
 app.use("/types", typeController);
+app.use("/stocks", stockController);
+app.use("/invest", investController); 
+app.use("/search", searchController);  
+app.use("/razorpay", razorpayController);
+app.use("/congrats",congratsController);
+app.use("/create",createController);
 
 app.post("/login", validator({
     email: ["required", "email"],
@@ -170,9 +177,14 @@ app.post("/verifying", function(req, res) {
         return res.status(500).json({ status: "failed", message: "Invalid Token"})
     }
 })
+app.get("/login",async(req,res)=>{
+    try {
+        return res.render("login");
+    } catch (e) {
+        return res.status(500).json({message: e.message});
+    }
+});
 
-app.use("/home", homeController)
-
-app.use("/login", loginController)
+app.use("/home", homeController);
 
 module.exports = app;

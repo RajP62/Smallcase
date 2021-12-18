@@ -1,3 +1,8 @@
+// let mainCont = document.getElementById('mainCont');
+if(localStorage.getItem('data_clicked')===null){
+    localStorage.setItem('data_clicked',JSON.stringify([]));
+}
+
 // // Debouncing functionality
 let timeoutForDeb;
 let inp_sear = document.getElementById('inp_search');
@@ -109,6 +114,20 @@ function nextPage(){
 }
 
 
+// proceeding to search page
+
+function showInDetail(elem){
+     console.log(elem)
+    let data_cart = JSON.parse(localStorage.getItem("data_clicked"));
+
+    data_cart = [];
+
+    data_cart.push(elem);
+
+    localStorage.setItem("data_clicked",JSON.stringify(data_cart));
+    
+    window.location.assign("search");
+}
 
 function navbar(){
     return `
