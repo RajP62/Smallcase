@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "css:build": "tailwind build ./tailwindconf/style.css -o ./src/public/css/style.css",
     "server": "redis-server & nodemon -e html,ejs,js ./src/server.js ",
-    "start": "redis-server & node src/server.js & tailwind build ./tailwindconf/style.css -o ./src/public/css/style.css"  
+    "start": "redis-server & nodemon src/server.js & tailwind build ./tailwindconf/style.css -o ./src/public/css/style.css"
   },
   "repository": {
     "type": "git",
@@ -32,12 +32,13 @@
     "mongoose": "^6.1.1",
     "node-cache": "^5.1.2",
     "nodemailer": "^6.7.2",
+    "nodemon": "^2.0.15",
+    "passport": "^0.5.2",
+    "passport-google-oauth2": "^0.2.0",
     "razorpay": "^2.8.0",
     "redis": "^3.0.0",
     "redis-server": "^1.2.2",
     "tailwindcss": "^3.0.2",
-    "passport": "^0.5.2",
-    "passport-google-oauth2": "^0.2.0",
     "uuidv4": "^6.2.12"
   }
 }

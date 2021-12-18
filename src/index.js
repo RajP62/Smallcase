@@ -1,7 +1,6 @@
 require("dotenv").config()
 const express = require("express");
 const app = express();
-const path = require("path");
 const messagebird = require("messagebird")(process.env.MESSAGEBIRD_KEY);
 
 const passport = require("./config/passport")
@@ -12,9 +11,6 @@ const createController = require("./controllers/create.controller");
 const stockController = require("./controllers/stock.controller")
 const smallcaseController = require("./controllers/smallcase.controller");
 const blogController = require('./controllers/blog.controller');
-const createController = require("./controllers/create.controller");
-const typeController = require('./controllers/type.controller');
-const stockController = require("./controllers/stock.controller");
 const discoverController = require("./controllers/discover.controller");
 const investController = require("./controllers/invest.controller");
 const searchController = require("./controllers/search.controller");
@@ -181,7 +177,14 @@ app.post("/verifying", function(req, res) {
         return res.status(500).json({ status: "failed", message: "Invalid Token"})
     }
 })
+app.get("/login",async(req,res)=>{
+    try {
+        return res.render("login");
+    } catch (e) {
+        return res.status(500).json({message: e.message});
+    }
+});
 
-app.use("", homeController);
+app.use("/home", homeController);
 
 module.exports = app;

@@ -5,7 +5,6 @@ const client = require('../config/redis');
 
 router.get("", async(req,res)=>{
     try {
-<<<<<<< HEAD
         const page = +req?.query?.page || 1;
         const size = +req?.query?.size || 10;
         const investmentrange = +req?.query?.investmentrange || Infinity;
@@ -30,18 +29,6 @@ router.get("", async(req,res)=>{
         }
         /*const data =await Smallcase.find({$or:[{"stats.ratios.riskLabel":{$eq:volatility}},{[volatility]:{type:'object'}}],"stats.minInvestAmount":{$lt:investmentrange}}).populate({path:"info",populate: ["type","investmentStrategy"]}).skip(skip).limit(size).lean().exec();
         return res.render("allsmallcase",{data});*/
-=======
-        const page = +req.query.page || 1;
-        const size = +req.query.size || 10;
-        const investmentrange = +req.query.investmentrange || Infinity;
-        const volatility = req.query.volatility || 'Low Volatility';
-        const strategy = req.query.strategy || null;  
-        console.log(volatility);
-
-        const skip = (page-1)*size;
-        const data =await Smallcase.find({"stats.ratios.riskLabel":volatility,"stats.minInvestAmount":{$lt:investmentrange}}).populate({path:"info",populate: ["type","investmentstrategy"]}).skip(skip).limit(size).lean().exec();
-        return res.render("allsmallcase",{data});
->>>>>>> 88ba16f97777ab0a68c6691a1c1495faf4798fca
 
     } catch (e) {
         res.status(500).json({message: e.message});
@@ -50,7 +37,6 @@ router.get("", async(req,res)=>{
 
 router.get("/all", async(req,res)=>{
     try {
-<<<<<<< HEAD
         client.get("allsmallcases",async(err, smallcases)=>{
             if(err) return res.status(400).json({message:"Bad request found"});
             if(smallcases && smallcases!=null){
@@ -62,10 +48,6 @@ router.get("/all", async(req,res)=>{
         return res.status(200).send(data);
         });
 
-=======
-        const data =await Smallcase.find().populate({path:"info",populate: ["type"]}).lean().exec();
-        return res.status(200).send(data);
->>>>>>> 88ba16f97777ab0a68c6691a1c1495faf4798fca
     } catch (e) {
         res.status(500).json({message: e.message});
     }
@@ -74,12 +56,9 @@ router.get("/all", async(req,res)=>{
 router.post("", async(req,res)=>{
     try {
         const operation =await Smallcase.create(req.body);
-<<<<<<< HEAD
 
         let allSmallcases = await Smallcase.find().lean().exec();
         client.set("allsmallcases", JSON.stringify(allSmallcases));
-=======
->>>>>>> 88ba16f97777ab0a68c6691a1c1495faf4798fca
         return res.status(200).send(operation);
         } catch (e) {
         res.status(500).json({message: e});
