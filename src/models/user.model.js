@@ -2,15 +2,17 @@ const { Schema, model } = require("mongoose");
 const bcrypt = require("bcryptjs")
 
 const userSchema = new Schema({
-    email: {type:String, required:true},
-    password: {type:String, required:true},
-    partner:{type:String, required:true},
-    smallcase:[{type:Schema.Types.ObjectId, ref:"smallcases", required:true}]
+    email: { type: String, required: true },
+    password: { type: String, required: true },
+    partner: { type: String, required: true },
+    smallcase: [{ type: Schema.Types.ObjectId, ref: "smallcases", required: false },{strict: false}],
+    watchlist: [{ type: Schema.Types.ObjectId, ref: "smallcases", required: false },{strict: false}]
 },
-{
-    versionKey: false,
-    timestamps:true,
-});
+    {
+        strict: false,
+        versionKey: false,
+        timestamps: true,
+    });
 
 userSchema.pre("save", function (next) {
     // create and update

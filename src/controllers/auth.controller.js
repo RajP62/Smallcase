@@ -1,6 +1,10 @@
 require("dotenv").config();
 const User = require("../models/user.model");
 
+const NodeCache = require("node-cache")
+
+const myCache = new NodeCache();
+
 const jwt = require("jsonwebtoken");
 
 const newToken = (user) => {
@@ -47,6 +51,10 @@ const login = async (req, res) => {
         // if not present throw an error 
         if (!user) return res.status(400).json({ status: "failed", message: "Provide a valid email address" })
 
+        // check partner
+
+        if(user.partner != req.body.partner) return res.status(400).json({ status:"failed", message:"enter a valid email address and password"})
+
         // else verify the password
         const match = await user.checkpassword(req.body.password);
 
@@ -56,14 +64,12 @@ const login = async (req, res) => {
         // else create a new token 
         const token = newToken(user);
 
-        // return the user and the token
-        // return res.status(201).json({user, token})
+        return res.status(201).send({ user, token })
 
-        return res.status(201).render("discover",{ user, token })
 
     } catch (e) {
         return res.status(500).json({ status: "failed", message: e.message });
     }
 }
 
-module.exports = { register, login }
+module.exports = { register, login, newToken }

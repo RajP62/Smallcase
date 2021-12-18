@@ -1,4 +1,63 @@
-// // Debouncing functionality
+let timerId;
+function texttranform(){
+    let pre=document.getElementById("performance");
+    pre.style.textDecoration="none";
+    pre.style.color="black";
+    let similar=document.getElementById("similar");
+    let text=document.getElementById("text");
+    text.innerHTML=null;
+    text.textContent="Add stocks to your smallcase to see similar stocks here";
+    text.style.alignSelf="center"
+    similar.style.color="blue";
+    similar.style.textDecoration="underline"
+}
+function texttranform1(){
+    let similar=document.getElementById("performance");
+    let pre=document.getElementById("similar");
+    pre.style.textDecoration="none";
+    pre.style.color="black";
+    let text=document.getElementById("text");
+    text.innerHTML=null;
+    text.textContent="Add at least 2 stocks to compare performance";
+    text.style.alignSelf="center"
+    similar.style.color="blue";
+    similar.style.textDecoration="underline"
+}
+// function search(){
+//     let input=document.getElementById("debounce").value;
+//     console.log(input)
+//     let result=document.getElementById("result");
+//     result.innerHTML=null;
+// }
+// function debounce(func,delay){
+
+//     if(timerId){
+//         clearTimeout(timerId);
+//     }
+//     timerId= setTimeout(function(){
+//          func();
+//      },delay)
+//  }
+// function display(){
+//     let result=document.getElementById("result");
+//     result.style.visibility="visible"
+// }
+
+
+
+// debounceFuntionality
+let getSmallcases = async ()=>{
+    let data = await fetch(`http://localhost:2000/smallcases/all`);
+    let res = await data.json();
+    console.log(res)
+    return res;
+}
+var allSmallcaseData;
+
+getSmallcases().then(res=>{
+    allSmallcaseData = res;
+})
+
 let timeoutForDeb;
 let inp_sear = document.getElementById('inp_search');
 inp_sear.addEventListener('keyup',appendSuggestion);
@@ -21,21 +80,13 @@ function appendSuggestion(){
     }, 600);
 }
 
-let appendSearchRes = async search=>{
-    let res = await fetch('http://localhost:2000/smallcases/all');
-    let realData =await res.json();
-
-    allSmallcaseData = realData;
+let appendSearchRes = search=>{
     suggBox.innerHTML = null;
+    suggBox.style.display = "block";
     allSmallcaseData.forEach(element => {
         let {info:{name,shortDescription,imageUrl}} = element;
         if(startCharMatch(name,search)){
             let div = document.createElement('div');
-            div.addEventListener('click',()=>{
-                let elem = {...element};
-                localStorage.setItem('cartcases',JSON.stringify(elem));
-                window.location.href = 'top_100.html';
-            })
             div.setAttribute('class','flex justify-between items-center text-small mb-1 cursor-pointer');
             let div2 = document.createElement('div');
             div2.setAttribute('class','text-blue-600 ml-5')
@@ -50,6 +101,9 @@ let appendSearchRes = async search=>{
             shortDesc = shortDescription;
             div2.append(nameOfCase,shortDesc);
             div.append(img,div2);
+            div.onclick=function (){
+                display(element)
+                };
             let hr = document.createElement('hr');
             suggBox.append(div,hr);
         }
@@ -64,49 +118,34 @@ let startCharMatch = (firStr,secStr)=>{
     }
     return true;
 }
+let sum=0;
+function display(element){
+    suggBox.style.display = "none";
+    let par1=document.getElementById("append");
+    par1.innerHTML=null;
+    let par2=document.getElementById("append2");
+    par2.innerHTML=null;
+    let main=document.getElementById("par");
+    main.setAttribute('class','grid grid-cols-4 mt-16  w-3/5 ml-14 visible border-b-2 gap-4')
+    let main1=document.getElementById("par1");
+    main1.setAttribute('class','grid grid-cols-4 mt-10  w-3/5 ml-14 visible border-b-1 gap-4')
+    let stock=document.createElement("div");
+    stock.textContent=element.info.name;
+    let price=document.createElement("div");
+    price.textContent=element.stats.minInvestAmount
+    let weight=document.createElement("div");
+    weight.textContent="100";
+    let min=document.createElement("div");
+    min.textContent="1|100.00%"
+    main1.append(stock,price,weight,min);
 
-// Sorting through backend
-
-
-// By Investment Amount
-function under(value){
-    const myUrl = new URL(window.location.href);
-    myUrl.searchParams.set("investmentrange", value);
-    window.location.href = myUrl;
+    let amount=document.getElementById("paise");
+    sum+=+(element.stats.minInvestAmount);
+    amount.textContent=`₹ ${sum}`;
+    console.log(element)
 }
 
-// By Volatility
-function byRisk(level){
-    const myUrl = new URL(window.location.href);
-    myUrl.searchParams.set("volatility",level);
-    window.location.href = myUrl;
-}
 
-// By Strategy
-function byStrategy(strategy){
-    const myUrl = new URL(window.location.href);
-    myUrl.searchParams.set("strategy",strategy);
-    window.location.href = myUrl;
-}
-
-// By Page
-function prevPage(){
-    const myUrl = new URL(window.location.href);
-    let currPage = myUrl.searchParams.get("page") || 1;
-    console.log(currPage);
-    if(currPage<=1){
-        currPage = 2;
-    }
-    myUrl.searchParams.set("page",+currPage-1);
-    window.location.href = myUrl;
-}
-
-function nextPage(){
-    const myUrl = new URL(window.location.href);
-    let currPage = myUrl.searchParams.get("page") || 1;
-    myUrl.searchParams.set("page",+currPage+1);
-    window.location.href = myUrl;
-}
 
 
 
@@ -136,26 +175,6 @@ function navbar(){
    `
 }
 
-function footer(){
-    return `
-    <div class=" w-full h-44 bg-gray-100 mt-20">
-        <div class="w-full h-20 flex ">
-            <div class="mt-5 ml-20"> 
-                <p class="text-gray-600">© Powered by smallcase Technologies Pvt. Ltd. Email us at groww-help@smallcase.com</p>
-            </div>
-            <div class="ml-auto space-x-12 mr-20 mt-5">
-                <button class="text-gray-600">Help</button>
-                <button class="text-gray-600">Disclimer</button>
-                <button class="text-gray-600">More</button>
-            </div>
-        </div>
-            <div class="ml-20"> 
-                <img class="h-10 p-1" src="./images/groww-logo.png">
-                <p class="text-gray-600">NSE & BSE – SEBI Reg. No.: INZ0123456789 |  CDSL - SEBI Reg. No.: IN-Dk-117-2019</p>
-            </div> 
-    </div>`
-}
-
 
 function logout() {
     localStorage.removeItem("login_detail");
@@ -166,8 +185,4 @@ function logout() {
 let gnavbar_div = document.getElementById("gnavbar")
 
 gnavbar_div.innerHTML = navbar(); 
-
-let footer_div = document.getElementById("footer");
-
-footer_div.innerHTML = footer(); 
 

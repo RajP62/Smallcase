@@ -1,3 +1,4 @@
+require("dotenv").config()
 const jwt = require("jsonwebtoken")
 
 const verifyToken = (token) => {
@@ -32,6 +33,7 @@ module.exports = async (req,res,next) => {
     return res.status(400).json({status: "failed",message: "Please provide a valid token"})
 
     // else we will attach the user to the request 
+    console.log(user)
     req.user = user;
 
     // return next

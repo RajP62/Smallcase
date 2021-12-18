@@ -6,15 +6,15 @@ btn.addEventListener('click',() => {
 })
 
 
-let err_pass = document.getElementById("err_pas");
-let err_email = document.getElementById("err_email");
-
 function checkemail() {
 
     if(!email) alert("Enter a valid email");
     else {
         let password = document.getElementById("password");
+        let rpassword = document.getElementById("rpassword");
+
         password.classList.remove('hidden')
+        rpassword.classList.remove('hidden')
 
         btn.innerText = "Submit";
         btn.removeEventListener("click", ()=> {
@@ -32,8 +32,9 @@ async function checkpassword() {
     let email = document.getElementById("email").value;
 
     let password = document.getElementById("password").value;
+    let rpassword = document.getElementById("rpassword").value;
 
-    if(!password) alert("Enter a valid email and password");
+    if(password != rpassword) alert("Password is not same");
     else {
 
         let login = {
@@ -45,7 +46,7 @@ async function checkpassword() {
 
         // post request to backend
         try {
-            const response = await fetch("http://localhost:2000/login", {
+            const response = await fetch("http://localhost:2000/register", {
                 method: 'POST',
                 headers: {
                   'Accept': 'application/json',
@@ -56,8 +57,7 @@ async function checkpassword() {
                 
             // console.log(response.status)
             if(response.status == 400) {
-                err_email.classList.remove('hidden');
-                err_pass.classList.remove('hidden')
+               return alert("Provide Different Email");
             }
             else {
                 let login_detail = await response.json();
@@ -68,8 +68,7 @@ async function checkpassword() {
             }
 
         } catch (e) {
-            err_email.classList.remove('hidden');
-            err_pass.classList.remove('hidden')
+            alert("Provide different email")
         }
 
 

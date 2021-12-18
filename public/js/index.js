@@ -123,7 +123,7 @@ let loginBox = () => {
             </div>
         </div>
         <p class="text-sm m-3 text-center text-gray-600">————Don't have a broker account?———</p>
-        <button id="btnGoTo" class="border border-blue-600 text-sm p-4 block m-auto w-4/5 text-blue-600 font-semibold mb-5 rounded">Open an account online</button>
+        <button id="btnGoTo" onclick="window.location.href = 'http://localhost:2000/signup'" class="border border-blue-600 text-sm p-4 block m-auto w-4/5 text-blue-600 font-semibold mb-5 rounded">Open an account online</button>
     </div>
 
     <!-- Login box ends here -->`;
@@ -135,15 +135,33 @@ let displayLogin = backCont => {
     let allLoginParts = document.querySelectorAll('.logByPartners');
     allLoginParts.forEach(element => {
         element.addEventListener('click', () => {
-
+            
             let partner = element.getAttribute("partner");
+
+            // let partner_url = element.getAttribute("")
 
             if(localStorage.getItem("partner") == null) {
                 localStorage.setItem('partner',JSON.stringify(partner));
             }
             localStorage.setItem('partner',JSON.stringify(partner));
 
-            window.location.href = "http://localhost:2000/login"
+
+if(localStorage.getItem("login_detail") != null) {
+    const login_detail = JSON.parse(localStorage.getItem("login_detail"));
+    console.log(login_detail)
+    if(partner == login_detail.user.partner) {
+        window.location.href = "http://localhost:2000/discover";
+    }
+    else {
+              
+        window.location.href = "http://localhost:2000/login"
+
+    }
+    
+}
+else {
+    window.location.href = "http://localhost:2000/login"
+}
         })
     })
     if (loginBox.classList.contains('hidden')) {
