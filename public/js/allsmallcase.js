@@ -2,413 +2,6 @@
 if(localStorage.getItem('data_clicked')===null){
     localStorage.setItem('data_clicked',JSON.stringify([]));
 }
-// let getSmallcases = async ()=>{
-//     let data = await fetch(`http://localhost:2000/smallcases/all`);
-//     let res = await data.json();
-//     return res;
-// }
-// var allSmallcaseData;
-
-// function appendAllSmallcase(){
-//     getSmallcases().then((res)=>{
-//         console.log(res);
-//         allSmallcaseData = res;
-//        res.forEach(element => {
-//            let {info:{name,shortDescription,imageUrl},stats:{minInvestAmount,ratios:{cagr,riskLabel}},} = element;
-//            let div = document.createElement('div');
-//            div.addEventListener('click',()=>{
-//             let elem = {...element};
-//                 localStorage.setItem('cartcases',JSON.stringify(elem));
-//                 window.location.href = 'top_100.html';
-//             })
-//            div.setAttribute('class','grid grid-cols-2 hover:bg-gray-100 cursor-pointer rounded');
-//            let div1 = document.createElement('div');
-//            div1.setAttribute('class','flex');
-//            let div1_div1 = document.createElement('div');
-//            let div1_div1_div1 = document.createElement('div');
-//            // for first div
-//            div1_div1.setAttribute('class','m-5 flex');
-//            div1_div1_div1.setAttribute('class','ml-2');
-//            let img1 = document.createElement('img');
-//            let head1 = document.createElement('h1');
-//            let para1 = document.createElement('p');
-//            head1.setAttribute('class','text-sm font-semibold');
-//            para1.setAttribute('class','text-small text-gray-700');
-//            img1.setAttribute('class','w-12 h-12 rounded');
-//            img1.alt = "Unable to load";
-//            img1.src = imageUrl;
-//            head1.textContent = name;
-//            para1.textContent = shortDescription;
-//            div1_div1_div1.append(head1,para1);
-//            div1_div1.append(img1,div1_div1_div1);
-           
-//            div1.append(div1_div1);
-//            // for second box 
-//            let div2 = document.createElement('div');
-//            let div2_div1 = document.createElement('div');
-//            let div2_div2 = document.createElement('div');
-//            let div2_div3 = document.createElement('div');
-//            div2.setAttribute('class','m-5 h-12 flex gap-5 justify-between items-end');
-//            let minAmtTxt = document.createElement('h1');
-//            minAmtTxt.textContent = "Min. Amount";
-//            minAmtTxt.setAttribute('class','text-gray-600 text-small');
-//            let minAmt = document.createElement('p');
-//            minAmt.textContent = `₹ ${minInvestAmount}`;
-//            minAmt.setAttribute('class','text-sm');
-//            div2_div1.append(minAmtTxt,minAmt);
-//            let threeYCagrTxt = document.createElement('h1');
-//            threeYCagrTxt.textContent = "3Y CAGR";
-//            threeYCagrTxt.setAttribute('class','text-gray-600 text-small');
-//            let threeYCagr = document.createElement('p');
-//            threeYCagr.textContent = `${(cagr*100).toFixed(2)} %`;
-//            threeYCagr.setAttribute('class',"text-green-500 text-sm font-semibold");
-//            div2_div2.append(threeYCagrTxt,threeYCagr);
-//            // for third box of div2
-//            div2_div3.setAttribute('class','h-full');
-//            let div2_div3_div1 = document.createElement('div');
-//            div2_div3_div1.setAttribute('class','h-full flex items-center');
-//            let btnVolatil = document.createElement('button');
-//            btnVolatil.textContent = riskLabel;
-//            btnVolatil.setAttribute('class','text-exsm border-gray-300 px-1 rounded border');
-//            // content for btn volatility
-//            let imgInBtnVol = document.createElement('img');
-//            if(riskLabel==="Low Volatility"){
-//                imgInBtnVol.src = "./images/risk_low.jpg";
-//            }
-//            else if(riskLabel==="Medium Volatility"){
-//                imgInBtnVol.src = "./images/risk_mid.jpg";
-//            }
-//            else{
-//                imgInBtnVol.src = "./images/risk_hi.jpg";
-//            }
-//            imgInBtnVol.setAttribute('class','w-4 inline');
-//            let volText = document.createElement('p');
-//            volText.textContent = riskLabel;
-//            volText.setAttribute('class','inline text-small text-gray-600');
-//            div2_div3_div1.append(imgInBtnVol,volText);
-//            div2_div3.append(div2_div3_div1);
-//            div2.append(div2_div1,div2_div2,div2_div3);
-   
-   
-//            div.append(div1,div2);
-//            // appending to the main container  
-//            mainCont.append(div);
-//        });
-//    });
-// }
-
-// appendAllSmallcase();
-
-
-
-// let rad = document.getElementById('radioIncludeNew');
-// rad.addEventListener('click',consoleSom);
-// function consoleSom(){
-//     console.log(rad.value)
-// }
-
-// let sortByAmt = document.querySelectorAll('.sortByAmount');
-// sortByAmt.forEach((el)=>{
-//     el.addEventListener('click',()=>{
-//         appendByAmount(el);
-//     })
-// });
-
-
-// function appendByAmount(el){
-//     mainCont.innerHTML = null;
-//     if(el.value==="allAmount"){
-//         appendAllSmallcase();
-//         return;
-//     }
-//     allSmallcaseData.forEach(element=>{
-//         let {info:{name,shortDescription,imageUrl},stats:{minInvestAmount,ratios:{cagr,riskLabel}},} = element;
-//         if(minInvestAmount<=el.value){
-//             let div = document.createElement('div');
-//             div.addEventListener('click',()=>{
-//                 let elem = {...element};
-//                 localStorage.setItem('cartcases',JSON.stringify(elem));
-//                 window.location.href = 'top_100.html';
-//             })
-//         div.setAttribute('class','grid grid-cols-2 hover:bg-gray-100 cursor-pointer rounded');
-//         let div1 = document.createElement('div');
-//         div1.setAttribute('class','flex');
-//         let div1_div1 = document.createElement('div');
-//         let div1_div1_div1 = document.createElement('div');
-//         // for first div
-//         div1_div1.setAttribute('class','m-5 flex');
-//         div1_div1_div1.setAttribute('class','ml-2');
-//         let img1 = document.createElement('img');
-//         let head1 = document.createElement('h1');
-//         let para1 = document.createElement('p');
-//         head1.setAttribute('class','text-sm font-semibold');
-//         para1.setAttribute('class','text-small text-gray-700');
-//         img1.setAttribute('class','w-12 h-12 rounded');
-//         img1.alt = "Unable to load";
-//         img1.src = imageUrl;
-//         head1.textContent = name;
-//         para1.textContent = shortDescription;
-//         div1_div1_div1.append(head1,para1);
-//         div1_div1.append(img1,div1_div1_div1);
-        
-//         div1.append(div1_div1);
-//         // for second box 
-//         let div2 = document.createElement('div');
-//         let div2_div1 = document.createElement('div');
-//         let div2_div2 = document.createElement('div');
-//         let div2_div3 = document.createElement('div');
-//         div2.setAttribute('class','m-5 h-12 flex gap-5 justify-between items-end');
-//         let minAmtTxt = document.createElement('h1');
-//         minAmtTxt.textContent = "Min. Amount";
-//         minAmtTxt.setAttribute('class','text-gray-600 text-small');
-//         let minAmt = document.createElement('p');
-//         minAmt.textContent = `₹ ${minInvestAmount}`;
-//         minAmt.setAttribute('class','text-sm');
-//         div2_div1.append(minAmtTxt,minAmt);
-//         let threeYCagrTxt = document.createElement('h1');
-//         threeYCagrTxt.textContent = "3Y CAGR";
-//         threeYCagrTxt.setAttribute('class','text-gray-600 text-small');
-//         let threeYCagr = document.createElement('p');
-//         threeYCagr.textContent = `${(cagr*100).toFixed(2)} %`;
-//         threeYCagr.setAttribute('class',"text-green-500 text-sm font-semibold");
-//         div2_div2.append(threeYCagrTxt,threeYCagr);
-//         // for third box of div2
-//         div2_div3.setAttribute('class','h-full');
-//         let div2_div3_div1 = document.createElement('div');
-//         div2_div3_div1.setAttribute('class','h-full flex items-center');
-//         let btnVolatil = document.createElement('button');
-//         btnVolatil.textContent = riskLabel;
-//         btnVolatil.setAttribute('class','text-exsm border-gray-300 px-1 rounded border');
-//         // content for btn volatility
-//         let imgInBtnVol = document.createElement('img');
-//         if(riskLabel==="Low Volatility"){
-//             imgInBtnVol.src = "./images/risk_low.jpg";
-//         }
-//         else if(riskLabel==="Medium Volatility"){
-//             imgInBtnVol.src = "./images/risk_mid.jpg";
-//         }
-//         else{
-//             imgInBtnVol.src = "./images/risk_hi.jpg";
-//         }
-//         imgInBtnVol.setAttribute('class','w-4 inline');
-//         let volText = document.createElement('p');
-//         volText.textContent = riskLabel;
-//         volText.setAttribute('class','inline text-small text-gray-600');
-//         div2_div3_div1.append(imgInBtnVol,volText);
-//         div2_div3.append(div2_div3_div1);
-//         div2.append(div2_div1,div2_div2,div2_div3);
-
-
-//         div.append(div1,div2);
-//         // appending to the main container  
-//         mainCont.append(div);
-
-//     }});
-// }
-
-// // Sorting by risk level
-// let btnSortLow = document.getElementById('btnSortLowRisk');
-// let btnSortMed = document.getElementById('btnSortMedRisk');
-// let btnSortHigh = document.getElementById('btnSortHighRisk');
-// btnSortLow.onclick = ()=>{
-//     sortByRisk('Low Volatility')
-// };
-// btnSortMed.onclick = ()=>{
-//     sortByRisk('Medium Volatility')
-// };
-// btnSortHigh.onclick = ()=>{
-//     sortByRisk('High Volatility')
-// };
-
-// function sortByRisk(level){
-//     mainCont.innerHTML = null;
-//     allSmallcaseData.forEach(element=>{
-//         let {info:{name,shortDescription,imageUrl},stats:{minInvestAmount,ratios:{cagr,riskLabel}},} = element;
-//         if(riskLabel===level){
-//             let div = document.createElement('div');
-//             div.addEventListener('click',()=>{
-//                 let elem = {...element};
-//                 localStorage.setItem('cartcases',JSON.stringify(elem));
-//                 window.location.href = 'top_100.html';
-//             })
-//         div.setAttribute('class','grid grid-cols-2 hover:bg-gray-100 cursor-pointer rounded');
-//         let div1 = document.createElement('div');
-//         div1.setAttribute('class','flex');
-//         let div1_div1 = document.createElement('div');
-//         let div1_div1_div1 = document.createElement('div');
-//         // for first div
-//         div1_div1.setAttribute('class','m-5 flex');
-//         div1_div1_div1.setAttribute('class','ml-2');
-//         let img1 = document.createElement('img');
-//         let head1 = document.createElement('h1');
-//         let para1 = document.createElement('p');
-//         head1.setAttribute('class','text-sm font-semibold');
-//         para1.setAttribute('class','text-small text-gray-700');
-//         img1.setAttribute('class','w-12 h-12 rounded');
-//         img1.alt = "Unable to load";
-//         img1.src = imageUrl;
-//         head1.textContent = name;
-//         para1.textContent = shortDescription;
-//         div1_div1_div1.append(head1,para1);
-//         div1_div1.append(img1,div1_div1_div1);
-        
-//         div1.append(div1_div1);
-//         // for second box 
-//         let div2 = document.createElement('div');
-//         let div2_div1 = document.createElement('div');
-//         let div2_div2 = document.createElement('div');
-//         let div2_div3 = document.createElement('div');
-//         div2.setAttribute('class','m-5 h-12 flex gap-5 justify-between items-end');
-//         let minAmtTxt = document.createElement('h1');
-//         minAmtTxt.textContent = "Min. Amount";
-//         minAmtTxt.setAttribute('class','text-gray-600 text-small');
-//         let minAmt = document.createElement('p');
-//         minAmt.textContent = `₹ ${minInvestAmount}`;
-//         minAmt.setAttribute('class','text-sm');
-//         div2_div1.append(minAmtTxt,minAmt);
-//         let threeYCagrTxt = document.createElement('h1');
-//         threeYCagrTxt.textContent = "3Y CAGR";
-//         threeYCagrTxt.setAttribute('class','text-gray-600 text-small');
-//         let threeYCagr = document.createElement('p');
-//         threeYCagr.textContent = `${(cagr*100).toFixed(2)} %`;
-//         threeYCagr.setAttribute('class',"text-green-500 text-sm font-semibold");
-//         div2_div2.append(threeYCagrTxt,threeYCagr);
-//         // for third box of div2
-//         div2_div3.setAttribute('class','h-full');
-//         let div2_div3_div1 = document.createElement('div');
-//         div2_div3_div1.setAttribute('class','h-full flex items-center');
-//         let btnVolatil = document.createElement('button');
-//         btnVolatil.textContent = riskLabel;
-//         btnVolatil.setAttribute('class','text-exsm border-gray-300 px-1 rounded border');
-//         // content for btn volatility
-//         let imgInBtnVol = document.createElement('img');
-//         if(riskLabel==="Low Volatility"){
-//             imgInBtnVol.src = "./images/risk_low.jpg";
-//         }
-//         else if(riskLabel==="Medium Volatility"){
-//             imgInBtnVol.src = "./images/risk_mid.jpg";
-//         }
-//         else{
-//             imgInBtnVol.src = "./images/risk_hi.jpg";
-//         }
-//         imgInBtnVol.setAttribute('class','w-4 inline');
-//         let volText = document.createElement('p');
-//         volText.textContent = riskLabel;
-//         volText.setAttribute('class','inline text-small text-gray-600');
-//         div2_div3_div1.append(imgInBtnVol,volText);
-//         div2_div3.append(div2_div3_div1);
-//         div2.append(div2_div1,div2_div2,div2_div3);
-
-
-//         div.append(div1,div2);
-//         // appending to the main container  
-//         mainCont.append(div);
-//         }
-//     })
-// }
-
-
-// // Sort by investment strategy
-
-// let sortByInvStrategy = document.querySelectorAll('.soryByInvStrategy');
-// sortByInvStrategy.forEach(element => {
-//     element.onclick = ()=>{
-//         sortByInvStr(element.value);
-//     };
-// });
-// function sortByInvStr(strategy){
-//     mainCont.innerHTML = null;
-//     allSmallcaseData.forEach(element=>{
-//         let {info:{name,shortDescription,imageUrl,investmentStrategy},stats:{minInvestAmount,ratios:{cagr,riskLabel}},} = element;
-//         investmentStrategy.forEach(({key})=>{
-//         if(key===strategy){
-//         let div = document.createElement('div');
-//         div.addEventListener('click',()=>{
-//             let elem = {...element};
-//                 localStorage.setItem('cartcases',JSON.stringify(elem));
-//                 window.location.href = 'top_100.html';
-//         })
-//         div.setAttribute('class','grid grid-cols-2 hover:bg-gray-100 cursor-pointer rounded');
-//         let div1 = document.createElement('div');
-//         div1.setAttribute('class','flex');
-//         let div1_div1 = document.createElement('div');
-//         let div1_div1_div1 = document.createElement('div');
-//         // for first div
-//         div1_div1.setAttribute('class','m-5 flex');
-//         div1_div1_div1.setAttribute('class','ml-2');
-//         let img1 = document.createElement('img');
-//         let head1 = document.createElement('h1');
-//         let para1 = document.createElement('p');
-//         head1.setAttribute('class','text-sm font-semibold');
-//         para1.setAttribute('class','text-small text-gray-700');
-//         img1.setAttribute('class','w-12 h-12 rounded');
-//         img1.alt = "Unable to load";
-//         img1.src = imageUrl;
-//         head1.textContent = name;
-//         para1.textContent = shortDescription;
-//         div1_div1_div1.append(head1,para1);
-//         div1_div1.append(img1,div1_div1_div1);
-        
-//         div1.append(div1_div1);
-//         // for second box 
-//         let div2 = document.createElement('div');
-//         let div2_div1 = document.createElement('div');
-//         let div2_div2 = document.createElement('div');
-//         let div2_div3 = document.createElement('div');
-//         div2.setAttribute('class','m-5 h-12 flex gap-5 justify-between items-end');
-//         let minAmtTxt = document.createElement('h1');
-//         minAmtTxt.textContent = "Min. Amount";
-//         minAmtTxt.setAttribute('class','text-gray-600 text-small');
-//         let minAmt = document.createElement('p');
-//         minAmt.textContent = `₹ ${minInvestAmount}`;
-//         minAmt.setAttribute('class','text-sm');
-//         div2_div1.append(minAmtTxt,minAmt);
-//         let threeYCagrTxt = document.createElement('h1');
-//         threeYCagrTxt.textContent = "3Y CAGR";
-//         threeYCagrTxt.setAttribute('class','text-gray-600 text-small');
-//         let threeYCagr = document.createElement('p');
-//         threeYCagr.textContent = `${(cagr*100).toFixed(2)} %`;
-//         threeYCagr.setAttribute('class',"text-green-500 text-sm font-semibold");
-//         div2_div2.append(threeYCagrTxt,threeYCagr);
-//         // for third box of div2
-//         div2_div3.setAttribute('class','h-full');
-//         let div2_div3_div1 = document.createElement('div');
-//         div2_div3_div1.setAttribute('class','h-full flex items-center');
-//         let btnVolatil = document.createElement('button');
-//         btnVolatil.textContent = riskLabel;
-//         btnVolatil.setAttribute('class','text-exsm border-gray-300 px-1 rounded border');
-//         // content for btn volatility
-//         let imgInBtnVol = document.createElement('img');
-//         if(riskLabel==="Low Volatility"){
-//             imgInBtnVol.src = "./images/risk_low.jpg";
-//         }
-//         else if(riskLabel==="Medium Volatility"){
-//             imgInBtnVol.src = "./images/risk_mid.jpg";
-//         }
-//         else{
-//             imgInBtnVol.src = "./images/risk_hi.jpg";
-//         }
-//         imgInBtnVol.setAttribute('class','w-4 inline');
-//         let volText = document.createElement('p');
-//         volText.textContent = riskLabel;
-//         volText.setAttribute('class','inline text-small text-gray-600');
-//         div2_div3_div1.append(imgInBtnVol,volText);
-//         div2_div3.append(div2_div3_div1);
-//         div2.append(div2_div1,div2_div2,div2_div3);
-
-
-//         div.append(div1,div2);
-//         // appending to the main container  
-//         mainCont.append(div);
-//         }
-//     });
-//     });
-// }
-
-// let btnClearAll = document.getElementById('btnClearall');
-// btnClearAll.onclick = ()=>{
-//     location.reload();
-// }
 
 // // Debouncing functionality
 let timeoutForDeb;
@@ -535,3 +128,65 @@ function showInDetail(elem){
     
     window.location.assign("search");
 }
+
+function navbar(){
+    return `
+    <div class=" w-full h-16 border-b border-gray-400 flex"> 
+       <div class="h-full flex ml-28 space-x-7">
+           <div class=" h-full py-3">
+               <img class="h-full" src="images/groww-logo.png">
+           </div>
+           <button onclick="window.location.href = 'http://localhost:2000/growDashboard'" class="text-gray-600 text-sm">Dashboard</button>
+           <button onclick="window.location.href = 'http://localhost:2000/discover'" class="text-gray-600 text-sm">Discover</button>
+           <button onclick="window.location.href = 'http://localhost:2000/create'" class="text-gray-600 text-sm">Create</button>
+       </div>
+       <div class="h-full flex ml-auto mr-28 space-x-7">
+           <button class="text-gray-600 text-sm" onclick="window.location.href ='http://localhost:2000/watchlists'">Watchlist</button>
+           <button class="text-gray-600 text-sm" onclick="window.location.href ='http://localhost:2000/investments'">Investments</button>
+           <button><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-600 text-sm" viewBox="0 0 20 20" fill="currentColor">
+               <path d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z" />
+             </svg></button>
+           <button><svg xmlns="http://www.w3.org/2000/svg" onclick="show()" class="h-5 w-5 text-gray-600 text-sm" viewBox="0 0 20 20" fill="currentColor">
+               <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd" />
+             </svg></button> 
+           <button onclick="logout()" class="rounded text-md text-gray-600 font-medium pb-2 border border-blue-500 px-2 h-7 mt-4 hover:text-blue-600">Log-out</button> 
+       </div>
+   </div>
+   `
+}
+
+function footer(){
+    return `
+    <div class=" w-full h-44 bg-gray-100 mt-20">
+        <div class="w-full h-20 flex ">
+            <div class="mt-5 ml-20"> 
+                <p class="text-gray-600">© Powered by smallcase Technologies Pvt. Ltd. Email us at groww-help@smallcase.com</p>
+            </div>
+            <div class="ml-auto space-x-12 mr-20 mt-5">
+                <button class="text-gray-600">Help</button>
+                <button class="text-gray-600">Disclimer</button>
+                <button class="text-gray-600">More</button>
+            </div>
+        </div>
+            <div class="ml-20"> 
+                <img class="h-10 p-1" src="./images/groww-logo.png">
+                <p class="text-gray-600">NSE & BSE – SEBI Reg. No.: INZ0123456789 |  CDSL - SEBI Reg. No.: IN-Dk-117-2019</p>
+            </div> 
+    </div>`
+}
+
+
+function logout() {
+    localStorage.removeItem("login_detail");
+    window.location.href="http://localhost:2000/home"
+}
+
+
+let gnavbar_div = document.getElementById("gnavbar")
+
+gnavbar_div.innerHTML = navbar(); 
+
+let footer_div = document.getElementById("footer");
+
+footer_div.innerHTML = footer(); 
+
