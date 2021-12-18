@@ -74,6 +74,7 @@ stockData.innerText = "₹"+yValues[yValues.length-1];
 //appending data using local storage
 
 let cart_data = JSON.parse(localStorage.getItem("data_clicked"));
+cart_data = [JSON.parse(cart_data[0])];
 console.log(cart_data);
 
 function append_local(){

@@ -1,7 +1,7 @@
 // let mainCont = document.getElementById('mainCont');
-// if(localStorage.getItem('cartcases')===null){
-//     localStorage.setItem('cartcases',JSON.stringify({}));
-// }
+if(localStorage.getItem('data_clicked')===null){
+    localStorage.setItem('data_clicked',JSON.stringify([]));
+}
 // let getSmallcases = async ()=>{
 //     let data = await fetch(`http://localhost:2000/smallcases/all`);
 //     let res = await data.json();
@@ -518,4 +518,20 @@ function nextPage(){
     let currPage = myUrl.searchParams.get("page") || 1;
     myUrl.searchParams.set("page",+currPage+1);
     window.location.href = myUrl;
+}
+
+
+// proceeding to search page
+
+function showInDetail(elem){
+     console.log(elem)
+    let data_cart = JSON.parse(localStorage.getItem("data_clicked"));
+
+    data_cart = [];
+
+    data_cart.push(elem);
+
+    localStorage.setItem("data_clicked",JSON.stringify(data_cart));
+    
+    window.location.assign("search");
 }
