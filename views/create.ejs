@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div id="gnavbar"></div>
+    <div class="w-4/5 m-auto">
+        <div class="mt-8 ml-8 font-bold text-2xl">
+            <span>Creating</span>
+            <input type="text" value="New Smallcase" class="font-bold text-2xl">
+        </div>
+        <div class="flex mt-8 ml-8 h-12">
+            <div class="flex w-3/5">
+                <div class="w-full">
+                    <h3 class="mb-5">Add & Organize stocks</h3>
+                    <div class="flex gap-2">
+                        <!-- <button
+                            class="w-36 h-14 bg-white hover:bg-gray-100 text-blue-500 border border-blue-400 rounded shadow">
+                            Add Segment
+                        </button> -->
+                        <div>
+                            <div class="pr-10 h-5">
+                                <input id="inp_search" type="text" class="px-10 py-2 border border border-gray-300 rounded" placeholder="Search by name or ticker">
+                                <div id="inp_sugg_box"
+                                    class="hidden h-60 w-5/5 sticky border-gray-200 p-2 shadow-lg rounded overflow-scroll bg-white">
+                                </div>
+                            </div>
+
+
+                            <!-- <input id="debounce" type="text" onclick="display()" oninput="debounce(search,1500)" class="h-8 focus:shadow focus:outline-none"> -->
+                            <div class="w-44 shadow focus:outline-none" id="result" style=" visibility: hidden">Type 3
+                                or more characters to start searching</div>
+                        </div>
+                    </div>
+                    <div id="append" class="mt-10">
+                        <img class="max-w-md mt-28" src="images/download.png">
+                    </div>
+                </div>
+                <div>
+                    <p class="justify-self-end mb-5">Weighting Scheme</p>
+                    <select class="hover:bg-gray-100 w-40 h-8">
+                        <option class="hover:bg-gray-100">Equi-Weighted</option>
+                        <option class="hover:bg-gray-100">Market Cap Weighted</option>
+                        <option class="hover:bg-gray-100">Custom Weighted</option>
+                    </select>
+                    <div id="append2" class="mt-20">
+                        <h1 class="text-2xl">Add at least 2 stocks to create a smallcase</h1>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w-2/5 ml-20">
+                <p>Minimum Investment Amount</p>
+                <p id="paise">₹ 0.00</p>
+                <button onclick="location.href='invest.html'"
+                    class="w-60 h-12 bg-white m-2 hover:bg-gray-100 text-blue-800 font-semibold  border border-blue-400 rounded shadow">
+                    Invest Now
+                </button> <br>
+                <button
+                    class="w-60 h-12 m-2 bg-white hover:bg-gray-100 text-blue-800 font-semibold  border border-blue-400 rounded shadow">
+                    Save Draft
+                </button>
+                <div class="grid grid-cols-2 w-80 mt-4 ">
+                    <p id="similar" class="w-40" onclick="texttranform()">Similar Stocks</p>
+                    <p id="performance" class="w-40" onclick="texttranform1()">Performance</p>
+                    <p id="text" class="w-61 mr-14 col-span-2 mt-4 text-center "></p>
+                </div>
+            </div>
+        </div>
+
+        <div id="par" class="grid grid-cols-4 mt-16  w-3/5 ml-14 invisible">
+            <h3>Stock</h3>
+            <h3>Price</h3>
+            <h3>Weights</h3>
+            <h3>Shares/Weights</h3>
+        </div>
+        <div id="par1" class="grid grid-cols-4 mt-10  w-3/5 ml-14 invisible">
+
+        </div>
+    </div>
+</body>
+<script src="js/create.js"></script>
+
+</html>
