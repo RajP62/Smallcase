@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="80" height="80" viewBox="0 0 80 80">
+    <defs>
+        <rect id="7zdg5swmna" width="80" height="80" x="0" y="0" rx="8"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <g>
+                <g>
+                    <g>
+                        <g transform="translate(-1229 -407) translate(0 57) translate(340 326) translate(865) translate(24 24)">
+                            <mask id="2q29fq2mvb" fill="#fff">
+                                <use xlink:href="#7zdg5swmna"/>
+                            </mask>
+                            <use fill="#2F363F" xlink:href="#7zdg5swmna"/>
+                            <g fill="#FFF" mask="url(#2q29fq2mvb)">
+                                <g>
+                                    <path d="M46.071 46.5L45 44 47.5 45.072 50 44 48.928 46.5 50 49 47.5 47.929 45 49z" opacity=".7" transform="translate(12 16)"/>
+                                    <path d="M3.968 27.635L5.556 23.667 7.143 27.635 11.111 29.222 7.143 30.81 5.556 34.778 3.968 30.81 0 29.222z" transform="translate(12 16)"/>
+                                    <path fill-rule="nonzero" d="M41.5 0L40.5 2.5 38 3.5 40.5 4.5 41.5 7 42.5 4.5 45 3.5 42.5 2.5z" transform="translate(12 16)"/>
+                                </g>
+                            </g>
+                            <rect width="44" height="44" x="-21" y="-18" fill="#81878C" mask="url(#2q29fq2mvb)" opacity=".2" rx="22"/>
+                            <rect width="10" height="10" x="56" y="32" fill="#81878C" mask="url(#2q29fq2mvb)" opacity=".2" rx="5"/>
+                            <g fill="#FFF" mask="url(#2q29fq2mvb)">
+                                <path d="M27 31.711v3.234c0 .583-.465 1.055-1.038 1.055H1.038C.465 36 0 35.528 0 34.945v-3.234h27zm-3.115-6.328c.573 0 1.038.472 1.038 1.055v3.164H2.077v-3.164c0-.583.465-1.055 1.038-1.055zM15.43.01c.762-.11 1.372.631 1.134 1.371l-.786 2.45 7.619 4.836c.486.31.634.96.33 1.454l-2.077 3.375c-.28.454-.851.623-1.327.393-3.88-1.876-5.721-1.077-5.879-.724-.076.169-.18.4.268.973 1.51 1.921 6.51 4.251 7.817 9.135H3.441C2.237 20.722 0 17.874 0 13.78 0 5.806 7.652 1.14 15.43.011z" transform="translate(27 22)"/>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
