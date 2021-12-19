@@ -23,6 +23,18 @@ router.get("/:id",authenticate, async(req,res) => {
     } catch (e) {
         return res.status(500).json({status: "failed", message: e.message})
     }
+});
+
+
+router.patch("/:id",authenticate, async(req,res)=>{
+    try{
+        const user = await User.findByIdAndUpdate(req.params.id,req.body,{new:true}).populate("watchlist").lean().exec();
+        return res.send(user);
+
+    }
+    catch(e){
+        res.status(500).json({message:e.message});
+    }
 })
 
 

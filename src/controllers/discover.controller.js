@@ -9,7 +9,7 @@ const myCache = new NodeCache();
 
 router.get("", async(req,res) => {
     try {
-        return res.render("discover")
+        return res.render("discover",{user:"user",token:"token"})      
     } catch (e) {
         return res.status(500).json({message: "Internal server error"})
     }
@@ -17,7 +17,6 @@ router.get("", async(req,res) => {
 
 router.get("/auth",authenticate, async(req,res)=>{
     try {
-       console.log("dlfkj")
        return res.send("discover");
     } catch (e) {
         res.status(500).json({message:"Internal server error"});

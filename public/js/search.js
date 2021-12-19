@@ -152,7 +152,7 @@ function footer(){
 
 
 function logout() {
-  localStorage.removeItem("login_detail");
+  window.localStorage.clear();
   window.location.href="http://localhost:2000/home"
 }
 
@@ -164,3 +164,44 @@ gnavbar_div.innerHTML = navbar();
 let footer_div = document.getElementById("footer");
 
 footer_div.innerHTML = footer(); 
+
+
+// watchlist
+
+
+async function redirect(){
+  let userDetail = JSON.parse(localStorage.getItem("login_detail"));
+  let smallcase = JSON.parse(localStorage.getItem("data_clicked"));
+  console.log(userDetail);
+let {user,user:{_id,watchlist},token} = userDetail;
+let {_id:id} = JSON.parse(smallcase);
+watchlist.push(id);
+console.log("watchlist", watchlist);
+console.log("id",id, "_id",_id, "token",token);
+
+  let response = await fetch(`http://localhost:2000/watchlists/${_id}`,{
+      method:'PATCH',
+      body:JSON.stringify(user),
+      headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`
+}
+  });
+  if(response.status != 200){
+    alert("Something went wrong");
+  }
+  else{
+    let res = await response.json();
+    userDetail = {user:res,token}
+    console.log("res",res);
+    let addToWatchElem = document.getElementById("addToWatch");
+    addToWatchElem.innerText = "Added to watchList";
+    addToWatchElem.classList.add("bg-gray-400","text-white");
+
+  localStorage.setItem("login_detail", JSON.stringify(userDetail));
+  }
+
+} 
+
+

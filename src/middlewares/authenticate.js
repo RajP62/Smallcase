@@ -10,7 +10,7 @@ const verifyToken = (token) => {
     });
 }
 
-module.exports = async (req,res,next) => {
+    module.exports = async (req,res,next) => {
     // if we received the bearer token in the header
     const bearerToken = req.headers.authorization;
     

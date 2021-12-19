@@ -4,6 +4,13 @@ if(localStorage.getItem("login_detail") == null) {
     window.location.href = "http://localhost:2000/home";
 }
 
+if(localStorage.getItem("newlyLogged")==null){
+    localStorage.setItem("newlyLogged", JSON.stringify([]));
+    setTimeout(() => {
+        location.reload();
+    },500);
+}
+
 const {token,user} = JSON.parse(localStorage.getItem("login_detail"));
 
 MyInvestment();
@@ -14,14 +21,17 @@ if(localStorage.getItem("myInvestment") == null) {
 
 else {
     let myInvestments = JSON.parse(localStorage.getItem("myInvestment"));
+    console.log(myInvestments);
     
-    if(myInvestments.smallcase.length == 0) {
+    if(myInvestments.investments.length == 0) {
         // show big image on watchlist or message that nothing in wishlist
     }
     
-    myInvestments.smallcase.forEach(({info: {name,shortDescription,imageUrl}},{stats:{minSipAmount,ratio:{cagr3y}}}) => {
+    myInvestments.investments.forEach(el => {
+
+        let {info: {name,shortDescription,imageUrl},stats:{minSipAmount, ratios:{cagr3y}}} = el;
         let div = document.createElement('div');
-        div.setAttribute('class','grid grid-cols-2 hover:bg-gray-100 cursor-pointer rounded');
+        div.setAttribute('class','grid grid-cols-2 hover:bg-gray-100 cursor-pointer rounded border-b-2 mb-5 border-gray-400');
         let div_L = document.createElement(`div`);
         div_L.classList.add('flex')
         let div_R = document.createElement(`div`);
@@ -62,11 +72,14 @@ else {
         head2.setAttribute('class',"text-gray-600 text-lg");
         head2.innerHTML = "3Y CAGR";
         para2.setAttribute("class","text-md");
-        para2.innerHTML = cagr3y;
+        para2.innerHTML = `${(cagr3y * 100).toFixed(2)} %`;
 
         let btn = document.createElement('button');
+        btn.onclick = ()=>{
+            searchData(JSON.stringify(el));
+        }
         btn.innerHTML = "Invest Now";
-        btn.setAttribute('class',"transition-all duration-150 transform hover:-translate-y-0.5 hover:shadow-lg bg-green-400 rounded")
+        btn.setAttribute('class',"transition-all duration-150 transform hover:-translate-y-0.5  hover:shadow-lg bg-green-400 cursor-pointer select-none rounded px-20 py-3 font-medium text-white")
 
         div_r1.append(head1,para1);
         div_r2.append(head2,para2);
@@ -74,7 +87,8 @@ else {
 
         div_R.append(div_r1,div_r2,div_r3);
 
-        div_watchlist.append(div_L,div_R)
+        div.append(div_L,div_R);
+        MyInvestment_box.append(div);
 
     })
 
@@ -90,17 +104,19 @@ async function MyInvestment(){
             'Authorization': `Bearer ${token}`
           },
           })
-          if(watchlist.status != 200) {
+          if(investment.status != 200) {
             //   return res.json({status:"failed", message:"provide a valid token"})
             // redirect to invalid token page 
           }
           else {
               let data = await investment.json();
   
+              console.log(data);
               localStorage.setItem("myInvestment", JSON.stringify(data));
   
           }
     } catch (e) {
+        console.log(e.message);
         // return res.status(500).json({status: "failed", message:"Provide a valid token"})
 
         // redirect to invalid token page
@@ -156,8 +172,27 @@ function footer(){
 }
 
 
+if(localStorage.getItem("data_clicked")== null){
+
+    localStorage.setItem("data_clicked", JSON.stringify([]));
+}
+
+function searchData(elem){
+
+    let data_cart = JSON.parse(localStorage.getItem("data_clicked"));
+
+    data_cart = [];
+
+    data_cart.push(elem);
+
+    localStorage.setItem("data_clicked",JSON.stringify(data_cart));
+
+    window.location.assign("http://localhost:2000/search");
+}
+
+
 function logout() {
-    localStorage.removeItem("login_detail");
+    window.localStorage.clear();
     window.location.href="http://localhost:2000/home"
 }
 

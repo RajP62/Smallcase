@@ -28,7 +28,7 @@ function navbar(){
 
 
 function logout() {
-    localStorage.removeItem("login_detail");
+    window.localStorage.clear();
     window.location.href="http://localhost:2000/home"
 }
 

@@ -18,6 +18,7 @@
     </style>
 </head>
 <body>
+    <div id="gnavbar"></div>
     
     <div class="mx-20">
 
@@ -102,13 +103,14 @@
                 </div>
                 <p class="text-sm text-gray-600 mt-6">Get access for free forever</p>
                 <p class="font-medium text-sm text-blue-600 mt-1">See more benefits</p>
-                <div class="mt-8">
+                <div class="mt-8 w-full">
                     <a onclick="proceedPayment()" class="cursor-pointer select-none rounded px-20 py-3 bg-green-400 font-medium text-white">Invest Now</a>
                 </div>
-                <div class="mt-10">
-                    <a href="#" class="rounded text-blue-600 border border-green-200 font-medium px-16 py-3">Add to Watchlist</a>
-                    <hr class="mt-10">
-                    <!-- icon images start-->
+                <div class="mt-10 w-full">
+                    <a id="addToWatch"  onclick="redirect()" href="#" class="cursor-pointer select-none rounded px-20 py-3 border-2 font-medium text-black">Add to Watchlist</a>
+                </div>
+                <hr class="mt-10">
+                <!-- icon images start-->
                     <div class="flex mt-4">
                         <div class="text-sm text-gray-500">
                             Share on
@@ -124,7 +126,7 @@
                         </div>
                     </div>
                     <!-- icon images end here -->
-                </div>
+
             </div>
 
             <!-- minimum investment amount box ends here -->
@@ -176,6 +178,8 @@
         </div>
 
     </div>
+
+    <div id="footer"></div>
 
 
     <script src="js/search.js"></script>

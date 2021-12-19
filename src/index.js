@@ -103,7 +103,7 @@ app.get(
     }),
     function (req, res) {
         // console.log({ user: req.user.user, token: req.user.token })
-        return res.status(201).render("discover",{ user: req.user.user, token: req.user.token});
+        return res.status(201).render("discover",{user: req.user.user, token: req.user.token});
     }
 );
 
@@ -185,6 +185,6 @@ app.get("/login",async(req,res)=>{
     }
 });
 
-app.use("/home", homeController);
+app.use("/home", homeController);    
 
 module.exports = app;

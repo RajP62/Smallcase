@@ -16,7 +16,7 @@ router.get("", async(req,res)=>{
 
 router.get("/:id",authenticate, async(req,res) => {
     try {
-        const user = await User.findOne({_id: req.params.id}).populate("smallcase").lean().exec();
+        const user = await User.findOne({_id: req.params.id}).populate("investments").lean().exec();
 
         return res.send(user);
     } catch (e) {

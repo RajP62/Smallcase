@@ -33,6 +33,7 @@ async function checkpassword() {
 
     let password = document.getElementById("password").value;
     let rpassword = document.getElementById("rpassword").value;
+    let watchlist = [], smallcase = [], investments = [];
 
     if(password != rpassword) alert("Password is not same");
     else {
@@ -40,9 +41,11 @@ async function checkpassword() {
         let login = {
             email,
             password,
-            partner
+            partner,
+            watchlist,
+            smallcase,
+            investments
         }
-        console.log(login)
 
         // post request to backend
         try {

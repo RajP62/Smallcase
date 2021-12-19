@@ -26,7 +26,8 @@ passport.use(
           password: uuid(),
           partner: "Google",
           smallcase: [],
-          watchlist: []
+          watchlist: [],
+          investments:[]
         });
       }
       const token = newToken(user);

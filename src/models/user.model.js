@@ -5,8 +5,9 @@ const userSchema = new Schema({
     email: { type: String, required: true },
     password: { type: String, required: true },
     partner: { type: String, required: true },
-    smallcase: [{ type: Schema.Types.ObjectId, ref: "smallcases", required: false },{strict: false}],
-    watchlist: [{ type: Schema.Types.ObjectId, ref: "smallcases", required: false },{strict: false}]
+    smallcase: [{ type: Schema.Types.ObjectId, ref: "smallcase", required: false },{strict: false}],
+    watchlist: [{ type: Schema.Types.ObjectId, ref: "smallcase", required: false },{strict: false}],
+    investments:[{ type: Schema.Types.ObjectId, ref: "smallcase", required: false },{strict: false}]
 },
     {
         strict: false,

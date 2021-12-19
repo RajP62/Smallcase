@@ -1,9 +1,14 @@
 if(localStorage.getItem("login_detail") == null) {
+
     let div_login = document.getElementById("login_detail");
     let data = div_login.getAttribute("login_info");
-
+    
     let {user,token} = JSON.parse(data)
-
+    
+    if(user=="user"|| token == "token"){
+        
+        window.location.href = "http://localhost:2000/login";
+    }
     localStorage.setItem("login_detail", JSON.stringify({user,token}))
     authenticate(token,user)
 }
@@ -193,7 +198,7 @@ function footer(){
 
 
 function logout() {
-    localStorage.removeItem("login_detail");
+    window.localStorage.clear();
     window.location.href="http://localhost:2000/home"
 }
 
