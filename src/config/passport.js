@@ -11,7 +11,7 @@ passport.use(
     {
       clientID: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-      callbackURL: "http://localhost:2000/auth/google/callback",
+      callbackURL: "https://smallcaseproject.herokuapp.com/auth/google/callback",
       userProfileURL: "https://**www**.googleapis.com/oauth2/v3/userinfo",
       passReqToCallback: true,
     },
