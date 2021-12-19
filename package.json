@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "css:build": "tailwind build ./tailwindconf/style.css -o ./src/public/css/style.css",
     "server": "redis-server & nodemon -e html,ejs,js ./src/server.js ",
-    "start": "redis-server & nodemon src/server.js & tailwind build ./tailwindconf/style.css -o ./src/public/css/style.css"
+    "start": "redis-server & nodemon src/server.js"
   },
   "repository": {
     "type": "git",
