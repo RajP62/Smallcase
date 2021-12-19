@@ -6,7 +6,7 @@ This project is a part of our build week in coding bootcamp name ***masai school
 <span>
 <div style="margin:auto; display:flex; items:center; justify-content:center">
 <span>
-<img src="images/siteLogo.png" style="width:15px" alt="Unable To Load" style="display:inline"></img><span>
+<img src="./public/images/siteLogo.png" style="width:15px" alt="Unable To Load" style="display:inline"></img><span>
 <span style="font-Size:20px; font-weight:bold; margin-left:10px">Smallcase</span>
 </div>
 <hr></hr>
@@ -17,37 +17,62 @@ This project is a part of our build week in coding bootcamp name ***masai school
 
  *<p style="color:purple">When the user visits they see this page, it consists of beautiful ui components and animations.</p>*
 
- <img src="images/dashboard.png"/>
+ <img src="./public/images/dashboard.png"/>
 
-#### Login and Signup Components
+#### Signup and Login
 
 
-*<p style="color:purple">We have made our own fake api using a library called json-server for login and signup authentication.</p>*
+*<p style="color:purple">We have used manual account creation as well as oauth for authentication and authorization , for user security we have used bcryptjs as well as we have implemented authorization in all the pages.</p>*
 
- <img src="images/loginbox.png"/>
+ <img src="./public/images/loginbox.png"/>
+ <img src="./public/images/growImg.png"/>
 <hr>
- <img src="images/signupbox.png">
 
 #### BlogPage
 
 
 *<p style="color:purple">As we know that news is an important part of decision making of an investor so, we have implement a beautiful- eye catching UI as well as search option for latest news with the functionality of debouncing.<p>*
 
- <img src="images/blogWithDeb.png">
+ <img src="./public/images/blogWithDeb.png">
 
 #### Discover page
 
 *<p style="color:purple">On the successful completion of user authentication the user will be redirected to the discover page where he/she can start exploring the world of smallcases.</p>*
 
 
- <img src="images/discover.png">
+ <img src="./public/images/discover.png">
 
-#### Smallcase Information Page
+ 
+#### Watchlist
 
-*<p style="color:purple">For getting the information of a specific smallcase the user wants to select he'she can go the the information page of that particular smallcase by clicking on it or directly searching for it through the search bar and can proceed to invest in it through this page.</p>*
+*<p style="color:purple">User can add smallcases into account which will be saved in database by clicking “add to watchlist” button available on product detail page and can follow it.</p>*
+
+ <img src="./public/images/watchlist.png">
+
+ #### All Smallcases
+
+*<p style="color:purple">In this page user can sort or filter all the stocks and smallcases according to their need, like sorting according to price, level of risk associated with it, and investment strategy as well as can move to different pages to see all smallcases. We have implemented sorting and pagination completely from backend.</p>*
+<img src="./public/images/allsmallcasesp.png">
+
+#### Smallcase Display
+
+*<p style="color:purple">User may further click on desirable category or searched stock to land in this page and can see the details for that particular smallcase. In this page user can either add smallcases into watchlist or can proceed to payment</p>*
 
 
- <img src="images/smallcaseinformation.png">
+ <img src="./public/images/smallcaseinformation.png">
+
+
+#### Payment 
+
+*<p style="color:purple">For payment process we have integrated razorpay through which user can complete payment process on clicking payment option an OTP will be send to user mobile number and if it is valid the payment will succeed else fail.</p>*
+
+ <img src="./public/images/payment.png">
+
+ #### Investments
+
+*<p style="color:purple">All the smallcases which user have purchased will store here and everything will be stored in database and will remain even after the signout and can be referred from any device.</p>*
+
+ <img src="./public/images/investmentsp.png">
 
 
 #### Create Page
@@ -55,7 +80,7 @@ This project is a part of our build week in coding bootcamp name ***masai school
 <p style="color:purple">If the user want their customised smallcases, they can create their set/group of smallcases and can invest in it</p></p>
 
 
- <img src="images/createnewsmallcase.png">
+ <img src="./public/images/createnewsmallcase.png">
 
  <h2>Tech stack used</h2>
 
