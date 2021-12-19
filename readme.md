@@ -86,9 +86,9 @@ This project is a part of our build week in coding bootcamp name ***masai school
 
  <ul>
  <li style="color:blue">Tailwind css</li>
- <li style="color:blue">Raw Css</li>
- <li style="color:blue">Raw Html</li>
- <li style="color:blue">Raw Javascript</li>
+ <li style="color:blue">NodeJS</li>
+ <li style="color:blue">Express</li>
+ <li style="color:blue">EJS</li>
  </ul>
 
  <p style="font-weight:bold">Libraries used<p>
