@@ -194,7 +194,7 @@
     
 
             try{
-                let data = await fetch("http://localhost:2000/razorpay/createorder",{
+                let data = await fetch("https://smallcaseproject.herokuapp.com/razorpay/createorder",{
                     method:'POST',
                     body:JSON.stringify({price: price}),
                     headers:{

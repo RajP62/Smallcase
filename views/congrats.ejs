@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Payment Success</title>
-    <link rel="stylesheet" href="http://localhost:2000/css/style.css">
+    <link rel="stylesheet" href="https://smallcaseproject.herokuapp.com/css/style.css">
 
 </head>
 <body>
@@ -26,7 +26,7 @@
         <p class="text-2xl text-white font-bold mt-3">Congratulations</p>
         <p class="text-lg text-white font-semibold mt-4">Thank You for making an investment in smallcase</p>
         <div class="mt-6">
-            <a href="http://localhost:2000/discover" class="text-lg text-white font-bold border border-white px-3 py-1 rounded">Continue</a>
+            <a href="https://smallcaseproject.herokuapp.com/discover" class="text-lg text-white font-bold border border-white px-3 py-1 rounded">Continue</a>
         </div>
     </div>
 
@@ -42,7 +42,7 @@
         console.log("invetments", investments);
         console.log("id",id, "_id",_id, "token",token);
 
-            let response = await fetch(`http://localhost:2000/users/${_id}`,{
+            let response = await fetch(`https://smallcaseproject.herokuapp.com/users/${_id}`,{
                 method:'PATCH',
                 body:JSON.stringify(user),
                 headers: {
@@ -57,7 +57,7 @@
             localStorage.setItem("login_detail", JSON.stringify(userDetail));
 
         setTimeout(() => {
-            window.location.href = "http://localhost:2000/discover";
+            window.location.href = "https://smallcaseproject.herokuapp.com/discover";
         }, 2000);
         } 
 

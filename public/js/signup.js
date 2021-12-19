@@ -49,7 +49,7 @@ async function checkpassword() {
 
         // post request to backend
         try {
-            const response = await fetch("http://localhost:2000/register", {
+            const response = await fetch("https://smallcaseproject.herokuapp.com/register", {
                 method: 'POST',
                 headers: {
                   'Accept': 'application/json',
@@ -67,7 +67,7 @@ async function checkpassword() {
                 console.log(login_detail)
                 localStorage.setItem("login_detail", JSON.stringify(login_detail))
 
-                return window.location.href = "http://localhost:2000/discover"            
+                return window.location.href = "https://smallcaseproject.herokuapp.com/discover"            
             }
 
         } catch (e) {
