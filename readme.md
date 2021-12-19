@@ -94,7 +94,24 @@ This project is a part of our build week in coding bootcamp name ***masai school
  <p style="font-weight:bold">Libraries used<p>
 
  <ul>
- <li style="color:blue">Json-server</li>
+ <li style="color:blue">axios</li>
+ <li style="color:blue">bcryptjs</li>
+ <li style="color:blue">dotenv</li>
+ <li style="color:blue">ejs</li>
+ <li style="color:blue">express</li>
+ <li style="color:blue">jsonwebtoken</li>
+ <li style="color:blue">messagebird</li>
+ <li style="color:blue">mongoose</li>
+ <li style="color:blue">node-cache</li>
+ <li style="color:blue">nodemailer</li>
+ <li style="color:blue">passport</li>
+ <li style="color:blue">passport-google-oauth2</li>
+ <li style="color:blue">razorpay</li>
+ <li style="color:blue">redis</li>
+ <li style="color:blue">redis-server</li>
+ <li style="color:blue">tailwindcss</li>
+ <li style="color:blue">uuidv4</li>
+
  </ul>
 
 <h4>Contributors</h4>
