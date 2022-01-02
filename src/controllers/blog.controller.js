@@ -14,7 +14,7 @@ router.get("", async(req,res)=>{
     } catch (e) {
         return res.status(500).json({message: "Internal server error"});
     }
-})
+});
 
 
 module.exports = router;
