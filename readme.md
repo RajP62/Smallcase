@@ -142,8 +142,3 @@ This project is a part of our build week in coding bootcamp name ***masai school
 <h5>Mohit Solanki</h5>
 
 [github](https://github.com/mohitsolanki71)
-
-
-<H3>Presentation</H3>
-
-(https://www.youtube.com/watch?v=qErHShZl3Zg)
